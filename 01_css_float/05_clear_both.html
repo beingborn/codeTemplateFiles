@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>float</title>
+<style>
+#wrap { width: 500px; height: 600px; border:1px dashed #777; }
+#box1 { float:left; width: 100px; height: 100px; background-color: #CCF; }
+#box2 { float:left; width: 150px; height: 150px; background-color: #C9F; }
+/* float이 설정된 상자들끼리는 가로배열되며, 
+그 다음 상자는 float이 설정된 상자들 밑에 깔려 겹쳐지게됨 
+--> 이때, 이 상태를 해제하려면 밑에 깔려진 상자에 clear:both를 지정한다 */
+#box3 { clear:both; width: 200px; height: 200px; background-color:#FC9; }
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+  <div id="box1">1</div>
+  <div id="box2">2</div>
+  <div id="box3">3</div>  
+</div>
+
+</body>
+</html>

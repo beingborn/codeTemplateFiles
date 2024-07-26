@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Swiper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+<!-- 스와이퍼 CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<style>
+* { margin:0; padding:0;}
+html,body { height: 100%; }
+ul { list-style:none; }
+body { font-family:'Roboto'; }
+
+
+
+/* 갤러리1 */
+.gallery1 {
+	margin:0 auto;
+	width:100%;
+	/* height:777px; */ /* 이미지를 넣을때는 설정하지 않는다 */
+	border:5px dashed lightblue;
+}
+
+.gallery1 .swiper-slide { 
+	font-size:77px; 
+	border:3px dashed #333; 
+	box-sizing:border-box; 
+}
+.gallery1 .swiper-slide img { 
+	display: block;
+	width: 100%;
+}
+
+.gallery1 .swiper-button-prev { left:50px; color:black; }
+.gallery1 .swiper-button-next { right:50px; color:white; }
+
+.gallery1 .swiper-pagination { /* 메뉴영역 */
+	bottom:30px;  font-size:77px; color:white;
+	border:2px dashed blue; 
+}
+
+.gallery1 .swiper-pagination .swiper-pagination-bullet { /* 메뉴 설정 */
+	background-color:white; 
+	opacity:0.9; 
+	width:16px; height:16px;
+	margin-left:20px;
+	margin-right:20px;
+	border-radius:8px;
+} 
+.gallery1 .swiper-pagination .swiper-pagination-bullet-active { /* 메뉴 활성화 설정 */
+	width:30px;
+	background-color:red; 
+	opacity:1; 
+}
+.gallery1 .swiper-pagination-progressbar { top:calc(100% - 15px); height:15px; background:yellow; } /* 진행바 기본설정 */
+.gallery1 .swiper-pagination-progressbar-fill { background:black; } /* 진행바 채워지는 부분 */
+
+</style>
+
+</head>
+<body>
+
+
+
+<!-- 갤러리1 -->
+<div class="swiper gallery1">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide"><img src="images/img1.jpg" alt=""></div>
+		<div class="swiper-slide"><img src="images/img2.jpg" alt=""></div>
+		<div class="swiper-slide"><img src="images/img3.jpg" alt=""></div>
+		<div class="swiper-slide"><img src="images/img4.jpg" alt=""></div>
+		<div class="swiper-slide"><img src="images/img5.jpg" alt=""></div>
+	</div>
+
+	<div class="swiper-button-next b-next1"></div>
+	<div class="swiper-button-prev b-prev1"></div>
+
+	<div class="swiper-pagination nav1"></div>
+</div>
+
+
+
+
+
+
+
+
+<!-- 스와이퍼 JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+
+	let swiper1 = new Swiper(".gallery1", { //갤러리 영역명
+
+
+/*
+
+			slidesPerView: 1,
+			observer: true,
+			observeParents: true,
+			observeSlideChildren: true,
+			loop: true,
+			loopedSlides: 1,
+			touchRatio: 0.5,
+			autoplay: {
+				delay: 3000,
+			},
+			direction: 'horizontal',
+			pagination: {
+				el: $('#bannerBoxPc').find(".swiper-pagination"),
+				clickable: true,
+				observer: true,	// 추가
+				observeParents: true,	// 추가
+				observeSlideChildren: true,
+			},
+			on:{
+				//pc만 페이지네이션 안먹어서 추가
+				touchEnd:(e)=>{
+					const tSwiper = header_banner_swiper.pc;
+					if(tSwiper){
+						const bullets = tSwiper.pagination.bullets;
+						const bIdx = $('#bannerBoxPc .swiper-pagination-bullet-active').index();
+						const idx = Array.from(tSwiper.slides).filter(e=>$(e).hasClass('swiper-slide-active'))[0].dataset.swiperSlideIndex;
+						if(bIdx != idx){
+							$('#bannerBoxPc .swiper-pagination-bullet-active').removeClass('swiper-pagination-bullet-active');
+							$(bullets[idx]).addClass('swiper-pagination-bullet-active');
+						}
+					}
+				}
+
+			}
+*/
+
+
+
+
+		loop:true, //순환유무
+		grabCursor:true, //커서 손모양
+
+		//autoplay:{ //자동실행
+			//delay:2000,//자동실행 간격 (1000=1초)
+			//disableOnInteraction:false, //true로 설정하면 메뉴를 누른후부터는 자동실행 안됨
+		//},
+
+		//effect:'coverflow', //slide fade cube coverflow flip cards creative
+/*
+		  creativeEffect: {
+			prev: {
+			  shadow: true,
+			  translate: [0, 0, -800],
+			},
+			next: {
+			  shadow: true,
+			  translate: ['100%', 0, -800],
+			},
+		  },
+*/
+		slidesPerView:3, //보이는 영역에 표시될 슬라이드 개수 (effect사용시 사용불가)
+		//spaceBetween:30, //슬라이드 사이의 간격
+
+centeredSlides: true,
+/*
+    breakpoints: {
+      1024: {
+        slidesPerView: 1.01,
+        spaceBetween: 12,
+        centeredSlides: true
+      },
+    },
+*/
+		pagination: {
+			el:".nav1", //메뉴영역 클래스명
+			clickable:true, //메뉴 클릭때도 슬라이드 실행
+			//dynamicBullets:true, //활성화 메뉴는 크고 나머지 메뉴는 작아는 효과
+			//type:"progressbar", //진행 스크롤바 형태로 표시
+			//type:"fraction", //페이지 번호 형태로 표시
+		},
+
+		navigation: {
+			nextEl:".b-next1",//다음 버튼 클래스명
+			prevEl:".b-prev1",//이전 버튼 클래스명
+		},
+
+	});
+
+</script>
+
+</body>
+</html>
+
