@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이메일 addeventListenr</title>
+  </head>
+  <body>
+    <form action="post" method="post">
+      <input type="email" placeholder="이메일을 입력해주세요" />
+      <input type="password" placeholder="비밀번호를 입력해주세요" />
+      <input type="submit" value="제출" />
+    </form>
+    <script>
+      // window.onload 내용이 다 불러와지면 실행
+
+      /**
+       * 1. 이메일 입력창에 포커스되면
+       * 2. 내용 추가
+       */
+      window.onload = function () {
+        const email = document.querySelector('input[type="email"]');
+
+        email.addEventListener("focus", function () {
+          const form = document.querySelector("form");
+          const info = document.createElement("p");
+          info.innerText = "이메일 형식을 잘 입력해주세요";
+
+          form.appendChild(info);
+          form.insertBefore(info, form.firstChild); // 두개의 인자 값을 가진다. 1번은 넣을 요소, 2번은 위치
+        });
+
+        email.addEventListener("blur", function () {
+          const form = document.querySelector("form");
+          form.removeChild(form.firstChild);
+        });
+      };
+    </script>
+  </body>
+</html>
