@@ -1,0 +1,7 @@
+[
+    {"name": "abc노동조합", "group": "abc총연맹", "assets": 1590, "liabilities": 210, "income": 120, "expenditure": 115},
+    {"name": "○○기업 노동조합", "group": "○○총연맹", "assets": 2360, "liabilities": 1250, "income": 870, "expenditure": 643},
+    {"name": "▲▲지역지회", "group": "총연합단체미가입", "assets": 3150, "liabilities": 2420, "income": 1120, "expenditure": 1098},
+    {"name": "△△기업분회", "group": "기타", "assets": 1320, "liabilities": 357, "income": 254, "expenditure": 204},
+    {"name": "□□산업노동조합", "group": "□□총연맹", "assets": 315, "liabilities": 25, "income": 90, "expenditure": 84}
+]
