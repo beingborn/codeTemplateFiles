@@ -1,0 +1,68 @@
+    .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    }
+  
+    .header__wrap {
+      display: flex;
+      justify-content: center; /* gnb 수평 중앙 정렬 */
+      align-items: center; /* gnb 수직 중앙 정렬 */
+      padding: 40px 0;
+      border-bottom: 1px solid $main-color;
+      background-color: lightgray;
+      box-sizing: border-box;
+    }
+  
+    .logo {
+      display: inline-block;
+      width: 140px;
+      height: 6.8rem;
+      position: absolute;
+      left: 48px;
+      background-color: blue;
+    }
+    
+
+    .gnb__menu {
+      display: flex;
+      position: relative;
+      
+      // 상위 메뉴 li
+      li:not(:last-child) { // 마지막 요소 제외 오른쪽 마진 값
+        margin-right: 80px;
+      }
+      
+      li {
+        a {
+          font-size: 1.6rem;
+          display: block;
+          font-weight: bold;
+        }
+        
+
+        // 서브 메뉴 li
+        .sub__menu {
+          position: absolute;
+          top: 80px;
+          opacity: 0;
+          display: none;
+  
+          li {
+            a {
+              display: block;
+              white-space: nowrap;
+              margin-bottom: 24px;
+              color: #000;
+              font-weight: 500;
+  
+              &:hover {
+                color: #ed1c24;
+              }
+            }
+          }      
+        }
+      }
+    }
