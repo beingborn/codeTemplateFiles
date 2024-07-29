@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="Chart" width="800" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('Chart').getContext('2d');
+        var Chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [], // 초기 라벨(시간)은 비워둠
+                datasets: [{
+                    label: 'Signal',
+                    data: [], // 초기 데이터는 비워둠
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                    lineTension: 0.1
+                }]
+            },
+            options: {
+                animation: true, // 실시간 성능을 위해 애니메이션 비활성화
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        let dataIndex = 0;
+
+        function addData(chart, label, data) {
+            if (chart.data.labels.length > 100) { // 최대 데이터 포인트 수를 100으로 제한
+                chart.data.labels.shift(); // 가장 오래된 라벨 제거
+                chart.data.datasets.forEach((dataset) => {
+                    dataset.data.shift(); // 가장 오래된 데이터 포인트 제거
+                });
+            }
+
+            chart.data.labels.push(label);
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(data);
+            });
+            chart.update();
+        }
+
+        // 데이터를 업데이트하는 함수를 1000ms(1초)마다 실행
+        setInterval(function() {
+            // 새로운 데이터 포인트 생성 (예: 사인파)
+            const newData = Math.sin(dataIndex * 0.1) * 10;
+            addData(Chart, dataIndex, newData);
+            dataIndex++;
+        }, 2000);
+    </script>
+</body>
+</html>
