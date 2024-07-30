@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chart-wrap {width: 400px;}
+        #myChart {width: 100%;}
+    </style>
+</head>
+<body>
+    <div class="chart-wrap">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <button onclick="updateChart(0)">1번 그래프</button>
+    <button onclick="updateChart(1)">2번 그래프</button>
+    <button onclick="updateChart(2)">3번 그래프</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script>
+
+        var getData = () => {
+            $.ajax({
+                type: "get",
+                url : "dummy/chartDouble.json",
+                dataType : "json",
+                success : function(data) {
+                    var testData = data
+                    console.log(testData)
+                },
+                error: function() {
+                    console.log("에러입니다!")
+                }
+            })
+        }        
+
+           // 페이지 로드 시 데이터를 가져옵니다.
+           $(document).ready(function() {
+            getData();
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+        var testData = [{name: '1번', asset : 400, income: 200},  {name: '2번', asset : 1500, income: 300}, {name: '3번', asset : 50, income: 600}]
+
+
+        // 데이터 정의 (여기서는 예시 데이터로 100과 200을 사용합니다)
+        let d = testData[0].asset;         
+        let e = testData[0].income;         
+        
+     
+
+        // 차트를 그릴 캔버스 요소 가져오기
+        const ctx = document.getElementById('myChart').getContext('2d');
+        // Chart.register(ChartDataLabels);
+        // Chart.defaults.set('plugins.datalabels', {
+        // color: '#FE777B'
+        // });
+
+
+        // 구분 값은 name or 배열의 index값, 비교 값은 asset과 200 name 1번을 누를 시 asset : 100과 200을 비교해서 그래프 표시
+
+        // 차트 구성 설정
+        const config = {
+            type: 'pie', // 차트 유형 설정 (여기서는 'pie' 차트)
+            plugins : [ChartDataLabels],
+            data: {
+                labels: ['자산', '부채'], // 차트에 표시될 레이블
+                datasets: [{
+                    label: '자산 부채현황', // 데이터 셋 레이블
+                    data: [], // 실제 데이터 값
+                    backgroundColor: ['green', 'red'], // 각 데이터에 대한 배경색
+                    hoverOffset: 4 // 마우스 오버 시 강조 효과
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true, // 제목 표시 여부
+                        text: '(백만원)   ', // 제목 텍스트
+                        align: 'center', // 제목 정렬
+                        font: { size: 14 } // 제목 폰트 크기
+                    },
+                    datalabels: {
+                        color: '#fff', // 데이터 라벨 색상
+                        font: { size: 16 }, // 데이터 라벨 폰트 크기
+                        formatter: function(value) {
+                            // 데이터 값을 포맷하는 함수 (여기서는 콤마를 추가)
+                            // return gfnAddCommas(value);
+                        }
+                    },
+                    legend: {
+                        position: 'bottom', // 범례 위치
+                        labels: { boxWidth: 16, boxHeight: 16 } // 범례 라벨 크기
+                    }
+                }
+            }
+        };
+    
+        // 설정된 구성으로 차트 생성
+        const myChart = new Chart(ctx, config);
+        myChart.data.datasets[0].data = [d, e];
+        myChart.update();
+
+        function updateChart(index) {
+            clearInterval(updateInterval)
+            const selectData = testData[index]; // 전달 받은 변수값을 할당.
+            const assetData = selectData.asset;
+            const incomeData = selectData.income;
+
+             // 차트 데이터 업데이트
+            myChart.data.datasets[0].data = [assetData, incomeData];
+            myChart.update();
+
+            updateInterval = setInterval(updateAuto, 3000)
+        }
+
+        let i = 0; // 인덱스 초기화
+    function updateAuto() {
+        if (i >= testData.length) {
+            i = 0; // 인덱스 초기화
+        }
+
+        const selectData = testData[i];
+        const assetData = selectData.asset;
+        const incomeData = selectData.income;
+
+        myChart.data.datasets[0].data = [assetData, incomeData];
+        myChart.update();
+
+        i++; // 인덱스 증가
+    }
+
+    // 3초마다 updateAuto 함수 호출
+    let updateInterval = setInterval(updateAuto, 3000);
+
+    </script>
+       
+</body>
+</html>
+
+

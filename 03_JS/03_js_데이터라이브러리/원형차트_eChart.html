@@ -27,6 +27,9 @@
         var chart = echarts.init(document.getElementById('chart'));
 
         // 차트 옵션을 설정합니다.
+
+
+
         var option = {
 
 
@@ -48,9 +51,16 @@
                     type: 'pie',
                     radius: '50%',
                     data: [
-                        { value: 335, name: '항목 A' },
+                        
+
+                        // 각 항목 클릭 시 차트 불러오기? 새로운 차트로 해야되는건가. 
+                        /** 항목 A의 value값1, value값 2 백분율 비교*/    
+                        /** 항목 B의 value값1, value값 2 백분율   비교*/
+                        { value: 335, name: '항목 A' }, // 밸류 값 => 데이터 값
                         { value: 310, name: '항목 B' },
-                        { value: 234, name: '항목 C' }
+
+
+                        // { value: 234, name: '항목 C' }
                     ],
                     emphasis: {
                         itemStyle: {
