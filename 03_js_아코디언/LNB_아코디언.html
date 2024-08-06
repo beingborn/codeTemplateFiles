@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="lnb__wrap">
+        <div class="lnb__title">
+            <h2>메뉴</h2>
+        </div>
+        <ul class="lnb">
+            <li class="menu__depth-1">
+                <a href="#">홈</a>
+              
+            </li>
+            <li class="menu__depth-1">
+                <a href="#">시스템안내</a>
+                <ol>
+                    <li class="menu__depth-2"><a href="#">- 회계공시시스템</a></li>
+                    <li class="menu__depth-2"><a href="#">- 주요고객 공시항목 설명</a></li>
+                    <li class="menu__depth-2"><a href="#">- 공지사항</a></li>
+                    <li class="menu__depth-2"><a href="#">- 자주묻는질문</a></li>
+                </ol>
+                <div class="arrow__wrap">
+                    <div class="arrow__top"></div>
+                    <div class="arrow__bottom"></div>
+                </div>
+            </li>
+            <li class="menu__depth-1">
+                <a href="#">회계공시열람</a>
+                <ol>
+                    <li class="menu__depth-2"><a href="#">- 회계공시 열람</a></li>
+                    <li  class="menu__depth-2"><a href="#">- 회계공시 여부 조회</a></li>
+                </ol>
+            </li>
+            <li class="menu__depth-1">
+                <a href="#">회계공시등록</a>
+                <ol>
+                    <li  class="menu__depth-2"><a href="#">- 회계공시 열람</a></li>
+                    <li  class="menu__depth-2"><a href="#">- 가맹노조(산하조직 관리)</a></li>
+                </ol>
+            </li>
+            <li class="menu__depth-1">
+                <a href="#">회계공시관리</a>
+                <ol>
+                    <li  class="menu__depth-2"><a href="#">- 노동조합관리</a></li>
+                    <li  class="menu__depth-2"><a href="#">- 노동조합 최계관리</a></li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // 기본 css에 innerHeight로 값 주기 
+// lnb height 기본값이 auto 여서 slideToggle 기능 수행 시 document가 함께 늘어남. 
+// 그래서 innerHeight을 이용해서 값을 유동적으로 지정해줘서 그 안에서만 slide되게 지정함
+
+$(document).ready(function(){
+    let lnb = $('.main__content .sub .lnb')
+    let lnbHeight = lnb.innerHeight();
+
+    lnb.css('height', lnbHeight)
+})
+
+
+
+$(document).ready(function(){
+    let tablePagination = $('.pagination .page-link') 
+
+
+    tablePagination.click(function (e) {
+    e.preventDefault(); // 링크 기본 동작 방지
+
+
+
+    $(this).addClass("active");
+    tablePagination.not($(this)).removeClass('active')
+  });
+
+  tablePagination.eq(0).addClass('active')
+
+})
+
+
+</script>
+
+</html>
