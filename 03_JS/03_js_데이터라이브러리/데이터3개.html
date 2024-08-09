@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eChart 템플릿</title>
+    <style>
+        .inner {width: 1280px; margin: 0px auto;}
+
+        .flex {display: flex; align-items: center;}
+
+        table {
+            width: 528px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr.active {
+            background-color: #70b6b9;
+        }
+
+        .chart-container {
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+            border: 1px solid blue;
+            /* margin: 20px; */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="inner">
+        <div class="flex">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>노동조합명</th>
+                        <th>총연합</th>
+                        <th>자산</th>
+                        <th>부채</th>
+                        <th>수입</th>
+                        <th>지출</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 데이터 행들 -->
+                    <tr>
+                        <td>abc노동조합</td>
+                        <td>abc총연맹</td>
+                        <td>1590</td>
+                        <td>210</td>
+                        <td>120</td>
+                        <td>115</td>
+                    </tr>
+                    <tr>
+                        <td>def노동조합</td>
+                        <td>def총연맹</td>
+                        <td>2300</td>
+                        <td>300</td>
+                        <td>150</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>홍길동조합</td>
+                        <td>홍길동연맹</td>
+                        <td>1230</td>
+                        <td>220</td>
+                        <td>130</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>아이조합</td>
+                        <td>아이연맹</td>
+                        <td>3300</td>
+                        <td>2200</td>
+                        <td>50</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>전도조합</td>
+                        <td>전도연맹</td>
+                        <td>1700</td>
+                        <td>500</td>
+                        <td>40</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>미도조합</td>
+                        <td>미도연맹</td>
+                        <td>1000</td>
+                        <td>800</td>
+                        <td>60</td>
+                        <td>40</td>
+                    </tr>
+                    <!-- 추가 데이터 행들 -->
+                </tbody>
+            </table>
+        
+            <div class="chart-container" id="chart-b"></div>
+            <div class="chart-container" id="chart-c"></div>
+        </div>
+    </div>
+    
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+
+
+    <script>
+
+
+const data = [
+    { name: "abc노동조합", union: "abc총연맹", assets: 1590, liabilities: 210, income: 120, expense: 115 },
+    { name: "def노동조합", union: "def총연맹", assets: 2300, liabilities: 300, income: 150, expense: 130 },
+    { name: "홍길동조합", union: "홍길동연맹", assets: 1230, liabilities: 220, income: 130, expense: 20 },
+    { name: "아이조합", union: "아이연맹", assets: 3300, liabilities: 2200, income: 50, expense: 20 },
+    { name: "미도조합", union: "미도연맹", assets: 1000, liabilities: 800, income: 60, expense: 40 },
+
+    // 추가 데이터
+];
+
+
+let currentIndex = 0;
+let autoPlay = true;
+
+
+// 차트는 미리 선언
+const chartB = echarts.init(document.getElementById('chart-b'));
+const chartC = echarts.init(document.getElementById('chart-c'));
+
+// 차트 옵션 데이터 index별 바꿈
+function updateCharts(index) {
+    const item = data[index];
+
+    // Chart B: 자산 vs 부채 (원형 차트)
+
+    var optionB = {
+        title : {text : `${item.name} 자산 vs 부채`},
+
+    
+        tooltip : {
+            trigger : 'item'
+        },
+        legend : {
+            orient : 'horizontal',
+            bottom :5,
+            itemWidth: 16,
+            itemHeight: 16
+        },
+
+        series: [{
+            type: 'pie',
+
+
+            label : {
+                show: true,
+                position: 'inside', // 라벨 위치를 슬라이스 바깥으로 설정
+                color: '#fff',
+                fontSize: 16,
+                formatter: '{b} {c}', // 라벨 형식: 이름: 값 (비율)
+            },
+            emphasis : {
+                itemStyle: {
+						shadowBlur: 10,
+						shadowOffsetX: 0,
+						shadowColor: 'rgba(0, 0, 0, 0.5)'
+					}
+            },
+            data: [
+                {value : item.assets , name: '자산'} , 
+                {value : item.liabilities, name : '부채'} 
+            ],
+        }]
+
+    }
+
+
+    chartB.setOption(optionB);
+
+    // Chart C: 수입 vs 지출 (바 차트)
+    chartC.setOption({
+        title: { text: `${item.name} 수입 vs 지출` },
+        xAxis: { type: 'category', data: ['수입', '지출'] },
+        yAxis: { type: 'value' },
+        series: [{
+            type: 'bar',
+            data: [
+                {value : item.income , name: '수입'} , 
+                {value : item.expense, name : '지출'} 
+            ],
+            label : {
+                show: true,
+                position: 'top',
+                color: '#fff',
+                fontSize: 16,
+            }
+        }]
+    });
+
+    // 표의 포커스 업데이트
+
+    $('#data-table tbody tr').each(function(idx, row){
+        $(row).toggleClass('active', idx === index); /// true 일 시 active false 일 시 제거
+    })    
+}
+
+function autoUpdate() {
+    if (autoPlay) {
+        currentIndex = (currentIndex + 1) % data.length;
+        updateCharts(currentIndex);
+    }
+}
+
+function rePlay(){
+    autoPlay = true;
+}
+
+$('#data-table tbody tr').click(function(){
+    autoPlay = false;
+
+    currentIndex = $(this).index();
+    updateCharts(currentIndex)
+
+    setTimeout(rePlay, 3000)
+
+})
+
+
+// 초기화 및 자동 업데이트 설정
+updateCharts(currentIndex);
+
+if(autoPlay == true){
+    setInterval(autoUpdate, 3000); // 3초마다 업데이트
+
+}
+    </script>
+
+</body>
+
+
+</html>

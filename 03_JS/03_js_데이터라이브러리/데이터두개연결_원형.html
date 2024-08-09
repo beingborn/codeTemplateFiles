@@ -17,7 +17,7 @@
             background-color: #f2f2f2;
         }
         .chart__wrap {
-            width: 640px;
+            width: 320px;
         }
 
         /* 차트 컨테이너를 반응형으로 설정 */
@@ -56,6 +56,7 @@
                 <!-- 데이터가 여기에 동적으로 삽입됩니다. -->
             </tbody>
         </table>
+        
         <div class="chart__wrap">
             <div id="chart"></div>
         </div>
@@ -63,6 +64,28 @@
   
 
     <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
 
 
@@ -165,8 +188,14 @@
             };
             console.log(option.series[0].data)
             chart.setOption(option)
+
+
+            
         }
         }
+
+
+
 
 
         // 페이지 로드 시 데이터를 가져옵니다.
@@ -180,6 +209,8 @@
                 chart.resize();
             }
         });
+
+        
 
         
 
