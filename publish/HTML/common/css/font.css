@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/** 
+   Bang So Jung CSS
+   http://bangsojung.com/
+**/
+/*
+
+        폰트관련 CSS
+
+*/
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 100;
+    src: local("Spoqa Han Sans Neo"),
+    url('../font/SpoqaHanSansNeo-Thin.eot') format('embedded-opentype'),
+    url('../font/SpoqaHanSansNeo-Thin.ttf') format('truetype'),
+    url('../font/SpoqaHanSansNeo-Thin.svg') format('svg'),
+    url('../font/SpoqaHanSansNeo-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 300;
+    src: local("Spoqa Han Sans Neo"),
+    url('../font/SpoqaHanSansNeo-Light.eot') format('embedded-opentype'),
+    url('../font/SpoqaHanSansNeo-Light.ttf') format('truetype'),
+    url('../font/SpoqaHanSansNeo-Light.svg') format('svg'),
+    url('../font/SpoqaHanSansNeo-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Spoqa Han Sans Neo"),
+    url('../font/SpoqaHanSansNeo-Regular.eot') format('embedded-opentype'),
+    url('../font/SpoqaHanSansNeo-Regular.ttf') format('truetype'),
+    url('../font/SpoqaHanSansNeo-Regular.svg') format('svg'),
+    url('../font/SpoqaHanSansNeo-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 500;
+    src: local("Spoqa Han Sans Neo"),
+    url('../font/SpoqaHanSansNeo-Medium.eot') format('embedded-opentype'),
+    url('../font/SpoqaHanSansNeo-Medium.ttf') format('truetype'),
+    url('../font/SpoqaHanSansNeo-Medium.svg') format('svg'),
+    url('../font/SpoqaHanSansNeo-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 600;
+    src: local("Spoqa Han Sans Neo"),
+    url('../font/SpoqaHanSansNeo-Bold.eot') format('embedded-opentype'),
+    url('../font/SpoqaHanSansNeo-Bold.ttf') format('truetype'),
+    url('../font/SpoqaHanSansNeo-Bold.svg') format('svg'),
+    url('../font/SpoqaHanSansNeo-Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Infinity Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Infinity Sans"),
+    url('../font/InfinitySans-Regular.eot') format('embedded-opentype'),
+    url('../font/InfinitySans-Regular.woff') format('woff'),
+    url('../font/InfinitySans-Regular.ttf') format('truetype'),
+    url('../font/InfinitySans-Regular.svg') format('svg'),
+    url('../font/InfinitySans-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Infinity Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local("Infinity Sans"),
+    url('../font/InfinitySans-Bold.eot') format('embedded-opentype'),
+    url('../font/InfinitySans-Bold.woff') format('woff'),
+    url('../font/InfinitySans-Bold.ttf') format('truetype'),
+    url('../font/InfinitySans-Bold.svg') format('svg'),
+    url('../font/InfinitySans-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Infinity Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local("Infinity Sans"),
+    url('../font/InfinitySans-CondBold.eot') format('embedded-opentype'),
+    url('../font/InfinitySans-CondBold.woff') format('woff'),
+    url('../font/InfinitySans-CondBold.ttf') format('truetype'),
+    url('../font/InfinitySans-CondBold.svg') format('svg'),
+    url('../font/InfinitySans-CondBold.woff') format('woff');
+}

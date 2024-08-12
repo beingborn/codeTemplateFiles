@@ -1,0 +1,96 @@
+@charset "utf-8"; 
+
+/* main visual */
+.main-swiper .blue-slide .txt-box .txt2 {padding:0 0 20px;font-family:'NanumSquare', sans-serif;}
+.main-swiper .blue-slide .btn-box i {width: 28px;height: 23px;margin:0 4px 0 0;background: url('../image/icon_btn_main1_en.png') no-repeat center/contain;}
+
+/* What We Build */
+.main-what .content-wrap {margin: 0 0 84px;}
+.main-what .content-wrap .txt-box {font-family:'NanumSquare', sans-serif;}
+.main-what .content-wrap.content2 .txt-box {width: 60%;margin-right: -215px;padding: 96px 0 0 160px;}
+.main-what .content-wrap.content2 .img-box {top:24px;}
+
+/* #Who We Are2 */
+.main-who2 .insight-wrap dt {display: flex;align-items: center;}
+.main-who2 .insight-wrap dd {font-family:'NanumSquare', sans-serif; font-size: 12px;white-space: normal;}
+.main-who2 .content-wrap p {font-family:'NanumSquare', sans-serif; }
+
+/* #Future Roadmap */
+.main-roadmap .content-wrap .btn-roadmap01 {left: 40%;bottom: 17.5%;}
+.main-roadmap .content-wrap .btn-roadmap02 {left: 72%;bottom: 0;}
+
+/* #Token Summary */
+.main-price {font-family:'NanumSquare', sans-serif; }
+.main-price .content-wrap h3 {font-weight: 900;}
+
+/* #Our Ecosystem */
+.main-ecosystem .content-wrap .txt-box p {font-family:'NanumSquare', sans-serif; }
+
+/* #Core Members */
+.main-members .advisors-wrap .member-list {height: 380px;}
+.member-list .user-team {margin: 4px 10px 0 24px;letter-spacing: 0;}
+.member-list .user-team em {padding-bottom: 5px;}
+.pop-members .txt-box {line-height: 1.7;}
+.pop-members .name-box .user-part {line-height: 1.2;}
+.pop-members .name-box .user-part em {padding-bottom: 8px;}
+
+
+@media (max-width: 1440px) {
+
+    /* main visual */
+    .main-swiper .blue-slide .txt-box .txt2 {padding:0 0 1.3889vw;font-family:'NanumSquare', sans-serif;}
+    .main-swiper .blue-slide .btn-box i {width: 1.9444vw;height: 1.5972vw;margin:0 0.2778vw 0 0;background: url('../image/icon_btn_main1_en.png') no-repeat center/contain;}
+
+    /* What We Build */
+    .main-what .content-wrap {margin: 0 0 5.8333vw;}
+    .main-what .content-wrap .txt-box {font-family:'NanumSquare', sans-serif;}
+    .main-what .content-wrap.content2 .txt-box {width: 60%;margin-right: -14.9306vw;padding: 6.6667vw 0 0 11.1111vw;}
+    .main-what .content-wrap.content2 .img-box {top:1.6667vw;}
+
+    /* #Who We Are2 */
+    .main-who2 .insight-wrap dt {display: flex;align-items: center;}
+    .main-who2 .insight-wrap dd {font-size: 0.8333vw;}
+
+    /* #Future Roadmap */
+    .main-roadmap .content-wrap .btn-roadmap01 {left: 40%;bottom: 17.5%;}
+    .main-roadmap .content-wrap .btn-roadmap02 {left: 72%;bottom: 0;}
+
+    /* #Token Summary */
+    .main-price {font-family:'NanumSquare', sans-serif; }
+    .main-price .content-wrap h3 {font-weight: 900;}
+
+    /* #Core Members */
+    .main-members .advisors-wrap .member-list {height: 26.3889vw;}
+    .member-list .user-team {margin: 0.2778vw 0.6944vw 0 1.6667vw;letter-spacing: 0;}
+    .member-list .user-team em {padding-bottom: 0.3472vw;}
+    .pop-members .name-box .user-part em {padding-bottom: 0.5556vw;}
+
+}
+
+@media (max-width: 768px) {
+
+    /* main visual */
+    .main-swiper .blue-slide .txt-box .txt2 {padding:0 0 2.7778vw;font-family:'NanumSquare', sans-serif;line-height: 1;}
+    .main-swiper .blue-slide .btn-box i {width: 5.8889vw;height: 5.1944vw;margin:0 1.5556vw 0 0;background: url('../image/icon_btn_main1_en.png') no-repeat center/contain;}
+
+    /* What We Build */
+    .main-what .content-wrap {margin: 0 0 24.3056vw;}
+    .main-what .content-wrap .txt-box h3 {font-size: 8.3333vw;}
+    .main-what .content-wrap.content2 .txt-box {width:auto;margin-right:0;padding: 10.4167vw 0 0 3.4722vw;}
+    .main-what .content-wrap.content2 .img-box {top:0;}
+
+    /* #Who We Are2 */
+    .main-who2 .insight-wrap dt {width:42%;}
+    .main-who2 .insight-wrap dd {width:58%;font-size: 2.7778vw;}
+
+    /* #Future Roadmap */
+    .main-roadmap .content-wrap .btn-roadmap01 {left: 58%;bottom: 46%;}
+    .main-roadmap .content-wrap .btn-roadmap02 {left: 58.4%;bottom: 0;}
+
+    /* #Core Members */
+    .main-members .advisors-wrap .member-list {height: 53.3889vw;}
+    .member-list .user-team {margin: 0.2778vw 1.4722vw 0 3.4722vw;}
+    .member-list .user-team em {padding-bottom: 0.6944vw;}
+    .pop-members .name-box .user-part em {padding-bottom: 1.1111vw;}
+}
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=360, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title></title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP" class="JOIN_WRAP">
+        <!-- header -->
+        <div id="HEADER">
+            <header>
+                <div class="head__navi">
+                    <button class="head__btn_back"><img src="./images/common/i_back.svg" alt="뒤로가기"><i></i></button>
+                    <h2 class="head__text">회원가입</h2>
+                </div>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+        
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="JOIN">
+
+                <form action="">
+                    <div class="login__body">
+                        <div class="form_row">
+                            <label for="email" class="lbl">이메일(선택)</label>
+                            <input type="text" class="int" id="email" placeholder="이메일을 입력하세요.">
+                        </div>
+                        <div class="form_row">
+                            <label for="id_nomination" class="lbl">추천인 아이디(선택)</label>
+                            <input type="text" class="int" id="id_nomination" placeholder="추천인 아이디를 입력하세요.">
+                        </div>
+                        <div class="form_agree">
+                            <div class="form_agree_head">
+                                <h3 class="form_agree_title">약관동의</h3>
+                                <p class="form_agree_desc">딩글리 서비스 이용을 위한 동의가 필요합니다.</p>
+                            </div>
+                            <div class="form_agree_body">
+                                <div class="int_check int_check_all">
+                                    <input type="checkbox" id="chk_all" name="terms">
+                                    <label for="chk_all"><span></span> 전체동의</label>
+                                </div>
+                                <div class="int_check">
+                                    <input type="checkbox" id="termsService" name="terms">
+                                    <label for="termsService"><span></span> 딩글리 서비스 이용약관(필수)</label>
+                                    <a href="javascript:;" class="btn_link2">상세보기</a>
+                                </div>
+                                <div class="int_check">
+                                    <input type="checkbox" id="termsPrivacy" name="terms">
+                                    <label for="termsPrivacy"><span></span> 개인정보 수집이용 동의(필수)</label>
+                                    <a href="javascript:;" class="btn_link2">상세보기</a>
+                                </div>
+                                <div class="int_check">
+                                    <input type="checkbox" id="termsSns" name="terms">
+                                    <label for="termsSns"><span></span> 마케팅 정보 수신 동의(선택)</label>
+                                    <a href="javascript:;" class="btn_link2">상세보기</a>
+                                </div>
+                                <div class="int_check_area">
+                                    <div class="int_check_inner">
+                                        <input type="checkbox" id="termsSns_app" name="terms">
+                                        <label for="termsSns_app"><span></span> 앱 푸쉬</label>
+                                    </div>
+                                    <div class="int_check_inner">
+                                        <input type="checkbox" id="termsSns_email" name="terms">
+                                        <label for="termsSns_email"><span></span> 이메일</label>
+                                    </div>
+                                    <div class="int_check_inner">
+                                        <input type="checkbox" id="termsSns_sns" name="terms">
+                                        <label for="termsSns_sns"><span></span> SMS</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login_foot login_next">
+                            <button type="submit" class="btn_submit" id="btn_submit">가입완료 <i></i></button>
+                        </div><!-- //login_foot -->
+                    </div><!-- //login__body -->
+                </form>
+
+            </div><!-- //LOGIN -->
+        </div>
+        <!-- //CONTAINER -->
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.gender_btns > a').on('click', function(){
+            $('.gender_btns > a').removeClass('on');
+            $(this).addClass('on');
+        });
+    });
+
+    var $chkAll = $('#chk_all');
+    $chkAll.change(function () {
+        var $this = $(this);
+        var checked = $this.prop('checked'); // checked 문자열 참조(true, false)
+        // console.log(checked);
+        $('input[name="terms"]').prop('checked', checked);
+
+    });
+    var $termsSns = $('#termsSns');
+    $termsSns.change(function () {
+        var $this = $(this);
+        var checked = $this.prop('checked'); // checked 문자열 참조(true, false)
+        // console.log(checked);
+        $('.int_check_area input[name="terms"]').prop('checked', checked);
+
+    });
+</script>
+</body>
+</html>

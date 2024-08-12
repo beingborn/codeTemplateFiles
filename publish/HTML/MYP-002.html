@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=360, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title></title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP">
+        <!-- HEADER -->
+        <div id="HEADER">
+            <header>
+                <div class="head__navi">
+                    <button class="head__btn_back"><img src="./images/common/i_back.svg" alt="뒤로가기"><i></i></button>
+                    <h2 class="head__text">결제내역</h2>
+                </div>
+                <div class="head__menu">
+                    <button class="head__btn_search"><img src="./images/common/i_search.svg" alt="검색버튼"></button>
+                </div>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+        
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="HISTORY">
+
+                    <div class="history__search search__bar">
+                        <div class="dim"></div>
+                        <button class="search_bar_close"><img src="./images/common/i_close.svg" alt="검색창 닫기"></button>
+                        <form action="">
+                            <div class="search_form">
+                                <input type="text" class="search_int" placeholder="샵명/제품명 입력하세요.">
+                                <button class="search_btn"><img src="./images/common/i_search.svg" alt="검색버튼"></button>
+                            </div>
+                            <div class="search_btns_month">
+                                <button type="button" class="on">최근 1년</button>
+                                <button type="button">1년</button>
+                                <button type="button">3년</button>
+                                <button type="button">6년</button>
+                            </div>
+                            <div class="search_btns_date">
+                                <button type="button">2021.09.01 <i></i></button>
+                                <button type="button">2021.09.01 <i></i></button>
+                            </div>
+                            <div class="search_check_status">
+                                <div class="int_check_status"><input type="checkbox" id="STATUS_c" checked><label for="STATUS_c"><span></span> 구매완료</label></div>
+                                <div class="int_check_status"><input type="checkbox" id="STATUS_b"><label for="STATUS_b"><span></span> 선물하기</label></div>
+                                <div class="int_check_status"><input type="checkbox" id="STATUS_a"><label for="STATUS_a"><span></span> 결제취소</label></div>
+                                <div class="int_check_status"><input type="checkbox" id="STATUS_d"><label for="STATUS_d"><span></span> 환불완료</label></div>
+                            </div>
+                            <div class="search_check_select">
+                                <a href="javascript:;">전체선택</a>
+                                <a href="javascript:;">선택해제</a>
+                            </div>
+                            <button type="button" class="btn_lookup">조회하기</button>
+                        </form>
+                    </div>
+                <div class="sub__wrap">
+                    <div class="line__bot"></div>
+                    <section class="history_wrap">
+                        <article class="cont__wrap">
+                            <div class="cont__head3">
+                                <div class="cont__head_history_title">
+                                    <!-- history_status_a,b,c,d
+                                        a : 사용완료
+                                        b : 결제취소
+                                        c : 구매완료
+                                        d : 환불완료
+                                    -->
+                                    <span class="history_status history_status_a">사용완료</span> 2022.02.04
+                                </div>
+                                <button class="history_close"><img src="./images/common/i_close3.svg" alt="아이콘"></button>
+                            </div>
+                            <div class="cont__body">
+                                <div class="product__list type_list">
+                                    <dl class="product_details">
+                                        <dt class="blind">상품 정보</dt>
+                                        <dd class="details_thumb">
+                                            <a href="javascript:;" style="background-image:url(./images/sub/product_thumb3.jpg);"></a>
+                                        </dd>
+                                        <dd class="details_infos">
+                                            <a href="javascript:;">
+                                                <div class="details_company">페이셜 관리</div>
+                                                <div class="details_title2">
+                                                    리프팅 탄력관리
+                                                </div>
+                                                <div class="details_foot">
+                                                    <div class="details_amount"><b>66,000</b><span>원</span></div>
+                                                    <div class="details_pay_status">간편결제</div>
+                                                </div>
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="product__btns col_3">
+                                    <a href="javascript:;" class="btn_cancel"><i></i> 취소신청</a>
+                                    <a href="javascript:;" class="btn_repurchase"><i></i> 재구매</a>
+                                    <a href="javascript:;" class="btn_detail"><i></i> 상세보기</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="cont__wrap">
+                            <div class="cont__head3">
+                                <div class="cont__head_history_title">
+                                    <!-- history_status_a,b,c,d
+                                        a : 사용완료
+                                        b : 결제취소
+                                        c : 구매완료
+                                        d : 환불완료
+                                    -->
+                                    <span class="history_status history_status_b">결제취소</span> 2022.02.04
+                                </div>
+                                <button class="history_close"><img src="./images/common/i_close3.svg" alt="아이콘"></button>
+                            </div>
+                            <div class="cont__body">
+                                <div class="product__list type_list">
+                                    <dl class="product_details">
+                                        <dt class="blind">상품 정보</dt>
+                                        <dd class="details_thumb">
+                                            <a href="javascript:;" style="background-image:url(./images/sub/product_thumb3.jpg);"></a>
+                                        </dd>
+                                        <dd class="details_infos">
+                                            <a href="javascript:;">
+                                                <div class="details_company">페이셜 관리</div>
+                                                <div class="details_title2">
+                                                    리프팅 탄력관리
+                                                </div>
+                                                <div class="details_foot">
+                                                    <div class="details_amount"><b>66,000</b><span>원</span></div>
+                                                    <div class="details_pay_status">간편결제</div>
+                                                </div>
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="cont__wrap">
+                            <div class="cont__head3">
+                                <div class="cont__head_history_title">
+                                    <!-- history_status_a,b,c,d
+                                        a : 사용완료
+                                        b : 결제취소
+                                        c : 구매완료
+                                        d : 환불완료
+                                    -->
+                                    <span class="history_status history_status_c">구매완료</span> 2022.02.04
+                                </div>
+                                <button class="history_close"><img src="./images/common/i_close3.svg" alt="아이콘"></button>
+                            </div>
+                            <div class="cont__body">
+                                <div class="product__list type_list">
+                                    <dl class="product_details">
+                                        <dt class="blind">상품 정보</dt>
+                                        <dd class="details_thumb">
+                                            <a href="javascript:;" style="background-image:url(./images/sub/product_thumb3.jpg);"></a>
+                                        </dd>
+                                        <dd class="details_infos">
+                                            <a href="javascript:;">
+                                                <div class="details_company">페이셜 관리</div>
+                                                <div class="details_title2">
+                                                    리프팅 탄력관리
+                                                </div>
+                                                <div class="details_foot">
+                                                    <div class="details_amount"><b>66,000</b><span>원</span></div>
+                                                    <div class="details_pay_status">간편결제</div>
+                                                </div>
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="cont__wrap">
+                            <div class="cont__head3">
+                                <div class="cont__head_history_title">
+                                    <!-- history_status_a,b,c,d
+                                        a : 사용완료
+                                        b : 결제취소
+                                        c : 구매완료
+                                        d : 환불완료
+                                    -->
+                                    <span class="history_status history_status_d">환불완료</span> 2022.02.04
+                                </div>
+                                <button class="history_close"><img src="./images/common/i_close3.svg" alt="아이콘"></button>
+                            </div>
+                            <div class="cont__body">
+                                <div class="product__list type_list">
+                                    <dl class="product_details">
+                                        <dt class="blind">상품 정보</dt>
+                                        <dd class="details_thumb">
+                                            <a href="javascript:;" style="background-image:url(./images/sub/product_thumb3.jpg);"></a>
+                                        </dd>
+                                        <dd class="details_infos">
+                                            <a href="javascript:;">
+                                                <div class="details_company">페이셜 관리</div>
+                                                <div class="details_title2">
+                                                    리프팅 탄력관리
+                                                </div>
+                                                <div class="details_foot">
+                                                    <div class="details_amount"><b>66,000</b><span>원</span></div>
+                                                    <div class="details_pay_status">간편결제</div>
+                                                </div>
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </article>
+                        <a href="javascript:;" class="btn_my_more"><i></i> 이전 내역 더보기</a>
+                    </section>
+                </div><!-- //sub__wrap -->
+
+            </div><!-- //HISTORY -->
+        </div>
+        <!-- //CONTAINER -->
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">    
+    $(function(){
+        // 최근1년~6년
+        $('.search_btns_month button').on('click', function(){
+            $('.search_btns_month button').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        // 검색창 열기 닫기
+        $('.head__btn_search').on('click', function(){
+            $('.history__search').fadeIn(100);
+        });
+        $('.search_bar_close, .history__search .dim').on('click', function(){
+            $('.history__search').fadeOut(100);
+        });
+    });
+</script>
+</body>
+</html>
