@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로 테이블 예제</title>
+    <link rel="stylesheet" href="./style/default.css">
+    <style>
+ 
+
+
+
+
+
+
+        .modal__result .radio__table tr td {
+            text-align: left;
+        }
+
+        .modal__result tr {line-height: 5.8rem;}
+
+
+
+        .radio__table th, td {text-align: left; border: 1px solid #ddd;}
+
+        .radio__table th {width: 12.5%; line-height: 5.8rem;}
+        .radio__table td {width: calc(100% - 12.5%);}
+        .radio__table tr {line-height: 5.8rem;}
+
+        .radio__table input[type="radio"]{
+        appearance: none;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        margin-right: 0.7rem;
+        }
+
+
+        .radio__table .flex {display: flex; align-items: center;}
+
+        .radio__table .flex label:not(:last-child) {margin-right: 2rem;}
+
+        
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="dis__info modal__result table__template table__horizontal">
+<table class="radio__table">
+    <caption>~~</caption>
+    <tr>
+        <th scope="col">자산 및 부채</th>
+        <td class="radio__wrap">
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">전체</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">현금 및 예금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">토지</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">건물</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">기타 자산</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">부채</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th scope="col">사용여부</th>
+        <td>
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">전체</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">수입총계</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">전년도 이월금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">조합비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">상급단체 교부금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">하부조직 부과금</label>
+            </div>
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">후원금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">타회계 전입금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">보조금 수입</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">수익사업 수입</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">기타</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th scope="col">사용여부</th>
+        <td>
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">전체</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">지출총계</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1"> 일반관리비용 전체</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1"> 인건비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">업무추진비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">기타운영비</label>
+            </div>
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">사업수행 비용전체</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1"> 총회 등 대회비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">  조직 사업비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">  정책 사업비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1"> 교육홍보 사업비</label>
+            </div>
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">교섭 쟁의 사업비</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">  상급단체 부과금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">  하부조직 교부금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">  타회계 전출금</label>
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">  기타</label>
+            </div>
+            <div class="flex">
+                <input type="radio" name="rdo_6-1" id="rdo_6-1">
+                <label for="rdo_1-1">기타 사업비</label>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>
+
+
+</body>
+</html>

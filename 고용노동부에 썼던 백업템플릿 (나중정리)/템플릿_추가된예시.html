@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>관리자 > 시스템관리 > 메뉴관리</title>
+    <!-- css 영역 -->
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/default.css">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="img/korea__favicon.ico">
+    <!-- 로컬 폰트 CSS -->
+    <link rel="stylesheet" crossorigin href="style/pretendardvariable-gov-dynamic-subset.min.css">
+
+    <!-- 로컬 jquery 스와이퍼 cdn -->
+    <script src="js/jquery-3.7.1.js"></script>
+
+</head>
+<body>
+    <!-- 스킵 네비게이션 -->
+    <div class="skip__nav">
+        <a href="#main__content">본문 바로가기</a>
+    </div>
+
+    <div class="wrap manage__wrap" id="wrap">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="inner">
+            <div class="header__top">
+                <a href="#">누리집안내지도</a>
+                <a href="#">화면크기</a>
+                <a href="#">Language</a>
+            </div>
+            <div class="header__btm">
+                <h1 class="logo">
+                    <a href="#" title="노동조합 회계공시 시스템 메인페이지로 바로가기">
+                        <span class="blind">노동조합 회계공시시스템</span>
+                        <img src="img/slogan_H48.png" alt="메인 홈페이지로고">
+                    </a>
+                </h1>
+                <div class="mobile__logo">
+                    <img src="img/mobile__logo.png" alt="모바일 버전 로고">
+                </div>
+                <div class="right__icon__set">
+                    <a href="#">
+                    <img src="img/icon20.png" alt="검색 아이콘">
+                        <span>통합검색</span>
+                    </a>
+                    <a href="#">
+                        <img src="img/icon20-1.png" alt="검색 아이콘">
+                        <span>로그인</span>
+                    </a>
+
+                    <!-- 전체메뉴 -->
+                    <a href="#" class="hamburger">
+                        <img src="img/hamburger__icon.png" alt="전체 메뉴 아이콘">
+                        <span>전체메뉴</span>
+                    </a>
+
+                    <a href="#" class="sign__up">
+                        <img src="img/icon20-2.png" alt="회원가입 아이콘">
+                        <span>회원가입</span>
+                    </a>
+                    <a href="#" class="talk">
+                        <span>알림톡</span>
+                        <span class="talk__count">5</span>
+                    </a>
+                </div>
+            </div>
+            <div class="border"></div>
+            <div class="base__gnb">
+                <a href="sub1-1.html">회계공시안내</a>
+                <a href="#">회계공시정보</a>
+                <a href="#">고객센터</a>
+            </div>
+            </div>
+        </header>
+
+
+
+        <div class="visual__bg">
+            <div class="inner">
+              <div class="visual__text">
+                <h2>시스템 관리</h2>
+                <p>시스템 관리를 통해 OO할 수 있습니다.</p>
+              </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 컨텐츠 -->
+       <main class="main__content">
+        <div class="inner">
+
+            <!-- 버튼 영역 -->
+            <div class="function__group">
+                <!-- 
+                아래 버튼 색상을 변경하시려면 bg--색상-00  부분에서 색상의 클래스명을 변경해주시면 됩니다.
+                색상 목록 : blue, black, red, green, gray
+        
+                ex) 회색 버튼 <button type="button" class= "btn__control bg--gray-00">조회</button> 
+                -->
+                <button type="button" class="check__data btn__control bg--blue-00">예시버튼1</button>
+                <button type="button" class="check__data btn__control bg--blue-00">예시버튼2</button>
+                <button type="button" class="check__data btn__control bg--blue-00">예시버튼3</button>
+                <button type="button" class="check__data btn__control bg--blue-00">예시버튼4</button>
+            </div>
+            <!-- 버튼 영역 END -->
+
+            <!-- 상단 검색 폼 영역 -->
+
+            <div class="content--flex system__margin">
+
+
+                
+                <div class="sub">    
+                </div>
+                <!--  
+                    왼쪽 영역이 사라지더라도 테이블을 100%로 지정하시고 싶으시면
+                    상단 sub 클래스를 가진 요소 옆에 display--none 클래스를 추가
+                -->
+
+                <!-- 메인 -->
+                <div class="main">
+                    <div class="content">
+                                <!-- 검색 폼 -->
+                            <div class="search__form" style="margin-bottom: 1.6rem;">
+                                <form action="POST" class="flex--box border-top-large">
+                                        <div class="form-input">                                   
+                                            <div class="form-content">
+                                                <div style="min-width: 16rem;">
+                                                    <select name="name2" id="name2" class="select--no--style" style="min-height: 4rem; position: relative;">
+                                                        <option value="option1">전체</option>
+                                                    </select>
+                                                </div>
+                                                <input type="text" name="abc" id="abc" placeholder="노동조합명을 입력해주세요" style="height: 4rem; padding: 0 0.8rem;">
+                                            </div>
+                                        </div>
+                                        
+                        
+                                        <div class="form-radio">
+                                            <div class="form-title" style="min-width: 9.8rem;">
+                                                <span>사용여부</span>
+                                            </div>      
+                                        
+                        
+                                            <div class="form-content radio__wrap">
+                                                <input type="radio" id="radio">
+                                                <label for="radio">전체</label>
+                                                <input type="radio" id="radio">
+                                                <label for="radio">신규</label>
+                                                <input type="radio" id="radio">
+                                                <label for="radio">수정</label>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="form-radio">
+                                        <div class="form-title" style="min-width: 9.8rem;">
+                                            <span>공시대상</span>
+                                        </div>      
+                                        <div class="form-content radio__wrap">
+                                            <input type="radio" id="radio">
+                                            <label for="radio">전체</label>
+                                            <input type="radio" id="radio">
+                                            <label for="radio">대상</label>
+                                            <input type="radio" id="radio">
+                                            <label for="radio">미대상</label>
+                                        </div>
+                                    </div>                    
+                                </form>
+                            </div>
+                                        
+                       
+               
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 푸터  -->
+            <footer>
+                <div class="footer__bottom" style="background-color: #F0F0F0;">
+                    <div class="inner">
+                        <div class="footer__logo">
+                            <img src="img/slogan_H48.png" alt="하단 로고">
+                        </div>
+                        <div class="mobile__logo">
+                            <img src="img/mobile__logo.png" alt="하단 모바일 로고">
+                        </div>
+                        <div class="footer__flex">
+                            <div class="footer__info">
+                                <p class="location">30117 세종특별자치시 한누리대로 422 정부세종청사 11동 고용노동부(044-202-7828)</p>
+                                <p class="call"><strong>대표전화 1350</strong> (평일 09시~18시)</p>
+                                <p class="fax"><strong>팩스 02-123-5678 </strong></p>
+                            </div>
+                            <div class="sns__info">
+                                <div class="info__btn">
+                                    <a href="">이용안내</a> 
+                                </div>
+                                <div class="info__btn">
+                                    <a href="">찾아오시는 길</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__global">
+                            <div class="g__flex">
+                                <div class="global__link">
+                                    <a href="#">이용안내</a>
+                                    <a href="#" class="strong">개인정보처리방침</a>
+                                    <a href="#">저작권정책</a>
+                                    <a href="#">웹 접근성 품질인증 마크 획득</a>
+                                </div>
+                                <div class="copyright">
+                                    <p>@ The Government of the Republic of Korea. All rights reserved</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>                    
+                </div>
+            </footer>
+        </div>
+
+
+    <!-- JS 파일 -->
+    <script src="js/default.js"></script>
+    <script src="js/manage__menu.js"></script>
+
+    <script>
+             $(document).ready(function(){
+
+
+            console.log("function 생성됌")
+            const subElement = $('.sub')
+            const mainElement = $('.main')
+                
+
+            if($('.sub').is(':empty')){
+                console.log('비어있습니다.')
+            }
+
+            // display가 none 처리거나 안에 내용이 없으면 
+
+            if (subElement.css('display') === 'none' || subElement.is(':empty') ){
+              console.log("맞는데?")
+              mainElement.addClass('width--100')
+            }
+
+            // 테이블 행 클릭 시 색상 변경 (선택 안된 것들은 해제)    
+            $('.table__vertical tbody tr').click(function(){
+            $(this).css('background-color' , '#DEEBF7');
+            $('.table__vertical tbody tr').not($(this)).css('background-color', 'transparent')
+            })
+      })
+
+
+    </script>
+    
+    
+
+
+</body>
+</html>
