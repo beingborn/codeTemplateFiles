@@ -1,0 +1,12 @@
+{
+    "sort-order": [
+        [
+            "position",
+            "z-index",
+            "top",
+            "right",
+            "left",
+            "display"
+        ]
+    ]
+}

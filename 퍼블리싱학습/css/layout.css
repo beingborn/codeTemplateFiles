@@ -13,7 +13,7 @@
 	속성순서    : 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
 *****************************************************/
 
-.ly-cont {max-width: 128rem; margin: 0 auto; border: 1px solid blue;}
+.ly-cont {max-width: 128rem; margin: 0 auto;}
 .ly-cont-w {max-width: 128rem; margin: 0 auto; padding-top: 7rem; border: 1px solid brown;}
 .ly-section {padding-top: 8rem; padding-bottom: 8rem;}
 .ly-section-w {margin-top: 8rem;}
