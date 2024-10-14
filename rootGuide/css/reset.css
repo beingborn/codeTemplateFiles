@@ -16,7 +16,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -61,6 +61,7 @@ body {
     line-height: 1.5;
 }
 
+img {max-width: 100%;}
 
 ol, ul {
 	list-style: none;
@@ -80,7 +81,7 @@ table {
 
 a{
     text-decoration: none;
-    color: #1d1d1d;
+    color: #000;
 }
 
 

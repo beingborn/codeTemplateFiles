@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/****************************************************
+	파일명	: common.css
+	최초작성자	: 이민혁
+	최초작성일	: 2024-09-28
+	-------------------------------------------------
+	Dec. 공통 스타일링 정의
+	-------------------------------------------------
+	최종수정자	: 이민혁
+	최종수정일	: 2024-09-28
+	수정내용	: 최초작성
+	속성순서    : 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+	주의사항    : 선택자 최소 2개로 지정, CSS 우선 순위보다 낮게 지정
+*****************************************************/
+
+/* 공통 변수 정의 */
+:root {
+	/* color */
+	--black00: #000; 
+	--white00: #fff;
+	--blue00: blue;
+	--gray00: #ddd;
+	
+	/* font size */
+	--fontLv1 : 40px;
+	--fontLv2 : 32px;
+	--fontLv3 : 20px;
+	--fontLv4 : 15px;
+	
+	/* padding */
+	--padding00: 8px;
+	--padding01: 12px;
+	--padding02: 16px;
+
+	/* border */
+	--border00: 6px;
+	--border01: 8px;
+}
+
+/* 사용 예시 */
+.element {color: var(--black00);}
+
+/* button */
+.el-btn {border-radius: var(--border00);}
+.el-btn-s {padding: var(--padding00); font-size: var(--fontLv4);}
+.el-btn-m {padding: var(--padding01); font-size: var(--fontLv3);}
+.el-btn-m {padding: var(--padding02); font-size: var(--fontLv2);}
+
+/* font */
+.el-text-lv1 {font-size: var(--fontLv1);}
+.el-text-lv2 {font-size: var(--fontLv2);}
+.el-text-lv3 {font-size: var(--fontLv3);}
+.el-text-lv3 {font-size: var(--fontLv4);}
+
+/* space */
+/* top */
+.mt-5 {margin-top: 5px;}
+.mt-10 {margin-top: 10px;}
+.mt-15 {margin-top: 15px;}
+.mt-17 {margin-top: 17px;}
+
+/* bottom */
+.mb-5 {margin-bottom: 5px;}
+.mb-10 {margin-bottom: 10px;}
+.mb-15 {margin-bottom: 15px;}
+.mb-17 {margin-bottom: 17px;}
+
+/* left */
+.ml-5 {margin-left: 5px;}
+.ml-10 {margin-left: 10px;}
+.ml-15 {margin-left: 15px;}
+.ml-17 {margin-left: 17px;}
+
+/* right */
+.mr-5 {margin-right: 5px;}
+.mr-10 {margin-right: 10px;}
+.mr-15 {margin-right: 15px;}
+.mr-17 {margin-right: 17px;}
