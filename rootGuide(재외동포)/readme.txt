@@ -32,3 +32,29 @@ ly : 레이아웃 관련 클래스 ex) ly-header, ly-inner, ly-conbody-inner (�
 4. 헬퍼(helper)
 5. 유니크 (unique) → 페이지 별
 6. 프로그램
+
+
+
+
+
+
+// 본문과의 간격 통일
+.ly-cont-inner {padding : 0 0 120px 0}
+.max-width (767px) {padding : 0 0 80px 0}
+
+// 웹 접근성 지침
+display : none 을 시켜야 하나 스크린 리더기가 읽을 수 있어야 할 경우 blind 클래스를 이용합니다.
+
+// 기본 미디어 쿼리 분기점
+
+@media screen and (max-width: 767px) {
+  /** Mobile */
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  /** Tablet  */
+}
+
+@media all and (max-width: 1023px) {
+  /** Mobile & Tablet  */
+}

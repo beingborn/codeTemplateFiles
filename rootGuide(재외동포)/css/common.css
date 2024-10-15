@@ -127,6 +127,10 @@
 .txt-r {text-align: right;}
 .txt-c {text-align: center;}
 
+/* emphasis : 강조 */
+.emp01 {color: blue;}
+.emp02 {color: red;}
+
 /* pc 전용 콘텐츠 (모바일에서 display: none) */
 .lg-only {display: block;}
 @media screen and (max-width: 768px){
@@ -138,3 +142,12 @@
 @media screen and (max-width: 768px){
 	.sm-only {display:block}
 }
+
+/* 접근성 */
+/* screen reader */
+.sr-only {position: absolute; width: 1px; height: 1px; clip: rect(0 0 0 0); overflow: hidden;} 
+/* skip navigation */
+#skip-nav {text-align: center;}
+#skip-nav a{position:absolute; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:12px; display: block; width: 100%; padding:0 6px;}
+#skip-nav a:focus,
+#skip_nav a:active{top:0;}
