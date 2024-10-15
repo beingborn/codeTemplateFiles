@@ -1,6 +1,7 @@
 /* 프로젝트 전달 사항 및 중요 규칙 설명 */
 ※해당 프로젝트의 CSS 컨벤션 규칙은 SMACSS에 기반을 두고 있습니다.
 
+
 목차 : 
 1. 클래스 네이밍 
 2. 주석 규칙
@@ -18,6 +19,11 @@ ly : 레이아웃 관련 클래스 ex) ly-header, ly-inner, ly-conbody-inner (�
 /* 아이디 네이밍 규칙 */
 아이디 네이밍 규칙은 카멜case를 사용합니다 ex ) #loginInfo
 
+/* 상태 변화를 나타내는 스타일 */
+- hidden, active, hover 등
+Class 명에 접두어로 "is" 또는 "s-"를 붙여서 사용
+
+ex) .btn.is-active {color: red;}
 
 
 
@@ -44,6 +50,8 @@ ly : 레이아웃 관련 클래스 ex) ly-header, ly-inner, ly-conbody-inner (�
 
 // 웹 접근성 지침
 display : none 을 시켜야 하나 스크린 리더기가 읽을 수 있어야 할 경우 blind 클래스를 이용합니다.
+button 클래스에 title 넣어서 진행
+
 
 // 기본 미디어 쿼리 분기점
 
@@ -58,3 +66,6 @@ display : none 을 시켜야 하나 스크린 리더기가 읽을 수 있어야 
 @media all and (max-width: 1023px) {
   /** Mobile & Tablet  */
 }
+
+4. 헬퍼 클래스의 경우 특정 스타일, 테마, 색상, 이미지 등을 변경합니다.
+.btn.hp-bg-gray00{background-color: blue;}

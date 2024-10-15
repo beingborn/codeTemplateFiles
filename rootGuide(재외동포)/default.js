@@ -271,3 +271,41 @@ $(".openPrint").on('click', function(){
 })
 
 
+// 레이어 팝업 (제외동포청)
+function fn_layer(e,t,s) {
+	var pdt = $('#'+e).find('> .inner').css('padding-top').replace(/[^-\d\.]/g, ''),
+		pdb = $('#'+e).find('> .inner').css('padding-bottom').replace(/[^-\d\.]/g, '');
+
+	$('*:focus').addClass(e);
+	$('#'+e).fadeIn(200).addClass('on');
+	$('body, html').css({'overflow':'hidden'});
+	$('#'+e).find('> .inner .cont').attr("tabindex",0).focus();
+	$(window).resize(function(){
+		$('#'+e).find('> .inner').css({'width':s+'px'});
+		$('#'+e).find('.cont').css({'max-height':$('#'+e).height()*0.9 - (Number(pdt) + Number(pdb))});
+
+		// 로그인 팝업
+		if($(".loginWrap").length){
+			var pdtC = $('#'+e).find('.cont').css('padding-top').replace(/[^-\d\.]/g, ''),
+				pdbC = $('#'+e).find('.cont').css('padding-bottom').replace(/[^-\d\.]/g, '');
+				titH = $('#'+e).find('.tit').outerHeight(),
+				tabH = $('#'+e).find('.tab').outerHeight();
+			$(".loginWrap").css({'max-height':$('#'+e).height()*0.9 - (Number(pdt) + Number(pdb) + Number(pdtC) + Number(pdbC) + Number(titH) + Number(tabH))});
+		}
+		//-- 로그인 팝업
+	}).resize();
+//	$('#'+e).find('> .inner> a').focusout(function(){
+//		$('#'+e).find('> .inner .cont').attr("tabindex",0).focus();
+//	});
+}
+
+// 레이어 팝업 닫기
+function fn_layer_close(t){
+	var backFocus = $(t).closest(".layerPop").attr("id");
+	console.log(backFocus)
+	$(t).closest(".inner").parent().fadeOut(200).removeClass("on");
+	$("body, html").css({"overflow":"auto"});
+	setTimeout(function(){
+		$("." + backFocus).focus().removeClass(backFocus);
+	},200)
+}

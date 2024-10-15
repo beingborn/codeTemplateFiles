@@ -14,26 +14,26 @@
 
 /* 공통 변수 정의 */
 :root {
-	/* color */
-	--black00: #000; 
-	--white00: #fff;
-	--blue00: blue;
-	--gray00: #ddd;
-	
-	/* font size */
-	--fontLv1 : 40px;
-	--fontLv2 : 32px;
-	--fontLv3 : 20px;
-	--fontLv4 : 15px;
-	
-	/* padding */
-	--padding00: 8px;
-	--padding01: 12px;
-	--padding02: 16px;
+/* color */
+--black00: #000; 
+--white00: #fff;
+--blue00: blue;
+--gray00: #ddd;
 
-	/* border */
-	--border00: 6px;
-	--border01: 8px;
+/* font size */
+--fontLv1 : 40px;
+--fontLv2 : 32px;
+--fontLv3 : 20px;
+--fontLv4 : 15px;
+
+/* padding */
+--padding00: 8px;
+--padding01: 12px;
+--padding02: 16px;
+
+/* border */
+--border00: 6px;
+--border01: 8px;
 }
 
 /* 사용 예시 */
@@ -114,6 +114,10 @@
 .width-80 {width: 80%;}
 .width-60 {width: 60%;}
 
+/* min-width percent */
+.miw-100per {min-width: 100%;}
+.miw-50per {min-width: 50%;}
+
 /* flex */
 .flex {display: flex;}
 .flex-ac {display: flex; align-items: center;}
@@ -121,15 +125,16 @@
 .flex-grow-1 {flex-grow: 1;}
 .flex-item-right {margin-left: auto;}
 .flex-item-left {margin-right: auto;}
+.flex-evenly > * {flex: 1;}
 
 /* text align */
 .txt-l {text-align: left;}
 .txt-r {text-align: right;}
 .txt-c {text-align: center;}
 
-/* emphasis : 강조 */
-.emp01 {color: blue;}
-.emp02 {color: red;}
+
+/* position */
+.relative {position: relative;}
 
 /* pc 전용 콘텐츠 (모바일에서 display: none) */
 .lg-only {display: block;}
@@ -150,4 +155,16 @@
 #skip-nav {text-align: center;}
 #skip-nav a{position:absolute; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:12px; display: block; width: 100%; padding:0 6px;}
 #skip-nav a:focus,
-#skip_nav a:active{top:0;}
+#skip_nav a:active{position: static;}
+
+/* table */
+table {table-layout: fixed; border-collapse: collapse;}
+
+/* horizontal table */
+
+/* hp : 특정 스타일, 테마, 색상, 이미지 등을 변경 적용 범위 넓을 시 hp 접두어 추가 */
+/* emphasis : 강조 */
+.emp01 {color: blue;}
+.emp02 {color: red;}
+.hp-bg-white00 {background: #fff;}
+.hp-bg-lightblue00 {background: lightblue;}
