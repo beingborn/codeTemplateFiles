@@ -45,7 +45,6 @@ $(".openPopup").on("click", function(event) {
 	$(".bgPopup").fadeOut(400);
 });
 
-
 /**
  * 함수명 : 
  * 설명   : 탭 콘텐츠 변경
