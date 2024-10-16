@@ -56,6 +56,11 @@
     .mt40 {margin-top: 40px;}
     .mb20 {margin-bottom: 20px;}
     .mb40 {margin-bottom: 40px;}
+
+    /* figure */
+    .readme-link {text-decoration: underline;}
+    .readme {width: 24px; height: 24px;}
+    img {max-width: 100%;}
 </style>
 <body>
     <!-- 스타일 가이드 탭 버튼 -->
@@ -74,6 +79,16 @@
         <div class="tabContent">
             <!-- 제목 스타일링 -->
             <div class="ly-cont">
+                <!-- readme 파일 다운로드 -->
+                <div class="mt20 mb40">
+                    <a class="readme-link" href="/readme.txt" download style="display: flex;">
+                        <figure class="readme" style="margin-right: 8px;">
+                            <img src="/readme.png" alt="readme 파일 다운로드" >
+                        </figure>
+                        CSS 컨벤션 readme 파일 다운로드
+                    </a>
+                </div>
+                <!-- .// readme 파일 다운로드 -->
                 <div class="mb20">
                     <h2 class="style-banner-ttl">엘리먼트 prefix = el</h2>
                     <span class="style-banner-ttl-use">버튼, 라벨, 제목 등 어디서나 재사용 할 수 있는 가장 작은 단위의 모듈</span>
@@ -220,7 +235,7 @@
                     <thead>
                         <tr>
                             <th scope="col">이름</th>
-                            <th scope="col">파일명(URL)</th>
+                            <th scope="col">용도</th>
                             <th scope="col">등록일</th>
                             <th scope="col">작업자</th>
                             <th scope="col">비고</th>
