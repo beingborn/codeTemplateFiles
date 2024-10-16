@@ -15,115 +15,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스타일가이드용 HTML</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- css -->
+    <link rel="shortcut icon" type="text/css" href="assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- js -->
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/common.js"></script>
 </head>
 <style>
     /* 기본 스타일링 */
+    .guide-inner {max-width: 1280px; margin: 0px auto;}
     .ly-cont {margin-top: 20px;}
-    .style-banner {padding: 12px; margin-bottom: 20px; width: 100%; background-color: darkgreen; color: #fff;}
+    .style-banner {padding: 8px; margin-bottom: 20px; width: 100%; border-bottom: 2px solid black;}
     .style-banner.hasUse {display: flex; align-items: center; justify-content: flex-start;}
     .style-banner-ttl {font-size: 20px; font-weight: 700; margin-right: 20px;}
     .style-banner-ttl-use {font-size: 15px; font-weight: 400;}
-
+    
     /* 가이드용 탭 버튼 스타일 */
-    .guide-tab { width: 100%; margin: 0px auto; padding-top: 2rem;}
+    .guide-tab { width: 100%; padding-top: 2rem; padding-bottom: 20px; background-color: #363636;}
     .guide-tab-inner {display: flex; gap: 12px;}
-    .guide-tabLink {background: lightgrey; cursor: pointer; padding: 8px 12px; border-radius: 4px; font-weight: 400; font-size: 16px;}
-    .guide-tabLink.is-active {background-color: darkgreen; color: #fff;}
+    .guide-tabLink {cursor: pointer; padding: 8px 12px; border-radius: 4px; font-weight: 400; font-size: 16px; color: #fff;}
+    .guide-msg {color: orange; font-size: 1.4rem; margin-left: 6px;}
+    .guide-tabLink.is-active {background-color: black; color: #fff;}
+    .guide-code-btn {background: rgb(208, 125, 24); border-radius: 5px; padding: 6px 12px; font-size: 15px; color: #fff;}
+
+    /* 가이드용 영역선 구분 */
+    .border-box {border: 1px solid #ddd; display: block; padding: 12px; border-radius: 5px;}
+
+    /* html-code-box */
+    .html-code-box {width: 100%; min-height: 200px;} 
+    .html-code {margin-top: 20px; color: orange;}
+
 </style>
 <body>
     <!-- 스타일 가이드 탭 버튼 -->
-    <div class="guide-tab ly-cont">
+    <div class="guide-tab">
         <div class="guide-tab-inner">
-            <button type="button" class="guide-tabLink">엘리먼트 모듈</button>
-            <button type="button" class="guide-tabLink">블록 모듈</button>
-            <button type="button" class="guide-tabLink">기타 모듈</button>
+            <div class="guide-inner" style="width: 100%;">
+                <button type="button" class="guide-tabLink">엘리먼트 모듈</button>
+                <button type="button" class="guide-tabLink">블록 모듈</button>
+                <button type="button" class="guide-tabLink">레이아웃 모듈</button>
+            </div>
         </div>
     </div>
     <!-- ./ 스타일 가이드 탭 버튼 -->
-    <!-- 탭 콘텐츠 1 -->
-    <div class="tabContent">
-        <!-- 제목 스타일링 -->
-        <div class="ly-cont">
-            <div class="style-banner hasUse">
-                <h2 class="style-banner-ttl">제목</h2>
-                <span class="style-banner-ttl-use">~을 위한 스타일링</span>
+    <div class="guide-inner">
+        <!-- 탭 콘텐츠 1 -->
+        <div class="tabContent">
+            <!-- 제목 스타일링 -->
+            <div class="ly-cont">
+                <div class="style-banner hasUse">
+                    <h2 class="style-banner-ttl">엘리먼트 prefix = el</h2>
+                    <span class="style-banner-ttl-use">버튼, 라벨, 제목 등 어디서나 재사용 할 수 있는 가장 작은 단위의 모듈</span>
+                </div>
+                <!-- vertical table -->
+                <table class="bl-vertical-list">
+                <caption>엘리먼트 모듈을 모아놓은 테이블입니다.</caption>
+                <colgroup>
+                    <col>
+                    <col style="width: 10%;">
+                    <col style="width: 24%;">
+                    <col style="width: 120px;">
+                    <col style="width: 100px;">
+                    <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">요소</th>
+                        <th scope="col">코드보기</th>
+                        <th scope="col">이름</th>
+                        <th scope="col">구분</th>
+                        <th scope="col">작업자</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txt-l cont-html"><label for="#" class="el-mustType">필수 입력</label></td>
+                        <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
+                        <td class="txt-l">필수 입력용 라벨</td>
+                        <td class="txt-c">라벨</td>
+                        <td class="txt-c">이민혁</td>
+                        <td class="txt-c">필수 입력 관련 공통 사용</td>
+                    </tr>
+                    <tr>
+                        <td class="txt-l cont-html"><label for="#" class="el-mustType">필수 입력2</label></td>
+                        <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
+                        <td class="txt-l">필수 입력용 라벨</td>
+                        <td class="txt-c">버튼</td>
+                        <td class="txt-c">이민혁</td>
+                        <td class="txt-c">필수 입력 관련 공통 사용</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- .// vertical table -->  
+            <!-- html 코드 출력 -->
+            <div class="border-box" style="margin-top: 80px;">
+                <div class="html-code-box">
+                    <div class="html-shape"></div>
+                    <div class="html-code"></div>
+                </div>
+            </div> 
+            <!-- .// html 코드 출력 -->         
             </div>
-            <!-- bl-dataTitle -->
-            <h2 class="bl-dataTitle">큰 제목1</h2>
-            <!-- ./ bl-dataTitle -->
-            <!-- sub-title -->
-            <h3 class="el-sub-title">중간 제목1</h3>
-            <!-- ./ sub-title -->
+            <!-- ./ 제목 스타일링 -->
         </div>
-        <!-- ./ 제목 스타일링 -->
-        <!-- 버튼 스타일링 -->
-        <div class="ly-cont">
-            <div class="style-banner hasUse">
-                <h2 class="style-banner-ttl">버튼</h2>
-                <span class="style-banner-ttl-use">~을 위한 스타일링</span>
+        <!-- ./ 탭 콘텐츠 1 -->
+        <!-- 탭 콘텐츠 2 -->
+        <div class="tabContent">
+            <div class="ly-cont">
+                <div class="style-banner hasUse">
+                    <h2 class="style-banner-ttl">블록 prefix = bl</h2>
+                    <span class="style-banner-ttl-use">검색창, 탭 등 유기체로써 재사용 가능한 모듈</span>
+                </div>
+                <!-- vertical table -->
+                <table class="bl-vertical-list">
+                    <caption>공지사항과 같은 세로형 리스트 게시판에 사용되는 모듈 게시판입니다.</caption>
+                    <colgroup>
+                        <col>
+                        <col style="width: 24%;">
+                        <col style="width: 120px;">
+                        <col style="width: 100px;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">파일명(URL)</th>
+                            <th scope="col">등록일</th>
+                            <th scope="col">작업자</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="txt-l"><a target="_blank" href="module/module-verticalTable-00.html">세로형 테이블</a></td>
+                            <td class="txt-l"><a target="_blank" class="guide-msg" href="module/module-verticalTable-00.html">module-verticalTable-00.html</a></td>
+                            <td class="txt-c">2024.10.16</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c">공지사항 리스트 사용</td>
+                        </tr>
+                        <tr>
+                            <td class="txt-l"><a target="_blank" href="module/module-table.html">브레드크럼브</a></td>
+                            <td class="txt-l"><a target="_blank" class="guide-msg" href="module/module-breadcrumb.html">module-breadcrumb.html</a></td>
+                            <td class="txt-c">2024.10.16</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c">모든 페이지 공통 사용</td>
+                        </tr>
+                        <tr>
+                            <td class="txt-l"><a target="_blank" href="module/module-step-wrap.html">단계표시기</a></td>
+                            <td class="txt-l"><a target="_blank" class="guide-msg" href="module/module-step-wrap.html">module-step-wrap.html</a></td>
+                            <td class="txt-c">2024.10.16</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c"></td>
+                        </tr>
+                        <tr>
+                            <td class="txt-l"><a target="_blank" href="module/module-rowTable-00.html">가로형 테이블</a></td>
+                            <td class="txt-l"><a target="_blank" class="guide-msg" href="module/module-rowTable-00.html">module-rowTable-00.html</a></td>
+                            <td class="txt-c">2024.10.16</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- .// vertical table -->
             </div>
-            <!-- el-btn -->
-            <a class="el-btn btnG" href="#">버튼1</a>
-            <!-- ./ el-btn -->
         </div>
-        <!-- ./ 버튼 스타일링 -->
-        <!-- 모듈 스타일링 -->
-        <div class="ly-cont">
-            <div class="style-banner hasUse">
-                <h2 class="style-banner-ttl">모듈</h2>
-                <span class="style-banner-ttl-use">type : bl-media, bl-block, bl-score</span>
-            </div>
-            <!-- bl-media -->
-            <div class="bl-media bl-media-rev">
-                <figure class="img-wrapper">
-                    <img src="assets/union__system__image__01_mo.png" alt="노동조합공시화면">
-                </figure>
-                <div class="bl-media-body">
-                    <h2 class="bl-media-title">
-                        사용자를 고려한 만족스런 체험
-                    </h2>
-                    <p>웹사이트 설계하기</p>
-                    <h3 class="sub-title">퍼소나란?</h3>
-                    <span>자사 상품은 이렇습니다.</span>
+        <!-- ./ 텝 콘텐츠 2 -->
+        <!-- 탭 콘텐츠 3 -->
+        <div class="tabContent">
+            <div class="ly-cont">
+                <div class="style-banner hasUse">
+                    <h2 class="style-banner-ttl">min-widthAuto</h2>
+                    <span class="style-banner-ttl-use">특징: flex 내부에서 처음에는 min-width값을 50rem 가지다가 flex-grow: 1; 및 min-width: auto로 변경하는 모듈 (flexBox에 추가 설정)</span>
+                </div>
+                <div class="border-box">
+                    <div class="table__horizontal__ex">
+                        <table class="border-top-large">
+                            <caption>알림톡 전송</caption>
+                            <colgroup>
+                                <col style="width: 15.38%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                <th scope="row" class="txt--c border--r">무선 전화번호</th>
+                                <td>
+                                    <div class="td__container">
+                                    <input type="text" class="lg--mw500">
+                                    <button type="button" class="btn__control responsive bg--blue-00">알림톡 전송</button>
+                                    </div>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <!-- ./ bl-media -->
         </div>
-        <!-- ./ 모듈 스타일링 --> 
+        <!-- ./ 텝 콘텐츠 3 -->
+        
     </div>
-    <!-- ./ 탭 콘텐츠 1 -->
-    <!-- 탭 콘텐츠 2 -->
-    <div class="tabContent">
-        <div class="ly-cont">
-            <div class="style-banner hasUse">
-                <h2 class="style-banner-ttl">엘리먼트</h2>
-                <span class="style-banner-ttl-use">모두 재사용 가능합니다.</span>
-            </div>
-        </div>
-    </div>
-    <!-- ./ 텝 콘텐츠 2 -->
-    <!-- 탭 콘텐츠 3 -->
-    <div class="tabContent">
-        <div class="ly-cont">
-            <div class="style-banner hasUse">
-                <h2 class="style-banner-ttl">기타 모듈</h2>
-                <span class="style-banner-ttl-use">헬퍼 클래스</span>
-            </div>
-        </div>
-    </div>
-    <!-- ./ 텝 콘텐츠 3 -->
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/common.js"></script>
     <script>
     /** 함수명	: 
         용도    : 가이드 관련 탭 콘텐츠 전환
     */
+    $('.tabContent').hide()
     $('.tabContent').eq(0).show();
     $('.guide-tab-inner button').eq(0).addClass('is-active')
     $('.guide-tab-inner button').on('click', function(){
@@ -133,6 +238,17 @@
         $('.guide-tab-inner button').removeClass('is-active')
         $(this).addClass('is-active')
     })
+    /** 함수명	: viewCode 
+        용도    : html 코드 보기
+        로직    : 버튼 클릭 시 가장 가까운 td 코드 내부에 내용을 읽어 html-code-box에 바인딩 
+    */
+    function viewCode(e){
+        $('.html-code-box .html-shape').empty()
+        $('.html-code-box .html-code').empty()
+        let htmlCode = $(e).closest('tr').find('.cont-html').html()
+        $('.html-code-box .html-shape').html(htmlCode)
+        $('.html-code-box .html-code').text(`${htmlCode}`)
+    }
     </script>
     <!-- ./ js -->
     

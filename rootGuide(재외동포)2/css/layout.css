@@ -1,0 +1,25 @@
+/****************************************************
+	파일명	: Layout.css
+	최초작성자	: 이민혁
+	최초작성일	: 2024-09-28
+	-------------------------------------------------
+	Dec. 레이아웃 관련 CSS 정의
+	-------------------------------------------------
+	최종수정자	: 이민혁
+	최종수정일	: 2024-09-28
+	수정내용	: 최초작성
+	속성순서    : 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+*****************************************************/
+
+/* ly-cont */
+.ly-cont {max-width: 128rem; margin: 0 auto;}
+
+.ly-cont-w {max-width: 128rem; margin: 0 auto; padding-top: 7rem; border: 1px solid brown;}
+.ly-section {padding-top: 8rem; padding-bottom: 8rem;}
+.ly-section-w {margin-top: 8rem;}
+.ly-inner {max-width: 128rem; margin: 0 auto;}
+
+/* header */
+.header-top > ul {display: flex; justify-content: end; gap: 2rem;}
+.header-top > ul > li > a {font-size: 1.6rem;}
+.header-top > ul > li > a:hover {text-decoration: underline; color: red;}

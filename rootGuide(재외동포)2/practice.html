@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>publishing</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 예시 구분 */
+        .example-text {color: red;}
+    </style>
+</head>
+<body>
+    <div class="wrap" id="practice">
+    <!-- header -->
+    <header id="header">
+        <div class="ly-cont">
+            <h2>헤더내용이 들어갈 것입니다.</h2>
+        </div>
+    </header>
+    <!-- /. header -->
+    <!-- main -->
+    <article id="main" class="ly-cont">
+        <h2 class="example-text">왼쪽에 이미지가 있는 구조</h2>
+        <div class="bl-media">
+            <figure class="img-wrapper">
+                <img src="assets/union__system__image__01_mo.png" alt="노동조합공시화면">
+            </figure>
+            <div class="bl-media-body">
+                <h2 class="bl-media-title">
+                    사용자를 고려한 만족스런 체험
+                </h2>
+                <p>웹사이트 설계하기</p>
+                <h3 class="el-sub-title">퍼소나란?</h3>
+                <span>자사 상품은 이렇습니다.</span>
+            </div>
+        </div>
+        <h2 class="example-text">오른쪽에 이미지가 있는 구조</h2>
+        <div class="bl-media bl-media-rev">
+            <figure class="img-wrapper">
+                <img src="assets/union__system__image__01_mo.png" alt="노동조합공시화면">
+            </figure>
+            <div class="bl-media-body">
+                <h2 class="bl-media-title">
+                    사용자를 고려한 만족스런 체험
+                </h2>
+                <p>웹사이트 설계하기</p>
+                <h3 class="sub-title">퍼소나란?</h3>
+                <span>자사 상품은 이렇습니다.</span>
+            </div>
+        </div>
+    </article>
+    <!-- /. main -->
+    <div class="ly-cont-w">
+        <div class="bl-titleline">
+            <h2 class="bl-dataTitle">
+                <a href="#" class="bl-dataTitle-link">실시간 라이브</a>
+                <span class="unit">오늘의 조회수: 2355</span>
+            </h2>
+            <a href="#" class="bl-dataTitle-more">+ 더보기</a>
+        </div>
+        <div class="bl-live-list">
+            <div>
+                <div class="bl-live-list-box">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="노동조합">
+                    </figure>
+                    <h2>노동조합 테스트</h2>
+                </div>
+                <div class="bl-live-list-box">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="노동조합">
+                    </figure>
+                    <h2>노동조합 테스트</h2>
+                </div>
+                <div class="bl-live-list-box">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="노동조합">
+                    </figure>
+                    <h2>노동조합 테스트</h2>
+                </div>
+                <div class="bl-live-list-box">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="노동조합">
+                    </figure>
+                    <h2>노동조합 테스트</h2>
+                </div>
+            </div>
+        </div>
+        <a class="el-btn btnG openPopup" href="#">실시간 바로가기</a>
+        <div class="bl-blog ly-section hp-bgGray">
+            <div>
+                <div class="bl-card">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="asset">
+                    </figure>
+                    <div class="bl-card-body">
+                        <h2 class="bl-card-title">CSS 상세도에 대해</h2>
+                        <span class="el-sub-title">상세도를 높이지 않는 방법에는 이런 것이 있습니다.</span>
+                    </div>
+                </div>
+                <div class="bl-card">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="asset">
+                    </figure>
+                    <div class="bl-card-body">
+                        <h2 class="bl-card-title">상세도를 줄이는 법</h2>
+                        <span class="el-sub-title">상세도를 높이지 않는 방법에는 이런 것이 있습니다.</span>
+                    </div>
+                </div>
+                <div class="bl-card">
+                    <figure>
+                        <img src="assets/union__system__image__01_mo.png" alt="asset">
+                    </figure>
+                    <div class="bl-card-body">
+                        <h2 class="bl-card-title">공통 요소 높이기</h2>
+                        <span class="el-sub-title">상세도를 높이지 않는 방법에는 이런 것이 있습니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="ly-cont">
+            <h2>푸터 내용이 들어갈겁니다.</h2>
+        </div>
+    </footer>
+    <!-- /. footer -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</div>
+</body>
+</html>
+
+<!-- 
+    그 내부에서만 사용하는 title에는 그 상위 클래스의 네이밍을 함께 넣어 
+    그 안에서만 활용됨을 명시한다.
+
+    sub-title 등 공용적으로 사용되는 것에는 붙이지 않는다.
+-->
+
+<!-- 
+    같은 모듈에서 조금 다른 스타일링을 지정할 경우 특정 페이지에서만 사용되는 것이 아니라면
+    bl-media-rev 등 모디파이어 (조정) 클래스를 사용한다. 
+-->

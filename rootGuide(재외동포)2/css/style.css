@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/****************************************************
+	파일명	: style.css
+	최초작성자	: 이민혁
+	최초작성일	: 2024-09-28
+	-------------------------------------------------
+	Dec. 상세스타일 관련 스타일
+	-------------------------------------------------
+	최종수정자	: 이민혁
+	최종수정일	: 2024-09-28
+	수정내용	: 최초작성
+	속성순서: 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+*****************************************************/
+
+.bl-titleline {display: flex; align-items: center; justify-content: space-between;}
+.bl-dataTitle {font-size: 2.1rem; font-weight: 700;}
+
+/* bl-media */
+.bl-media-title {color: blue; font-size: 2.2rem;}
+.bl-media-body > span {font-size: 1.4rem; color: red;}
+.bl-media {display: flex; align-items: center; gap: 4rem;}
+.bl-media-rev {flex-direction: row-reverse; text-align: right;}
+
+/* bl-card */
+.bl-card .bl-card-body > h2 {font-size: 2rem; color: purple;}
+
+.unit {font-size: 1.4rem; color: #555555;}
+.el-btn {display: inline-block; padding: 0.8rem 1.2rem; font-size: 1.6rem; text-align: center; border-radius: 0.7rem; color: #fff;}
+.el-btn.is-on {background-color: blue;}
+.btnG {background-color: green;}
+
+.hp-textBlack {color: #000;}
+.hp-textWhite {color: #fff;}
+.hp-bgGray {background-color: lightgray;}
+
+/* live-list */
+.bl-live-list {padding-top: 2.8rem; overflow: hidden;}
+.bl-live-list > div {width:100%; display: flex; justify-content: space-between;}
+.bl-live-list .bl-live-list-box {width: calc(25% - 1rem);}
+
+/* bl-blog */
+.bl-blog > div {display: flex; justify-content: space-between;}
+
+.flexBox {display: flex;}
+
+/* eliment */
+.el-sub-title {font-size: 1.5rem; color: gray;}
+
+/* page styling */
+#practice .bl-blog {margin-top: 8rem;}
