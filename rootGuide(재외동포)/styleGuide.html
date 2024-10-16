@@ -51,7 +51,11 @@
     /* html-code-box */
     .html-code-box {width: 100%; min-height: 200px;} 
     .html-code {margin-top: 20px; color: orange;}
-
+    /* margin */
+    .mt20 {margin-top: 20px;}
+    .mt40 {margin-top: 40px;}
+    .mb20 {margin-bottom: 20px;}
+    .mb40 {margin-bottom: 40px;}
 </style>
 <body>
     <!-- 스타일 가이드 탭 버튼 -->
@@ -70,7 +74,7 @@
         <div class="tabContent">
             <!-- 제목 스타일링 -->
             <div class="ly-cont">
-                <div class="style-banner hasUse">
+                <div class="mb20">
                     <h2 class="style-banner-ttl">엘리먼트 prefix = el</h2>
                     <span class="style-banner-ttl-use">버튼, 라벨, 제목 등 어디서나 재사용 할 수 있는 가장 작은 단위의 모듈</span>
                 </div>
@@ -97,7 +101,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="txt-l cont-html"><label for="#" class="el-mustType">필수 입력</label></td>
+                        <td class="txt-l cont-html">
+                            <label for="#" class="el-mustType">필수 입력</label>
+                        </td>
                         <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
                         <td class="txt-l">필수 입력용 라벨</td>
                         <td class="txt-c">라벨</td>
@@ -105,18 +111,24 @@
                         <td class="txt-c">필수 입력 관련 공통 사용</td>
                     </tr>
                     <tr>
-                        <td class="txt-l cont-html"><label for="#" class="el-mustType">필수 입력2</label></td>
+                        <td class="txt-l cont-html">
+                            <h2 class="style-banner-ttl">스타일제목</h2>
+                        </td>
                         <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
-                        <td class="txt-l">필수 입력용 라벨</td>
+                        <td class="txt-l">제목 lv1 큰 제목용</td>
                         <td class="txt-c">버튼</td>
                         <td class="txt-c">이민혁</td>
-                        <td class="txt-c">필수 입력 관련 공통 사용</td>
+                        <td class="txt-c">가장 큰 버튼 사용</td>
                     </tr>
                 </tbody>
             </table>
             <!-- .// vertical table -->  
-            <!-- html 코드 출력 -->
-            <div class="border-box" style="margin-top: 80px;">
+            <div class="mt40">
+                <h2 class="style-banner-ttl">코드 및 요소 출력</h2>
+                <span class="style-banner-ttl-use">해당 행의 코드보기 버튼 클릭 시 하단에 요소와 html이 출력됩니다.</span>
+            </div>
+            <!-- html 코드 출력 박스 -->
+            <div class="border-box mt20">
                 <div class="html-code-box">
                     <div class="html-shape"></div>
                     <div class="html-code"></div>
@@ -130,13 +142,13 @@
         <!-- 탭 콘텐츠 2 -->
         <div class="tabContent">
             <div class="ly-cont">
-                <div class="style-banner hasUse">
+                <div class="mb20">
                     <h2 class="style-banner-ttl">블록 prefix = bl</h2>
                     <span class="style-banner-ttl-use">검색창, 탭 등 유기체로써 재사용 가능한 모듈</span>
                 </div>
                 <!-- vertical table -->
                 <table class="bl-vertical-list">
-                    <caption>공지사항과 같은 세로형 리스트 게시판에 사용되는 모듈 게시판입니다.</caption>
+                    <caption>공지사항과 게시판</caption>
                     <colgroup>
                         <col>
                         <col style="width: 24%;">
@@ -191,32 +203,40 @@
         <!-- 탭 콘텐츠 3 -->
         <div class="tabContent">
             <div class="ly-cont">
-                <div class="style-banner hasUse">
-                    <h2 class="style-banner-ttl">min-widthAuto</h2>
-                    <span class="style-banner-ttl-use">특징: flex 내부에서 처음에는 min-width값을 50rem 가지다가 flex-grow: 1; 및 min-width: auto로 변경하는 모듈 (flexBox에 추가 설정)</span>
+                <div class="mb20">
+                    <h2 class="style-banner-ttl">레이아웃 prefix = ly</h2>
+                    <span class="style-banner-ttl-use">ly-header, ly-footer, ly-cont-inner등으로 사용</span>
                 </div>
-                <div class="border-box">
-                    <div class="table__horizontal__ex">
-                        <table class="border-top-large">
-                            <caption>알림톡 전송</caption>
-                            <colgroup>
-                                <col style="width: 15.38%">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                <th scope="row" class="txt--c border--r">무선 전화번호</th>
-                                <td>
-                                    <div class="td__container">
-                                    <input type="text" class="lg--mw500">
-                                    <button type="button" class="btn__control responsive bg--blue-00">알림톡 전송</button>
-                                    </div>
-                                </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <!-- vertical table -->
+                <table class="bl-vertical-list">
+                    <caption>레이아웃 게시판</caption>
+                    <colgroup>
+                        <col>
+                        <col style="width: 24%;">
+                        <col style="width: 120px;">
+                        <col style="width: 100px;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">파일명(URL)</th>
+                            <th scope="col">등록일</th>
+                            <th scope="col">작업자</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="txt-l">ly-cont</td>
+                            <td class="txt-l">콘텐츠 가운데 정렬 및 최대 값 설정</td>
+                            <td class="txt-c">2024.10.16</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c">공통 사용</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- .// vertical table -->
             </div>
         </div>
         <!-- ./ 텝 콘텐츠 3 -->
@@ -227,6 +247,7 @@
     <script>
     /** 함수명	: 
         용도    : 가이드 관련 탭 콘텐츠 전환
+        설명    : 탭 클릭 시 해당 컨텐츠만 show하고 버튼 활성화
     */
     $('.tabContent').hide()
     $('.tabContent').eq(0).show();
@@ -240,7 +261,7 @@
     })
     /** 함수명	: viewCode 
         용도    : html 코드 보기
-        로직    : 버튼 클릭 시 가장 가까운 td 코드 내부에 내용을 읽어 html-code-box에 바인딩 
+        설명    : 버튼 클릭 시 가장 가까운 td 코드 내부에 내용을 읽어 html-code-box에 바인딩 
     */
     function viewCode(e){
         $('.html-code-box .html-shape').empty()
