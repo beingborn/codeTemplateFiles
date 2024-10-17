@@ -76,16 +76,17 @@ html {
 /* 핵심 body의 기본값을 설정합니다. */
 body {
     height: 100%;
-	font-size:15px;
-	line-height:1.5;
+	font-size: 15px;
+	line-height: 1.5;
 	font-family: 'Noto Sans KR', sans-serif;
     min-height: 100vh;
 }
 
 fieldset, img {
 	border: 0;
+	font-size:0;
 	vertical-align: middle;
-	max-width:100%
+	max-width:100%;
 }
 
 ol, ul {
@@ -99,16 +100,15 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 a{
     color: #000;
     text-decoration: none;
 }
 
+summary::-webkit-details-marker {display: none;} 
+summary {list-style-type: none;}
+
 button {cursor: pointer;}
 textarea {border:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;word-break:keep-all;word-wrap:break-word}
-button, input {border:0; background: inherit;-webkit-border-radius:0;border-radius:0;}
+button, input { padding: 0; border: 0; background: inherit;-webkit-border-radius:0;border-radius:0;}

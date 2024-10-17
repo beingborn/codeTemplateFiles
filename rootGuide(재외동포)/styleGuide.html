@@ -24,9 +24,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- js -->
-    <script src="js/jquery-3.7.1.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/common.js"></script>
+    <script defer src="js/jquery-3.7.1.js"></script>
+    <script defer src="js/jquery-ui.min.js"></script>
+    <script defer src="js/common.js"></script>
 </head>
 <style>
     /* 기본 스타일링 */
@@ -117,7 +117,7 @@
                 <tbody>
                     <tr>
                         <td class="txt-l cont-html">
-                            <label for="#" class="el-mustType">필수 입력</label>
+                            <label for="#" class="el-mustType">필수 입력 라벨</label>
                         </td>
                         <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
                         <td class="txt-l">필수 입력용 라벨</td>
@@ -127,13 +127,33 @@
                     </tr>
                     <tr>
                         <td class="txt-l cont-html">
-                            <h2 class="style-banner-ttl">스타일제목</h2>
+                            <span class="el-text-lv1">제목 레벨1</span>
                         </td>
                         <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
                         <td class="txt-l">제목 lv1 큰 제목용</td>
                         <td class="txt-c">버튼</td>
                         <td class="txt-c">이민혁</td>
-                        <td class="txt-c">가장 큰 버튼 사용</td>
+                        <td class="txt-c"></td>
+                    </tr>
+                    <tr>
+                        <td class="txt-l cont-html">
+                            <span class="el-text-lv2">제목 레벨2</span>
+                        </td>
+                        <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
+                        <td class="txt-l">제목 lv2 중간 큰 제목용</td>
+                        <td class="txt-c">버튼</td>
+                        <td class="txt-c">이민혁</td>
+                        <td class="txt-c"></td>
+                    </tr>
+                    <tr>
+                        <td class="txt-l cont-html">
+                            <button type="button" class="el-toggleList el-toggle-open">셀렉트 커스텀1</button>
+                        </td>
+                        <td class="txt-c"><button type="button" class="guide-code-btn" onclick="viewCode(this)">코드보기</button></td>
+                        <td class="txt-l">상단 헤더용 커스텀 셀렉터</td>
+                        <td class="txt-c">셀렉터</td>
+                        <td class="txt-c">이민혁</td>
+                        <td class="txt-c">자바스크립트 is-open 클랙스로 화살표 애니메이션</td>
                     </tr>
                 </tbody>
             </table>
@@ -209,6 +229,20 @@
                             <td class="txt-c">이민혁</td>
                             <td class="txt-c"></td>
                         </tr>
+                        <tr>
+                            <td class="txt-l"><a target="_blank" href="module/module-foldFaq-00.html">자주 묻는 질문</a></td>
+                            <td class="txt-l"><a target="_blank" class="guide-msg" href="module/module-foldFaq-00.html">module-foldFaq-00.html</a></td>
+                            <td class="txt-c">2024.10.17</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c"></td>
+                        </tr>
+                        <tr>
+                            <td class="txt-l"><a target="_blank" href="module/module-custom-select.html">커스텀셀렉트 예시</a></td>
+                            <td class="txt-l"><a target="_blank" class="guide-msg" href="module/module-custom-select.html">module-custom-select.html</a></td>
+                            <td class="txt-c">2024.10.17</td>
+                            <td class="txt-c">이민혁</td>
+                            <td class="txt-c"></td>
+                        </tr>
                     </tbody>
                 </table>
                 <!-- .// vertical table -->
@@ -220,38 +254,38 @@
             <div class="ly-cont">
                 <div class="mb20">
                     <h2 class="style-banner-ttl">레이아웃 prefix = ly</h2>
-                    <span class="style-banner-ttl-use">ly-header, ly-footer, ly-cont-inner등으로 사용</span>
+                    <span class="style-banner-ttl-use">공통적인 레이아웃 구성에 사용되는 요소 ex) 헤더, 푸터, 콘텐츠 간격</span>
                 </div>
                 <!-- vertical table -->
                 <table class="bl-vertical-list">
-                    <caption>레이아웃 게시판</caption>
-                    <colgroup>
-                        <col>
-                        <col style="width: 24%;">
-                        <col style="width: 120px;">
-                        <col style="width: 100px;">
-                        <col style="width: 20%;">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th scope="col">이름</th>
-                            <th scope="col">용도</th>
-                            <th scope="col">등록일</th>
-                            <th scope="col">작업자</th>
-                            <th scope="col">비고</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="txt-l">ly-cont</td>
-                            <td class="txt-l">콘텐츠 가운데 정렬 및 최대 값 설정</td>
-                            <td class="txt-c">2024.10.16</td>
-                            <td class="txt-c">이민혁</td>
-                            <td class="txt-c">공통 사용</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- .// vertical table -->
+                <caption>공지사항과 게시판</caption>
+                <colgroup>
+                    <col>
+                    <col style="width: 24%;">
+                    <col style="width: 120px;">
+                    <col style="width: 100px;">
+                    <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">파일명(URL)</th>
+                        <th scope="col">등록일</th>
+                        <th scope="col">작업자</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txt-l"><a target="_blank" href="module/layout-HeaderFooter.html">헤더, 푸터</a></td>
+                        <td class="txt-l"><a target="_blank" class="guide-msg" href="module/layout-HeaderFooter.html">layout-HeaderFooter.html</a></td>
+                        <td class="txt-c">2024.10.16</td>
+                        <td class="txt-c">이민혁</td>
+                        <td class="txt-c">헤더, 푸터 공통사용</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- .// vertical table -->
             </div>
         </div>
         <!-- ./ 텝 콘텐츠 3 -->

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="외교부">
+    <title>자주묻는 질문 테이블</title>
+
+    <!-- css -->
+    <link rel="shortcut icon" type="text/css" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <!-- js -->
+    <script defer src="/js/jquery-3.7.1.js"></script>
+    <script defer src="/js/jquery-ui.min.js"></script>
+    <script defer src="/js/common.js"></script>
+
+    <style>
+        .inner {max-width: 1280px; margin: 0px auto; margin-top: 40px;}
+    </style>
+</head>
+<body>
+    <div class="inner">
+        <div class="bl-foldFaq">
+            <details>
+                <summary class="bl-foldFaq-title">
+                    <span>Q</span>
+                    <span>추가 정보나 어떤 식으로 진행해야 하나요?</span>
+                </summary>
+                <p class="bl-foldFaq-content">
+                    <span>A</span>
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                </p>
+            </details>
+            <details>
+                <summary class="bl-foldFaq-title">
+                    <span>Q</span>
+                    <span>추가 정보나 어떤 식으로 진행해야 하나요?</span>
+                </summary>
+                <p class="bl-foldFaq-content">
+                    <span>A</span>
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                    필요한게 있으시다면 이런식으로 진행하쇼
+                </p>
+            </details>
+        </div>
+    </div>
+    <script>
+    /** 함수명	: 
+        용도    : 디테일 클릭 시 나머지 닫기
+        설명    : 
+    */
+    $('.bl-foldFaq details').on('toggle', function(e){
+        let toggled = e.target;
+        let content = $(toggled).find('.bl-foldFaq-content');
+        if($(toggled).attr('open')){           
+            content.css('max-height', content.prop('scrollHeight') + 'px') // 트랜지션 약 .5초 max-height이 유지될 시 계속 animation이 안됨으로 애니메이션이 끝날시 max-height값을 초기화해줘야함;
+            $('details[open]').each(function(){
+                if (toggled !== this) { 
+                    $(this).removeAttr('open'); 
+                }
+            })
+        } else {content.css('max-height', '0')}
+    })
+
+
+
+
+
+
+
+    </script>
+</body>
