@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 만들기</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="inner">
+        <div class="size-select toggle-group">
+            <a href="#" class="toggle-btn" title="내용 열림">
+                화면크기 변경
+            </a>
+            <ul class="toggle-target">
+                <li><a href="#" onclick="zoomOut(20)">작게</a></li>
+                <li><a href="#" onclick="zoomIn(20)">중간</a></li>
+                <li><a href="#" onclick="zoomIn(40)">크게</a></li>
+                <li><a href="#" onclick="zoomReset()">초기화</a></li>
+            </ul>
+        </div>
+
+        <div class="body-text" style="margin-top: 200px;">
+            <span>안녕하세요 바디텍스트입니다.</span>
+        </div>
+        
+    </div>
+
+
+
+</body>
+<script>
+    // 줌이 140인 상태에서 + 클릭 시 
+
+    $('.size-select > a').on('click', function(){
+        $(this).parent().toggleClass('is-active');
+    })
+
+    $('.size-select .toggle-target > li > a').on('click',function(){
+        $('.size-select .toggle-target > li > a').removeClass('active')
+        $(this).addClass('active')
+    })
+
+    // 현재 화면 크기 비율
+    let nowZoom = 100
+    // 화면 크기 축소  
+    function zoomOut(zoomValue){
+        nowZoom = nowZoom - zoomValue;
+        if (nowZoom < 80){nowZoom = 80; alert('더이상 축소할 수 없습니다.')} 
+        zoom();
+    }
+    // 화면 크기 확대
+    function zoomIn(zoomValue){
+        nowZoom = nowZoom + zoomValue;
+        if (nowZoom > 140){nowZoom = 140; alert('더이상 확대할 수 없습니다')}
+        zoom();
+    }
+    // 현재 화면 초기화
+    function zoomReset(){
+        nowZoom = 100;
+        zoom();
+    }
+    function zoom(){
+        document.body.style.zoom = nowZoom  + "%";
+    }   
+
+
+
+</script>
+</html>
