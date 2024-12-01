@@ -1,0 +1,170 @@
+/****************************************************
+	파일명	: common.css
+	최초작성자	: 이민혁
+	최초작성일	: 2024-09-28
+	-------------------------------------------------
+	Dec. 공통 스타일링 정의
+	-------------------------------------------------
+	최종수정자	: 이민혁
+	최종수정일	: 2024-09-28
+	수정내용	: 최초작성
+	속성순서    : 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+	주의사항    : 선택자 최소 2개로 지정, CSS 우선 순위보다 낮게 지정
+*****************************************************/
+
+/* 공통 변수 정의 */
+:root {
+/* color */
+--black00: #000; 
+--white00: #fff;
+--blue00: blue;
+--gray00: #ddd;
+
+/* font size */
+--fontLv1 : 40px;
+--fontLv2 : 32px;
+--fontLv3 : 20px;
+--fontLv4 : 15px;
+
+/* padding */
+--padding00: 8px;
+--padding01: 12px;
+--padding02: 16px;
+
+/* border */
+--border00: 6px;
+--border01: 8px;
+}
+
+/* 사용 예시 */
+.element {color: var(--black00);}
+
+/* button */
+.el-btn {border-radius: var(--border00);}
+.el-btn-s {padding: var(--padding00); font-size: var(--fontLv4);}
+.el-btn-m {padding: var(--padding01); font-size: var(--fontLv3);}
+
+/* font */
+.el-text-lv1 {font-size: var(--fontLv1);}
+.el-text-lv2 {font-size: var(--fontLv2);}
+.el-text-lv3 {font-size: var(--fontLv3);}
+.el-text-lv4 {font-size: var(--fontLv4);}
+
+/* margin */
+/* top */
+.mt-5 {margin-top: 5px;}
+.mt-10 {margin-top: 10px;}
+.mt-15 {margin-top: 15px;}
+.mt-17 {margin-top: 17px;}
+/* bottom */
+.mb-5 {margin-bottom: 5px;}
+.mb-10 {margin-bottom: 10px;}
+.mb-15 {margin-bottom: 15px;}
+.mb-17 {margin-bottom: 17px;}
+/* left */
+.ml-5 {margin-left: 5px;}
+.ml-10 {margin-left: 10px;}
+.ml-15 {margin-left: 15px;}
+.ml-17 {margin-left: 17px;}
+/* right */
+.mr-5 {margin-right: 5px;}
+.mr-10 {margin-right: 10px;}
+.mr-15 {margin-right: 15px;}
+.mr-17 {margin-right: 17px;}
+/* margin 좌우 값 (x축) */
+.mx-5 {margin: 0 5px;}
+.mx-10 {margin: 0 10px;}
+.mx-15 {margin: 0 15px;}
+.mx-17 {margin: 0 17px;}
+/* margin 상하 값 (y축) */
+.my-5 {margin: 5px 0;}
+.my-10 {margin: 10px 0;}
+.my-15 {margin: 15px 0;}
+.my-17 {margin: 17px 0;}
+
+/* padding */
+/* top */
+.pt-5 {padding-top: 5px;}
+.pt-10 {padding-top: 10px;}
+/* bottom */
+.pb-5 {padding-bottom: 5px;}
+.pb-10 {padding-bottom: 10px;}
+/* left */
+.pl-5 {padding-left: 5px;}
+.pl-10 {padding-left: 10px;}
+/* right */
+.pr-5 {padding-right: 5px;}
+.pr-10 {padding-right: 10px;}
+/* padding 좌우 값 (x축) */
+.px-5 {padding: 0 5px;}
+.px-10 {padding: 0 10px;}
+/* padding 상하 값 (y축) */
+.py-5 {padding: 5px 0;}
+.py-10 {padding: 10px 0;}
+
+/* min-width*/
+.miw-200{min-width: 200px;}
+.miw-400{min-width: 400px;}
+/* max-width */
+.mw-200 {max-width: 200px;}
+.mw-400 {max-width: 400px;}
+
+/* percentage */
+.width-100 {width: 100%;}
+.width-80 {width: 80%;}
+.width-60 {width: 60%;}
+
+/* min-width percent */
+.miw-100per {min-width: 100%;}
+.miw-50per {min-width: 50%;}
+
+/* flex */
+.flex {display: flex;}
+.flex-ac {display: flex; align-items: center;}
+.flex-acjs {display: flex; align-items: center; justify-content: space-between;}
+.flex-grow-1 {flex-grow: 1;}
+.flex-item-right {margin-left: auto;}
+.flex-item-left {margin-right: auto;}
+.flex-evenly > * {flex: 1;}
+
+/* text align */
+.txt-l {text-align: left;}
+.txt-r {text-align: right;}
+.txt-c {text-align: center;}
+
+
+/* position */
+.relative {position: relative;}
+
+/* pc 전용 콘텐츠 (모바일에서 display: none) */
+.lg-only {display: block;}
+@media screen and (max-width: 768px){
+	.lg-only {display:none}
+}
+
+/* 모바일 전용 콘텐츠 (모바일에서 display: block) */
+.sm-only {display: none;}
+@media screen and (max-width: 768px){
+	.sm-only {display:block}
+}
+
+/* 접근성 */
+/* screen reader */
+.sr-only {position: absolute; width: 1px; height: 1px; clip: rect(0 0 0 0); overflow: hidden;} 
+/* skip navigation */
+#skip-nav {text-align: center;}
+#skip-nav a{position:absolute; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:12px; display: block; width: 100%; padding:0 6px;}
+#skip-nav a:focus,
+#skip_nav a:active{position: static;}
+
+/* table */
+table {table-layout: fixed; border-collapse: collapse;}
+
+/* horizontal table */
+
+/* hp : 특정 스타일, 테마, 색상, 이미지 등을 변경 적용 범위 넓을 시 hp 접두어 추가 */
+/* emphasis : 강조 */
+.emp01 {color: blue;}
+.emp02 {color: red;}
+.hp-bg-white00 {background: #fff;}
+.hp-bg-lightblue00 {background: lightblue;}

@@ -1,0 +1,140 @@
+<!-- 
+	파일명	: styleGuide.html
+	최초작성자	: 이민혁
+	최초작성일	: 2024-09-28
+	-------------------------------------------------
+	Dec. 공통 모듈, 스타일 관리
+	-------------------------------------------------
+	최종수정자	: 이민혁
+	최종수정일	: 2024-09-28
+	수정내용	: 최초작성
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일가이드용 HTML</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    /* 기본 스타일링 */
+    .ly-cont {margin-top: 20px;}
+    .style-banner {padding: 12px; margin-bottom: 20px; width: 100%; background-color: darkgreen; color: #fff;}
+    .style-banner.hasUse {display: flex; align-items: center; justify-content: flex-start;}
+    .style-banner-ttl {font-size: 20px; font-weight: 700; margin-right: 20px;}
+    .style-banner-ttl-use {font-size: 15px; font-weight: 400;}
+
+    /* 가이드용 탭 버튼 스타일 */
+    .guide-tab { width: 100%; margin: 0px auto; padding-top: 2rem;}
+    .guide-tab-inner {display: flex; gap: 12px;}
+    .guide-tabLink {background: lightgrey; cursor: pointer; padding: 8px 12px; border-radius: 4px; font-weight: 400; font-size: 16px;}
+    .guide-tabLink.is-active {background-color: darkgreen; color: #fff;}
+</style>
+<body>
+    <!-- 스타일 가이드 탭 버튼 -->
+    <div class="guide-tab ly-cont">
+        <div class="guide-tab-inner">
+            <button type="button" class="guide-tabLink">엘리먼트 모듈</button>
+            <button type="button" class="guide-tabLink">블록 모듈</button>
+            <button type="button" class="guide-tabLink">기타 모듈</button>
+        </div>
+    </div>
+    <!-- ./ 스타일 가이드 탭 버튼 -->
+    <!-- 탭 콘텐츠 1 -->
+    <div class="tabContent">
+        <!-- 제목 스타일링 -->
+        <div class="ly-cont">
+            <div class="style-banner hasUse">
+                <h2 class="style-banner-ttl">제목</h2>
+                <span class="style-banner-ttl-use">~을 위한 스타일링</span>
+            </div>
+            <!-- bl-dataTitle -->
+            <h2 class="bl-dataTitle">큰 제목1</h2>
+            <!-- ./ bl-dataTitle -->
+            <!-- sub-title -->
+            <h3 class="el-sub-title">중간 제목1</h3>
+            <!-- ./ sub-title -->
+        </div>
+        <!-- ./ 제목 스타일링 -->
+        <!-- 버튼 스타일링 -->
+        <div class="ly-cont">
+            <div class="style-banner hasUse">
+                <h2 class="style-banner-ttl">버튼</h2>
+                <span class="style-banner-ttl-use">~을 위한 스타일링</span>
+            </div>
+            <!-- el-btn -->
+            <a class="el-btn btnG" href="#">버튼1</a>
+            <!-- ./ el-btn -->
+        </div>
+        <!-- ./ 버튼 스타일링 -->
+        <!-- 모듈 스타일링 -->
+        <div class="ly-cont">
+            <div class="style-banner hasUse">
+                <h2 class="style-banner-ttl">모듈</h2>
+                <span class="style-banner-ttl-use">type : bl-media, bl-block, bl-score</span>
+            </div>
+            <!-- bl-media -->
+            <div class="bl-media bl-media-rev">
+                <figure class="img-wrapper">
+                    <img src="assets/union__system__image__01_mo.png" alt="노동조합공시화면">
+                </figure>
+                <div class="bl-media-body">
+                    <h2 class="bl-media-title">
+                        사용자를 고려한 만족스런 체험
+                    </h2>
+                    <p>웹사이트 설계하기</p>
+                    <h3 class="sub-title">퍼소나란?</h3>
+                    <span>자사 상품은 이렇습니다.</span>
+                </div>
+            </div>
+            <!-- ./ bl-media -->
+        </div>
+        <!-- ./ 모듈 스타일링 --> 
+    </div>
+    <!-- ./ 탭 콘텐츠 1 -->
+    <!-- 탭 콘텐츠 2 -->
+    <div class="tabContent">
+        <div class="ly-cont">
+            <div class="style-banner hasUse">
+                <h2 class="style-banner-ttl">엘리먼트</h2>
+                <span class="style-banner-ttl-use">모두 재사용 가능합니다.</span>
+            </div>
+        </div>
+    </div>
+    <!-- ./ 텝 콘텐츠 2 -->
+    <!-- 탭 콘텐츠 3 -->
+    <div class="tabContent">
+        <div class="ly-cont">
+            <div class="style-banner hasUse">
+                <h2 class="style-banner-ttl">기타 모듈</h2>
+                <span class="style-banner-ttl-use">헬퍼 클래스</span>
+            </div>
+        </div>
+    </div>
+    <!-- ./ 텝 콘텐츠 3 -->
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+    /** 함수명	: 
+        용도    : 가이드 관련 탭 콘텐츠 전환
+    */
+    $('.tabContent').eq(0).show();
+    $('.guide-tab-inner button').eq(0).addClass('is-active')
+    $('.guide-tab-inner button').on('click', function(){
+        let tabIndex = $(this).index();
+        $('.tabContent').hide()
+        $('.tabContent').eq(tabIndex).show();
+        $('.guide-tab-inner button').removeClass('is-active')
+        $(this).addClass('is-active')
+    })
+    </script>
+    <!-- ./ js -->
+    
+</body>
+</html>

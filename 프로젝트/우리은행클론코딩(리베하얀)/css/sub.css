@@ -1,0 +1,47 @@
+.join_wrap { margin: 0 auto; padding:86px 0 180px; width: 1000px;}
+.join_wrap .step { display: flex; justify-content: space-around; align-items: center; margin: 30px 0 10px ;height: 242px; border: 1px solid #bdbdbd;}
+.join_wrap .step li { position: relative; padding:119px 0 0; width: 100px; background: url(../images/bg_tab01_off.png) no-repeat center top; font-size: 12px;  text-align: center; color:#d8d0d0;}
+.join_wrap .step li ~ li:before { content:url(../images/bg_arrow_right.png); position: absolute; left:calc(-232px / 2); top: 50%; transform: translateY(-50%);}
+.join_wrap .step li:nth-child(2) { background-image: url(../images/bg_tab02_off.png);}
+.join_wrap .step li:nth-child(3) { background-image: url(../images/bg_tab03_off.png);}
+.join_wrap .step li.active {color:#666; font-weight: bold;}
+.join_wrap .step li.active:nth-child(1) { background-image: url(../images/bg_tab01_on.png);}
+.join_wrap .step li.active:nth-child(2) { background-image: url(../images/bg_tab02_on.png);}
+.join_wrap .step li.active:nth-child(3) { background-image: url(../images/bg_tab03_on.png);}
+.join_wrap .step li div { color:#999; font-weight: normal;}
+.join_wrap .step li.active div { color:#288bcc;}
+.join_wrap .agree { overflow: auto; padding: 25px 30px; height: 300px; border: 1px solid #e3e3e3; box-sizing: border-box; font-size: 16px; color:#666;}
+.join_wrap .agree h4 { padding: 0 0 20px; font-size: 17px; color:#444;}
+.join_wrap .agree h4 ~ h4 { padding-top: 50px;}
+.join_wrap .agree p { line-height: 28px;}
+.join_wrap .agree > ol { counter-reset: num;}
+.join_wrap .agree > ol > li { padding: 0 0 0 20px; text-indent: -20px;}
+.join_wrap .agree > ol > li:before { content:counter(num); counter-increment:num; display: inline-block; margin: 0 4px 0 0; width: 15px; text-align: center; line-height: 15px; font-size: 10px; border: 1px solid #666; border-radius: 100%; transform: translateY(-3px); text-indent: 0;}
+
+.join_wrap .agree > ol > li > ol { counter-reset: num2; padding: 0 0 0 20px;}
+.join_wrap .agree > ol > li > ol > li:before { content: counter(num2) ". "; counter-increment:num2; }
+.join_wrap .check_total { margin: 0 0 50px; text-align: center; line-height: 105px; border-bottom: 1px solid #b5b5b5;}
+
+.step + form .table_type1 { margin-top: 40px;}
+form + *[class*="align"] { padding-top:50px; }
+input + button { margin-left: 4px;}
+
+.table_type1 { border-top:2px solid #333333; border-bottom:1px solid #c6c6c6;}
+.table_type1 tr ~ tr  { border-top:1px solid #eaeaea;}
+.table_type1 th { border-right:1px solid #c6c6c6; color:#333; text-align: left; padding: 0 0 0 20px;}
+.table_type1 td { height: 50px; padding: 10px 20px;}
+.table_type1 td .space { display: inline-block; width:20px; line-height: 50px; text-align: center;}
+
+.table_type1 td:focus-within #password_tip{ opacity: 1; margin-left: 0;}
+
+#password_tip { display: inline-block; opacity: 0; margin-left: 10px; transition: .3s;}
+
+
+
+
+
+
+
+
+
+/*  */

@@ -1,0 +1,87 @@
+/* 레이아웃 */
+header .top { margin: 0 auto; width: 1200px; padding: 0 0 26px;}
+header .top h1 { float: left; padding: 33px 0 0;}
+header .top h1 a:first-child { margin-right:28px; }
+header .top > div { float: right;}
+header .control { float: left; padding: 31px 24px 0 0;}
+header .control h2 { float: left; font-size: 16px; color:#333; font-weight: normal; line-height: 36px;}
+header .control ul { float: left; padding: 0 0 0 9px;}
+header .control li { float: left; padding: 0 0 0 4px;}
+header .control li button[class] { padding: 0;}
+header .control li button { padding: 0 16px; min-width:36px; height:36px; font-size: 14px; color:#3190ce; background: #fff; border:1px solid #dfdfdf; border-radius: 36px; box-sizing: border-box;}
+header .sns { float: left; position: relative; padding: 27px 0 0 7px;}
+header .sns:before { content: ""; position: absolute; left: 0; top: 35px; width: 1px; height: 30px; background: #e3e3e3;}
+header .sns li { float: left; padding: 0 0 0 12px;}
+header .sns li img { width: 46px;}
+header .btm { border-top:1px solid #ededed; border-bottom:1px solid #ededed;}
+header .btm > div { margin: 0 auto; width: 1200px;}
+header .btm .lnb { float: left;}
+header .btm .lnb li { float:left;}
+header .btm .lnb a { display: block; line-height: 59px; padding: 0 40px; color:#333; font-size: 22px;}
+header .btm .spot { float:right; font-size: 0;}
+header .btm .spot * { vertical-align: middle;}
+header .btm .spot a { display: inline-block; position: relative; padding: 0 25px; line-height: 59px; font-size: 15px; color:#666;}
+header .btm .spot a ~ a:before { content: ""; position: absolute; left: 0; top:50%; width: 1px; height: 10px; background: #e3e3e3; transform: translateY(-50%);}
+header .btm .spot button{ width: 59px; height: 59px; background: none; color:#0066b3; font-size:26px;}
+
+.contents { margin: 0 auto; width: 1200px;}
+.block > div { margin: 0 auto; padding: 100px 0 0; width: 1200px;}
+.slide_btm { padding:40px; font-size: 0;}
+.slide_btm a { padding: 0 10px 0 0;}
+.slide_btm img { border:1px solid #e3e3e3;}
+
+footer { background: #f5f5f5;}
+footer.block > div { padding:60px 0;}
+footer .top { display: flex; justify-content: space-between; padding: 0 0 29px; border-bottom: 1px solid #e4e4e4; }
+footer .top ul {display:inline-flex; padding: 0 0 0 38px;}
+footer .top li { padding: 0 17px; position: relative;}
+footer .top li ~ li:after { content: ""; position: absolute; left: 0; top: 50%; width: 1px; height: 13px; background: #d9d9d9; transform: translateY(-50%);}
+footer .top a { display: block; line-height: 44px; font-size: 15px; color:#222;}
+footer .top select { padding: 0 0 0 24px; width: 228px; height: 44px; border: 1px solid #c4c4c4; background: #fff; font-size: 14px; color:#333;}
+footer .btm { display: flex; justify-content: space-between; padding: 30px 0 0; font-size:14px; color:#a8a8a8; line-height: 46px;}
+footer .btm ul { display: flex;}
+footer .btm li { padding: 0 0 0 12px;}
+footer .btm li a { display: block; width: 46px; height: 46px;  border-radius:100%;}
+footer .btm li:nth-child(1) a { background: url(../images/sns_3.png) no-repeat center;}
+footer .btm li:nth-child(2) a { background: url(../images/sns_1.png) no-repeat center;}
+footer .btm li:nth-child(3) a { background: url(../images/sns_2.png) no-repeat center;}
+footer .btm li:nth-child(4) a { background: url(../images/sns_4.png) no-repeat center;}
+
+
+/* 서브페이지 공통디자인 */
+
+.align_both { display: flex; justify-content: space-between;}
+.align_both { padding: 45px 0 20px;}
+.align_both .h3 { padding:0;}
+.align_center { text-align: center;}
+
+.btn_type1 {  display: inline-block; width: 160px; background: #288bcc; border-radius: 6px; line-height:60px; color:#fff; font-size: 15px;}
+.btn_type1.small { width: 100px; line-height:50px;}
+
+.h2 { line-height: 1; font-size: 32px; color:#333;}
+.h3 { padding: 45px 0 20px; font-size: 19px; color:#333;}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select { height: 50px; border:1px solid #ddd; border-radius: 5px; background: #fafafa; font-size: 15px; text-indent:20px; color:#333; box-sizing: border-box;}
+
+input[type="checkbox"] + label { display: inline-block; padding: 0 20px 0 29px; line-height: 25px; background: url(../images/chk.png) no-repeat left; font-size: 16px; color:#333;}
+input[type="checkbox"]:checked + label { background-image: url(../images/chk_on.png);}
+
+input[type="radio"] + label { display: inline-block; padding: 0 24px 0 34px; line-height: 26px; background: url(../images/ico_radio_off.png) no-repeat left; color:#333;}
+input[type="radio"]:checked + label { background-image: url(../images/ico_radio_on.png);}
+
+
+
+
+
+
+
+
+
+
+
+/*  */

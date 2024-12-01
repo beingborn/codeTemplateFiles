@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>우리은행 시니어플러스</title>
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/swiper.js" charset="utf-8"></script>
+  <script src="js/default.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <a href="#content" class="skip">본문바로가기</a>
+  <header>
+    <div class="top clear">
+      <h1><a href=""><img src="images/original_logo.png" alt="우리은행"></a><a href="#a"><img src="images/logo.png" alt="시니어플러스"></a></h1>
+      <div>
+        <div class="control">
+          <h2>화면크기조정</h2>
+          <ul>
+            <li><button class="xi-plus"><span class="hide">크기확대</span></button></li>
+            <li><button class="xi-minus"><span class="hide">크기축소</span></button></li>
+            <li><button>원본보기</button></li>
+          </ul>
+        </div>
+        <h2 class="hide">SNS</h2>
+        <ul class="sns">
+          <li><a href=""><img src="images/sns_3.png" alt="페이스북"></a></li>
+          <li><a href=""><img src="images/sns_1.png" alt="네이버카페"></a></li>
+          <li><a href=""><img src="images/sns_2.png" alt="유튜브"></a></li>
+          <li><a href=""><img src="images/sns_4.png" alt="인스타그램"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="btm">
+      <div class="clear">
+        <nav class="lnb">
+          <ul>
+            <li><a href="">금융서비스</a></li>
+            <li><a href="">관심정보</a></li>
+            <li><a href="">교육/세미나</a></li>
+            <li><a href="">여행/쇼핑</a></li>
+            <li><a href="">일자리정보</a></li>
+          </ul>
+        </nav>
+        <div class="spot">
+          <a href="">로그인</a>
+          <a href="">회원가입</a>
+          <button class="xi-search"><span class="hide">검색</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="contents">
+    <div class="join_wrap">
+      <h2 class="h2">회원가입</h2>
+      <ol class="step">
+        <li>STEP.01<div>약관동의</div></li>
+        <li class="active">STEP.02<div>정보입력</div></li>
+        <li>STEP.03<div>가입완료</div></li>
+      </ol>
+
+        <form>
+            <fieldset>
+                <legend>회원가입 정보입력</legend>
+                <table class="table_type1">
+                    <caption>
+                        정보입력 표
+                        <div>
+                            이메일, 비밀번호, 이름, 성별, 생년월일, 전화번호 등을 표현하는 표
+                        </div>
+                    </caption>
+                    <colgroup>
+                        <col style="width:180px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><label for="txt1_1">이메일</label></th>
+                            <td><input type="email" id="txt1_1" style="width:312px;"><button class="btn_type1 small">중복확인</button></td>
+                        </tr>
+                        <tr>
+                            <th><label for="txt1_2">비밀번호</label></th>
+                            <td>
+                                <input type="password" id="txt1_2" aria-describedby="password_tip" style="width:230px;">
+                                <p id="password_tip">※ 8자이상 영문 대 소문자, 숫자, 특수문자를 사용하세요.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="txt1_3">비밀번호 확인</label></th>
+                            <td><input type="password" id="txt1_3"  style="width:230px;"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="txt1_4">이름</label></th>
+                            <td><input type="text" id="txt1_4"  style="width:230px;"></td>
+                        </tr>
+                        <tr>
+                            <th>성별</th>
+                            <td>
+                                <input type="radio" id="ra1_1" name="rag" checked>
+                                <label for="ra1_1">남</label>
+                                <input type="radio" id="ra1_2" name="rag">
+                                <label for="ra1_2">여</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="txt1_5">생년월일</label></th>
+                            <td><input type="number" id="txt1_5" placeholder="예)20190101"  style="width:230px;"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="txt1_6">휴대전화</label></th>
+                            <td>
+                                <select id="txt1_6" style="width:140px;">
+                                <option>010</option>
+                                </select>
+                                <span class="space">-</span>
+                                <input type="tel" style="width:120px;" aria-label="휴대전화 중간번호">
+                                <span class="space">-</span>
+                                <input type="tel" style="width:120px;" aria-label="휴대전화 마지막번호">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>뉴스레터 신청</th>
+                            <td>
+                                <input type="radio" id="ra2_1" name="rag2" checked>
+                                <label for="ra2_1">예</label>
+                                <input type="radio" id="ra2_2" name="rag2">
+                                <label for="ra2_2">아니오</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </form>
+      <div class="align_center">
+        <a href="" class="btn_type1">가입하기</a>
+      </div>
+    </div>
+    <div class="slide_btm">
+      <div class="swiper-container slide3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer1.png" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer2.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer3.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer4.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer5.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer6.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer1.png" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer2.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href=""><img src="images/ad_customer3.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="block">
+    <div>
+      <div class="top">
+        <div>
+          <img src="images/original_logo.png" alt="우리은행">
+          <h2 class="hide">우리은행 시니어플러스 소개 및 약관</h2>
+          <ul>
+            <li><a href="">은행소개</a></li>
+            <li><a href="">영업점안내</a></li>
+            <li><a href="">전자민원접수</a></li>
+            <li><a href="">상품공시실</a></li>
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">공지사항</a></li>
+          </ul>
+        </div>
+        <div>
+          <select>
+            <option>패밀리 사이트 바로가기</option>
+          </select>
+        </div>
+      </div>
+      <div class="btm">
+        <div>Copyright WOORI BANK. All Rights Reserved.</div>
+        <h2 class="hide">SNS바로가기</h2>
+        <ul>
+          <li><a href=""><span class="hide">페이스북</span></a></li>
+          <li><a href=""><span class="hide">네이버카페</span></a></li>
+          <li><a href=""><span class="hide">유튜브</span></a></li>
+          <li><a href=""><span class="hide">인스타그램</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>

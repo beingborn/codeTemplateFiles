@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 메뉴 해쉬 연결</title>
+    <style>
+        /* reset style */
+        body {width: 1280px; margin: 0px auto;}
+        ul, li {list-style: none;}
+
+        /* check mark */
+        .red {background: red;}
+        .blue {background: blue;}
+        
+        /* tab */
+        .tab-cont {display: none;}
+        .tab-cont.is-show {display: block;}
+        
+        /* .reload_tab */
+        .reload_tab {display: flex; justify-content: space-between;}
+        .reload_tab > li {width: 50%; text-align: center;}
+        .reload_tab > li > a {text-decoration: none; display: block; line-height: 40px; background: aliceblue;}
+        .reload_tab > li > a.is-active {background: blue;}
+    </style>
+</head>
+<body>
+    <div class="tab line full">
+        <ul class="reload_tab flex-ac flex-evenly" role="tablist">
+            <li role="tab" aria-selected="true" aria-controls="tab-1" data-tab="tab-1" title="회원 로그인 선택됨">
+                <a href="#tab-1" class="txt-c el-text-lv5 is-active">탭1</a>
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="tab-2" data-tab="tab-1" title="비회원 로그인">
+                <a href="#tab-2" class="txt-c el-text-lv5">탭2</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 탭 콘텐츠 -->
+    <div id="tab-1" class="tab-cont red">
+        탭콘텐츠 1번
+    </div>
+    <div id="tab-2" class="tab-cont blue">
+        탭콘텐츠 2번
+    </div>
+    <!-- ./ 탭 콘텐츠 -->
+</body>
+<!-- jquery inject -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    // 처음에 탭 콘텐츠 숨김 1번째 요소는 보이게 함
+    $('.tab-cont').removeClass('is-show').eq(0).addClass('is-show')
+    $('.reload_tab li a').click(function(){
+        /* tab active class */
+        $('.reload_tab li a').not($(this)).removeClass('is-active')
+        $(this).addClass('is-active')
+        /* tab content show hide active class */
+        $('.tab-cont').removeClass('is-show').filter(this.hash).addClass('is-show');
+    })        
+</script>
+</html>
