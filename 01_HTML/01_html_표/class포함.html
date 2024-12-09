@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이콘 공통스타일</title>
+    <style>
+        [class*=ico-]::before,
+        [class*=ico-]::after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .ico-sm::before,
+        .ico-sm::after {
+            width: 20px;
+            height: 20px;
+        }
+
+        .ico-md::before,
+        .ico-md::after {
+            width: 24px;
+            height: 24px;
+        }
+
+        .ico-lg::before,
+        .ico-lg::after {
+            width: 28px;
+            height: 28px;
+        }
+        .ico-sm.yellow { background: yellow;}
+        .ico-md.green { background: green;}
+        .ico-lg.red { background: red;}
+    </style>
+</head>
+<body>
+    <span class="ico-sm yellow"></span>
+    <span class="ico-md green"></span>
+    <span class="ico-lg red"></span>
+</body>
+</html>
