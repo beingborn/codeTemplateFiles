@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    ul {display: flex; list-style: none;}
+    ul > li { padding: 0 20px; position: relative;}
+    ul > li:not(:last-child)::after {content: ''; background: yellow; 
+    width: 1px; height: 20px; position: absolute; right: 0;
+    top: 50%; transform: translateY(-50%);
+}
+
+</style>
+
+<body>
+    <ul>
+        <li>안녕하세요</li>
+        <li>안녕하세요2</li>
+        <li>안녕하세요3</li>
+        <li>안녕하세요4</li>
+        <li>안녕하세요4</li>
+        <li>안녕하세요4</li>
+        <li>안녕하세요4</li>
+    </ul>
+</body>
+</html>

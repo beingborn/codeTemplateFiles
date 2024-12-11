@@ -109,6 +109,19 @@ a{
 summary::-webkit-details-marker {display: none;} 
 summary {list-style-type: none;}
 
+button,
+input[type="submit"],
+input[type="button"] {
+	overflow: visible;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font: inherit;
+	color: inherit;
+}
+
 button {cursor: pointer;}
 textarea {border:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;word-break:keep-all;word-wrap:break-word}
 button, input { padding: 0; border: 0; background: inherit;-webkit-border-radius:0;border-radius:0;}

@@ -13,6 +13,26 @@
 	속성순서: 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
 *****************************************************/
 
+/* WEB FONT */
+@font-face {
+	font-weight: 300;
+	font-family: 'Noto Sans KRD';
+	font-style: normal;
+	src: url(https://www.g4k.go.kr/css/NotoSansKR-DemiLight.woff2) format('woff2'), url(https://www.g4k.go.kr/css/NotoSansKR-DemiLight.woff) format('woff'), url(https://www.g4k.go.kr/css/NotoSansKR-DemiLight.otf) format('opentype');
+}
+@font-face {
+	font-weight: 400;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	src: url(https://www.g4k.go.kr/css/NotoSansKR-Regular.woff2) format('woff2'), url(https://www.g4k.go.kr/css/NotoSansKR-Regular.woff) format('woff'), url(https://www.g4k.go.kr/css/NotoSansKR-Regular.otf) format('opentype');
+}
+@font-face {
+	font-weight: 600;
+	font-family: 'Noto Sans KRM';
+	font-style: normal;
+	src: url(https://www.g4k.go.kr/css/NotoSansKR-Medium.woff2) format('woff2'), url(https://www.g4k.go.kr/css/NotoSansKR-Medium.woff) format('woff'), url(https://www.g4k.go.kr/css/NotoSansKR-Medium.otf) format('opentype');
+}
+
 *,
 *::before,
 *::after {
@@ -32,12 +52,11 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
     font-size: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -45,23 +64,33 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-/* 폰트 크기의 팽창을 방지합니다. */
 html {
+    height: 100%;
+	
+    /* 
+	font-size: 62.5%; 
+	REM 설정시
+	*/ 
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    height: 100%;
-    font-size: 62.5%;
 }
 
 /* 핵심 body의 기본값을 설정합니다. */
 body {
-    min-height: 100vh;
     height: 100%;
-    line-height: 1.5;
+	font-size: 15px;
+	line-height: 1.5;
+	font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
 }
 
-img {max-width: 100%;}
+fieldset, img {
+	border: 0;
+	font-size:0;
+	vertical-align: middle;
+	max-width:100%;
+}
 
 ol, ul {
 	list-style: none;
@@ -74,17 +103,38 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 a{
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
 }
 
+summary::-webkit-details-marker {display: none;} 
+summary {list-style-type: none;}
 
+/* button reset */
+button,
+input[type="submit"],
+input[type="button"] {
+	overflow: visible;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font: inherit;
+	color: inherit;
+}
 
-textarea {-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;border:0;word-break:keep-all;word-wrap:break-word}
-button, input {-webkit-border-radius:0;border-radius:0;border:0; background: inherit;}
+textarea {border:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;word-break:keep-all;word-wrap:break-word}
+
+/* table settings */
+table {
+	table-layout: fixed;
+	max-width: none;
+	width: auto;
+	min-width: 100%;
+	border-collapse: collapse;
+}
+
+/* sr-only */

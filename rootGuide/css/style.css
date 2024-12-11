@@ -13,39 +13,39 @@
 	속성순서: 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
 *****************************************************/
 
-.bl-titleline {display: flex; align-items: center; justify-content: space-between;}
-.bl-dataTitle {font-size: 2.1rem; font-weight: 700;}
+/* top gov banner */
+.gov-banner {position: relative; background: var(--lightblue00);}
+.gov-banner .gov-desc {display: flex; height: 3.2rem; align-items: center; gap: 0.4rem;}
+.gov-banner .gov-desc > img {box-shadow: 0 0 .2rem rgba(0, 0, 0, .1);}
 
-/* bl-media */
-.bl-media-title {color: blue; font-size: 2.2rem;}
-.bl-media-body > span {font-size: 1.4rem; color: red;}
-.bl-media {display: flex; align-items: center; gap: 4rem;}
-.bl-media-rev {flex-direction: row-reverse; text-align: right;}
+/* vertical table */
+.bl-vertical-list {border-top: 2px solid #000; border-bottom: 1px solid #ddd;}
+.bl-vertical-list tr {border-top: 1px solid #ddd;}
+.bl-vertical-list thead th { padding: 15px; background: #f9f9f9;text-align: center; white-space: nowrap; border-right: 1px solid #ddd;}
+.bl-vertical-list thead th:last-child{border-right: 0;}
+.bl-vertical-list tbody td {padding: 15px; vertical-align: middle; word-break: break-all;}
 
-/* bl-card */
-.bl-card .bl-card-body > h2 {font-size: 2rem; color: purple;}
+/* horizontal table */
+.bl-rowTable {border-top: 2px solid #000; border-bottom: 1px solid #ddd;}
+.bl-rowTable tr {border-top: 1px solid #ddd;}
+.bl-rowTable th {padding: 20px; background: #f9f9f9; line-height: 22px; text-align: left;}
+.bl-rowTable td {padding: 20px; line-height: 22px; text-align: left;}
 
-.unit {font-size: 1.4rem; color: #555555;}
-.el-btn {display: inline-block; padding: 0.8rem 1.2rem; font-size: 1.6rem; text-align: center; border-radius: 0.7rem; color: #fff;}
-.el-btn.is-on {background-color: blue;}
-.btnG {background-color: green;}
+@media only screen and (max-width:768px) {
+	.bl-rowTable th, .bl-rowTable td { display: block;width: 100%;}
+	.bl-rowTable th {background: transparent;}
+	.bl-rowTable, .bl-rowTable thead, .bl-rowTable tbody, .bl-rowTable th, .bl-rowTable td, .bl-rowTable tr {display: block;}
+}
 
-.hp-textBlack {color: #000;}
-.hp-textWhite {color: #fff;}
-.hp-bgGray {background-color: lightgray;}
+/* fold faq */
+.bl-foldFaq {width: 100%;}
+.bl-foldFaq summary { position: relative; border: 1px solid red;cursor: pointer;} 
+.bl-foldFaq > details > summary::before { position: absolute; top: 50%; right: 1rem;content: '+'; transform: translateY(-50%);}
+.bl-foldFaq > details[open] > summary::before {content: '-';}
+.bl-foldFaq-content {max-height: 0; overflow: hidden; transition: max-height 500ms ease-out;}
 
-/* live-list */
-.bl-live-list {padding-top: 2.8rem; overflow: hidden;}
-.bl-live-list > div {width:100%; display: flex; justify-content: space-between;}
-.bl-live-list .bl-live-list-box {width: calc(25% - 1rem);}
-
-/* bl-blog */
-.bl-blog > div {display: flex; justify-content: space-between;}
-
-.flexBox {display: flex;}
-
-/* eliment */
-.el-sub-title {font-size: 1.5rem; color: gray;}
-
-/* page styling */
-#practice .bl-blog {margin-top: 8rem;}
+/* option select */
+.bl-select {position: relative; width: 12rem; height: 3.5rem; border: 0.1rem solid #ddd;}
+.bl-select > button {width: 100%; height: 100%;}
+.bl-select.is-open .bl-select-optList {max-height: 20rem; overflow-y: auto;}
+.bl-select-optList { border: 0.1rem solid #ddd; overflow: hidden; transition: max-height .5s, overflow .5s; position: absolute; width: 100%; bottom: 100%; max-height: 0; overflow-y: hidden;} 
