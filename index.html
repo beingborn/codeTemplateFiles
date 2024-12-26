@@ -1,99 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이민혁 컴포넌트 파일</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <style>
-        * { margin: 0; padding: 0}
-        ol,
-        ul,
-        li { margin: 0; padding: 0; list-style: none}
-        a { color: #555; text-decoration: none}
-        a:hover { text-decoration: underline}
-        body { font-family: "맑은고딕", Malgun Gothic, Doutm, Tahoma, sans-serif; -webkit-text-size-adjust: none; font-size: 12px; color: #333}
-        h1 { padding: 10px; border-bottom: 1px solid #ddd; font-size: 24px}
-        h2 { font-size: 20px}
-        #category { float: left; width: 200px; border-right: 1px solid #ddd}
-        #category li { display: block; border-bottom: 1px solid #ddd}
-        #category li a { display: block; padding: 10px; font-weight: bold}
-        #category li a:hover,
-        #category li a.on { background: #00abe2; color: #fff; text-decoration: none}
-        #category .sub { border-top: 1px solid #ddd}
-        #category .sub li { border: 0}
-        #category .sub li a { padding-left: 20px}
-        #file_contents { margin-left: 200px; border-left: 1px solid #ddd}
-        #footer { clear: both; position: relative; padding: 10px; border-top: 1px solid #ddd}
-        .cont { margin: 10px}
-        button { border: 0; background: none; height: auto; cursor: pointer}
-        table.file_lst { table-layout: fixed; border-collapse: collapse; width: 100%; margin: 10px 0; border-bottom: 1px solid #ccc}
-        table.file_lst tr.line { border-top: 2px solid #ccc}
-        table.file_lst tr.done { background: rgb(241, 252, 255); } 
-        table.file_lst tr.done.main { background: rgb(255, 225, 230); } 
-        table.file_lst tr.done.popup { background: rgb(212, 228, 212); } 
-        table.file_lst thead th { padding: 7px 5px; background-color: #f0f0f0; border: 1px solid #ccc; border-bottom: double #ccc; white-space: nowrap}
-        table.file_lst tbody th { padding: 10px; border: 1px solid #ccc; color: #555; text-align: left}
-        table.file_lst tbody td { padding: 10px; border: 1px solid #ccc; color: #555}
-        table.file_lst td a { display: block; color: #114fc1}
-        table.file_lst td span { color: red}
-        table.file_lst .line { border-top: 2px solid #ccc}
-        table.file_lst .date { font-family: Tahoma; color: #999}
-        .ac { text-align: center}
-        .count-info { position: absolute; right: 20px; top: 15px;} 
-    </style>
+  <title>이민혁 코드 스타일 정리</title>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="guide.css">
 </head>
 <body>
-    <!-- tab -->
-    <div class="tab-list">
-        <a href="component">컴포넌트</a>
-        <a href="etc">기타</a>
+  <div class="cont">
+    <h2>Guide v01</h2>
+    <span>20241226</span>
+    <!-- 컬러 -->
+    <div class="color-info">
+      
+    </div>
+    <!-- 툴팁 -->
+    <div class="flex-item-right">
+      <form class="file_lst_search">
+        <fieldset>
+          <legend>
+            검색
+            <a href="#" class="file_tooltip">
+              ?
+              <div class="file_tooltip_box">
+                <p><strong>필터 버튼이 활성화된 상태</strong>에서 인풋에 값을 넣으면 해당 검색어를 포함한 행을 <strong>실시간으로 필터링</strong>합니다.</p>
+                <br>
+                <p><strong>검색모드 버튼이 활성화된 상태</strong>에선 인풋에 <strong>값을 넣고 검색 버튼을 클릭해야만</strong> 데이터가 필터링됩니다.</p>
+              </div>
+            </a>
+          </legend>
+          <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+          <button class="search-btn" id="search-confirm">검색</button>
+          <button class="btn-function" id="fastModeBtn">필터</button>
+          <button class="btn-function" id="slowModeBtn">검색모드</button>
+        </fieldset>
+      </form>
     </div>
 
-    <div class="cont">
-        <h2>스타일 html</h2>
-        <!-- 컴포넌트 탭 -->
-        <div class="tab-cont">
-            <table class="file_lst" id="component">
-                <colgroup>
-                    <col width="15%" />
-                    <col width="15%" />
-                    <col>
-                    <col>
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>형식</th>
-                        <th>URL</th>
-                        <th>비고</th>
-                        <th>스크립트</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="line">
-                        <th>아이콘 공통 html</th>
-                        <td><a href="./01_HTML/01_html_표/class포함.html" target="blank">class포함.html</a></td>
-                        <td>
-                            before와 [class*=]를 이용해 제작
-                        </td>                        
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- 기타 탭 -->
-        <div class="tab-cont" id="etc">
-            abc
-        </div>
-    </div>
-    <script>
-        /* 탭 변환 */
-        $('.tab-list button').click(function () {
-            $('.tab-cont').hide().filter(this.hash).show();
-            $('.tab-list li a').removeClass('show');
-            $(this).addClass('show');
-            return false;
-        }).filter(':eq(0)').click();
-
-    </script>
+    <span class="count-info">
+      <span class="page">페이지 : <span></span></span>
+      <span>/</span>
+      <span class="popup">팝업 : <span></span></span>
+    </span>
+    <table class="file_lst">
+      <colgroup>
+        <col width="15%" />
+        <col width="15%" />
+        <col width="10%" />
+        <col width="15%" />
+        <col width="10%" />
+        <col width="25%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>1Depth</th>
+          <th>2Depth</th>
+          <th>형식</th>
+          <th>URL</th>
+          <th>완료여부</th>
+          <th>수정내역</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="line done l">
+          <th>평생교육이용권</th>
+          <td>이용권 지자체_마이페이지_개인정보 수정</td>
+          <td>page</td>
+          <td><a href="./LIP_001.html">LIP_001.html</a></td>
+          <td class="ac">O</td>
+          <td>12.11 : 시연용 대체 이미지 퍼블리싱</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    $(function() {
+      $(".main-tab .tab").each(function(i) {
+        $(this).on("click", function() {
+          $(".main-tab .tab").removeClass("act");
+          $(this).addClass("act");
+          $(".main-con").hide();
+          $(".main-con").eq(i).show();
+        });
+      });
+      $(".main-tab .tab").eq(0).trigger("click");
+      $(".tab-area .tab").each(function(i) {
+        $(this).on("click", function() {
+          $(".tab-area .tab").removeClass("act");
+          $(this).addClass("act");
+          $(".tab-con").hide();
+          $(".tab-con").eq(i).show();
+        });
+      });
+      $(".tab-area2 .tab").each(function(i) {
+        $(this).on("click", function() {
+          $(".tab-area2 .tab").removeClass("act");
+          $(this).addClass("act");
+          $(".tab-con2").hide();
+          $(".tab-con2").eq(i).show();
+        });
+      });
+      $(".tab-area .tab").eq(0).trigger("click");
+      $(".tab-area2 .tab").eq(0).trigger("click");
+      var pageNum = 0;
+      var popupNum = 0;
+      $(".file_lst tbody tr").each(function() {
+        var text = $(this).find('td').eq(1).text();
+        if (text.indexOf('page') >= 0) {
+          pageNum++;
+        }
+        if (text.indexOf('popup') >= 0) {
+          popupNum++;
+        }
+      });
+      $('.count-info .page span').text(pageNum);
+      $('.count-info .popup span').text(popupNum);
+    });
+    /* 검색 전환 */
+    $('.file_lst_search .btn-function').eq(0).addClass('is-active')
+    $('.file_lst_search .btn-function').click(function () {
+      $('.file_lst_search .btn-function').not($(this)).removeClass('is-active')
+      $(this).addClass('is-active');
+    })
+    let searchMode = "fastmode"; // 기본값을 패스트 모드로 설정
+    const fastModeBtn = document.querySelector('#fastModeBtn')
+    const slowModeBtn = document.querySelector('#slowModeBtn')
+    fastModeBtn.addEventListener('click',function(event){
+      event.preventDefault();
+      searchMode = "fastmode";
+      searchBtn.disabled = true;
+    })
+    slowModeBtn.addEventListener('click',function(event){
+      event.preventDefault();
+      searchMode = "slowmode"
+      searchBtn.disabled = false;
+    })
+    let filterValue;
+    let searchTbody;
+    let rows;
+    document.addEventListener('DOMContentLoaded', function(){
+      if (searchMode = "fastmode"){
+        searchBtn.disabled = true;
+      } else {
+        searchBtn.disabled = false;
+      }
+      const searchInput = document.querySelector('#search')
+      searchTbody = document.querySelector('.file_lst tbody');
+      searchInput.addEventListener('keyup', function(){
+        filterValue = searchInput.value;
+        if (searchMode == "fastmode"){
+          // 해당 요소의 tr들 모두 배열로 넣기
+          rows = searchTbody.querySelectorAll('tr');
+          for (var i = 0; i < rows.length; i++){
+            var rowText = rows[i].textContent;
+            if(rowText.includes(filterValue)){
+              rows[i].style.display = '';
+            } else {
+              rows[i].style.display = 'none'
+            }
+          }
+        } 
+      })
+    })
+    // 검색 버튼 기능
+    const searchBtn = document.querySelector('#search-confirm')
+    searchBtn.addEventListener('click',function(event){
+      event.preventDefault();
+      const pageNameRows = searchTbody.querySelectorAll('tr');
+      let matched = false;
+      for (var i = 0; i < pageNameRows.length; i++){
+        var pageNumText = pageNameRows[i].textContent;
+        // 각각의 tr의 text컨텐츠의 filterValue가 포함되어있다면, tr의 display값을 'block'
+        if(pageNumText.includes(filterValue)){
+          pageNameRows[i].style.display = '';
+          matched = true;
+        } else {
+          pageNameRows[i].style.display = 'none';
+        }
+      } 
+      // 검색어가 없을 경우
+      if (matched === false) {
+          const noDataTr = document.createElement('tr')
+          const noDataTd = document.createElement('td')
+          noDataTd.textContent = "조회된 데이터가 없습니다."
+          noDataTd.setAttribute('colspan', '6')
+          noDataTd.setAttribute('style', 'text-align: center;')
+          noDataTr.appendChild(noDataTd);
+          searchTbody.appendChild(noDataTr)
+          return false;
+      }
+    })
+  </script>
 </body>
+
 </html>
