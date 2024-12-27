@@ -3,31 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>템플릿 파일</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../guide.css">
     <link rel="stylesheet" href="../plugin/prism.css">
     <script src="../guide.js"></script>
     <script src="../plugin/prism.js"></script>
 </head>
-<style>
-    ul {display: flex; list-style: none;}
-    ul > li { padding: 0 20px; position: relative;}
-    ul > li:not(:last-child)::after {content: ''; background: blue; 
-    width: 1px; height: 20px; position: absolute; right: 0;
-    top: 50%; transform: translateY(-50%);
-}
-</style>
-<body>
-    <ul>
-        <li>안녕하세요</li>
-        <li>안녕하세요2</li>
-        <li>안녕하세요3</li>
-        <li>안녕하세요4</li>
-        <li>안녕하세요4</li>
-        <li>안녕하세요4</li>
-        <li>안녕하세요4</li>
-    </ul>
+
+<body class="inner">
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
             <summary>HTML</summary>
@@ -60,4 +44,20 @@
         </details>
     </div>
 </body>
+<script class="script">
+/**
+ * 원시값 : 문자, 숫자, 불린, 심볼, null, undefined
+ * 객체 : 프로퍼티(속성)에 다양한 값 저장 가능
+ */
+let john = {
+    name : "john",
+    sayHi : function() {
+        alert(this.name + "반가워~")
+    }
+}
+
+let str = "Hello";
+alert(str.toUpperCase())
+
+</script>
 </html>
