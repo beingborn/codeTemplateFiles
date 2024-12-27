@@ -6,15 +6,21 @@ a:hover { text-decoration: underline }
 body { font-family: "맑은고딕", Malgun Gothic, Doutm, Tahoma, sans-serif; -webkit-text-size-adjust: none; font-size: 12px; color: #333 } 
 h1 { padding: 10px; border-bottom: 1px solid #ddd; font-size: 24px } 
 h2 { font-size: 20px}
-.cont { margin: 10px}
+.cont {padding: 20px;}
 button { border: 0; background: none; height: auto; cursor: pointer}
+body {position: relative;}
+
+/* index 상단 제목 */
+header.main-info .main-info-tit {font-size: 40px;}
+header.main-info .count-info {padding: 12px; border: 1px solid #d8d8d8; border-radius: 12px;} 
+header .main-info-wrap {display: flex; height: 80px; align-items: end; column-gap: 20px;}
+header .main-info-wrap .file_search {margin-left: auto;}
 
 /* 테이블 기본 스타일 */
-table.file_lst { table-layout: fixed; border-collapse: collapse; width: 100%; margin: 10px 0; border-bottom: 1px solid #ccc}
+table.file_lst { table-layout: fixed; border-collapse: collapse; width: 100%; margin-top: 28px; border-bottom: 1px solid #ccc;}
 table.file_lst tr.line { border-top: 2px solid #ccc}
-table.file_lst tr.js {background: rgb(255, 255, 184);}
-table.file_lst tr.css {background: rgb(136, 136, 171)}
-table.file_lst tr.html {background: rgb(224, 164, 138)}
+table.file_lst tr.js {background: rgb(255, 255, 225);}
+table.file_lst tr.markup {background: rgb(254, 231, 222)}
 
 /* 완료 처리 */
 table.file_lst tr.done { background: rgb(241, 252, 255); } 
@@ -31,13 +37,13 @@ table.file_lst td span { color: red}
 table.file_lst .line { border-top: 2px solid #ccc}
 table.file_lst .date { font-family: Tahoma; color: #999}
 .ac { text-align: center}
-.count-info { position: absolute; right: 20px; top: 15px; } 
 /* 상단 컬러 정보 */
 .color-info {margin-top: 20px;}
 .color-info p {padding: 8px; border-radius: 8px; border: 1px solid black;}
 .color-info p + p {margin-left: 10px;}
 /* 상단 검색 */
-.file_lst_search > fieldset { display: flex; column-gap: 10px; padding: 20px; margin-top: 20px; margin-bottom: 10px; width: 840px; border-radius: 12px; font-size: 13px; font-weight: 700; border: none;}
+.file_lst_search > fieldset { display: flex; column-gap: 10px; width: 840px; border-radius: 12px; font-size: 13px; font-weight: 700; border: none;}
+.file_lst_search legend { margin-bottom: 8px;}
 .file_lst_search select {width: 168px;}
 .file_lst_search :where(select, input, button) {border-radius: 8px; height: 44px; padding: 0 8px;}
 .file_lst_search button.search-btn {background: #333333; color: #fff; font-weight: 700; width: 120px;}
@@ -54,3 +60,24 @@ table.file_lst .date { font-family: Tahoma; color: #999}
 .file_tooltip_box > p { color: #000; font-weight: 500;}
 .file_tooltip_box > strong {font-weight: 700;}
 .file_tooltip:hover .file_tooltip_box {display: block;}
+
+
+/* code-box group */
+.code-box-group {
+    margin-top: 40px; 
+    position: absolute; 
+    top: 20px;
+    right: 20px;
+    width: var(--side-width, 600px);
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #272822;
+}
+.code-box-group :where(.html-code-box, .css-code-box, .script-code-box){ white-space: pre-wrap;}
+.code-box-group .code-wrap:not(.memo) {background: #272822; font-size: 12px; border-radius: 8px;}
+.code-box-group .code-box {padding: 16px;}
+.code-box-group .code-box + .code-box {border-top: 1px solid #535353 ;}
+.code-box-group .code-box summary {font-size: 15px; font-weight: 700; color: #fff; width: 100%; cursor: pointer;}
+.code-box-group .memo-wrap {padding: 12px; margin-top: 12px; border: 1px solid #d8d8d8; background:  #2f302ace;;}
+.code-box-group .memo-wrap > p {font-size: 12px; color: #fff;}
+

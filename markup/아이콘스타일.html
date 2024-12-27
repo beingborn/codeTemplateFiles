@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이콘 공통스타일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+    <style>
+        [class*=ico-]::before,
+        [class*=ico-]::after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .ico-sm::before,
+        .ico-sm::after {
+            width: 20px;
+            height: 20px;
+        }
+
+        .ico-md::before,
+        .ico-md::after {
+            width: 24px;
+            height: 24px;
+        }
+
+        .ico-lg::before,
+        .ico-lg::after {
+            width: 28px;
+            height: 28px;
+        }
+        .ico-sm.yellow { background: yellow;}
+        .ico-md.green { background: green;}
+        .ico-lg.red { background: red;}
+    </style>
+</head>
+<body>
+    <span class="ico-sm yellow"></span>
+    <span class="ico-md green"></span>
+    <span class="ico-lg red"></span>
+
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p>화면크기 변경은 어렵군.. 뭐 어쩔수 없는거 아니겠나 이렇게 된거</p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+</html>

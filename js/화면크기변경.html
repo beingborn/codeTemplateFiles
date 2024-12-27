@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면크기변경</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    /* reset */
+    * {padding: 0; margin: 0;}
+    body {font-size: 1.7rem;}
+    .inner {margin: 0px auto; width: 1280px;}
+    a {text-decoration: none; color: #000;}
+    ul {list-style: none;}
+
+    /* size select*/
+    .size-select {position: relative; width: 200px;}
+    .size-select > a {display: inline-flex; width:100%; border: 1px solid #ddd;}
+    .size-select > a::after {content: '+'; margin-left: 16px;}
+    .size-select .toggle-target {display: none; position: absolute; left: 0; width: 100%; top: 100%; background: #f8f8f8;}
+    .size-select .toggle-target > li > a {display: block;}
+    .size-select .toggle-target > li > a.active {background: aliceblue;}
+    .size-select.is-active .toggle-target {display: block;}
+</style>
+<body class="inner">
+        <div class="size-select toggle-group">
+            <a href="#" class="toggle-btn" title="내용 열림">
+                화면크기 변경
+            </a>
+            <ul class="toggle-target">
+                <li><a href="#" onclick="zoomOut(20)">작게</a></li>
+                <li><a href="#" onclick="zoomIn(20)">중간</a></li>
+                <li><a href="#" onclick="zoomIn(40)">크게</a></li>
+                <li><a href="#" onclick="zoomReset()">초기화</a></li>
+            </ul>
+        </div>
+        <div class="body-text" style="margin-top: 200px;">
+            <span>안녕하세요 바디텍스트입니다.</span>
+        </div>
+        <!-- 코드 -->
+        <div class="code-box-group">
+            <details class="html-code-box language-html code-box">
+                <summary>HTML</summary>
+                <div class="code-wrap">
+                    <code class="html-content code">
+                    </code>
+                </div>
+            </details>
+            <details class="css-code-box language-css code-box">
+                <summary>CSS</summary>
+                <div class="code-wrap">
+                    <code class="css-content code">
+                    </code>
+                </div>
+            </details>
+            <details class="script-code-box language-javascript code-box">
+                <summary>JS</summary>
+                <div class="code-wrap">
+                    <code class="js-content code">
+                    </code>
+                </div>
+            </details>
+            <details class="memo-code-box code-box">
+                <summary>메모내역</summary>
+                <div class="code-wrap memo">
+                    <div class="memo-wrap">
+                        <p>화면크기 변경은 어렵군.. 뭐 어쩔수 없는거 아니겠나 이렇게 된거</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+</body>
+<script class="script">
+    // 줌이 140인 상태에서 + 클릭 시 
+    $('.size-select > a').on('click', function(){
+        $(this).parent().toggleClass('is-active');
+    })
+    $('.size-select .toggle-target > li > a').on('click',function(){
+        $('.size-select .toggle-target > li > a').removeClass('active')
+        $(this).addClass('active')
+    })
+    // 현재 화면 크기 비율
+    let nowZoom = 100
+    // 화면 크기 축소  
+    function zoomOut(zoomValue){
+        nowZoom = nowZoom - zoomValue;
+        if (nowZoom < 80){nowZoom = 80; alert('더이상 축소할 수 없습니다.')} 
+        zoom();
+    }
+    // 화면 크기 확대
+    function zoomIn(zoomValue){
+        nowZoom = nowZoom + zoomValue;
+        if (nowZoom > 140){nowZoom = 140; alert('더이상 확대할 수 없습니다')}
+        zoom();
+    }
+    // 현재 화면 초기화
+    function zoomReset(){
+        nowZoom = 100;
+        zoom();
+    }
+    function zoom(){
+        document.body.style.zoom = nowZoom  + "%";
+    }   
+</script>
+</html>

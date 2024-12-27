@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<body>
+    <textarea name="content" rows="4" onkeyup="counter(this,100)" style="width: 400px; height: 150px; border: 1px solid blue;"></textarea>
+    <div style="text-align: left;">
+        <span id="count">0 / 100</span>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+    <script class="script">
+        function counter(text, length) {
+            var limit = length;
+            var str = text.value.length;
+            if (str > limit) {
+                document.getElementById("count").innerHTML = "100자 이상 입력!";
+                text.value = text.value.substring(0, limit);
+                text.focus();
+            } else {
+                document.getElementById("count").innerHTML = `${str} / ${limit}`;
+            }
+        }
+    </script>
+</body>
+</html>
