@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>템플릿 파일</title>
+    <title>툴팁</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../guide.css">
     <link rel="stylesheet" href="../plugin/prism.css">
@@ -11,9 +11,60 @@
     <script src="../plugin/prism.js"></script>
 </head>
 <style>
+    .tooltip {
+        position: relative;
+    }
+    .tooltip-content {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        width: var(--width, 192px);
+        text-align: left;
+        padding: 10px;
+        color: #fff;
+        background: #4C85BA;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 12px;
+    }
+    .tooltip .tooltip-txt::after{
+        content:'ⓘ';
+        display:inline-block;
+        width:16px;height:16px;
+        vertical-align:middle;
+        margin: 0 0 10px 0;
+    }
+    .tooltip-content::before{
+        content:'';
+        display:inline-block;
+        width:14px;
+        height:12px;
+        position:absolute;
+        left: 20px;
+        top:-10px;
+        background:url(../images/ico_tooltip_arrow.svg) no-repeat center;
+    } 
+    .tooltip:hover .tooltip-content{
+        display:block
+    } 
 
 </style>
 <body class="guide-inner">
+    <!-- 호버 툴팁 -->
+    <h2 class="guide-section-name">호버 툴팁</h2>
+    <div class="tooltip">
+        <span class="tooltip-txt">상세보기</span>
+        <div class="tooltip-content">
+            <ul>
+                <li>학력보완교육</li>
+                <li>성인 문해교육</li>
+                <li>직업능력 향상교육</li>
+                <li>성인 진로개발역량 향상교육</li>
+                <li>인문교양교육</li>
+            </ul>
+        </div>
+    </div>
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
             <summary>HTML</summary>

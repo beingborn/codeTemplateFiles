@@ -21,8 +21,6 @@ $(function(){
     })
 })
 
-
-
 var markupNum = 0;
 var jsNum = 0;
 $(".file_lst tbody tr").each(function() {
@@ -33,7 +31,6 @@ $(".file_lst tbody tr").each(function() {
     if (text.indexOf('js') >= 0) {
         jsNum++;
     }
-
 });
 
 $('.count-info .markup strong').text(markupNum);
