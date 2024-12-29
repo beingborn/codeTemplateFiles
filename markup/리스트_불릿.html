@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>리스트_불릿</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../guide.css">
     <link rel="stylesheet" href="../plugin/prism.css">
     <script src="../guide.js"></script>
     <script src="../plugin/prism.js"></script>
 </head>
-<body>
-    <textarea name="content" rows="4" onkeyup="counter(this,100)" style="width: 400px; height: 150px; border: 1px solid blue;"></textarea>
-    <div style="text-align: left;">
-        <span id="count">0 / 100</span>
-    </div>
+<style>
+    .bullet-list > li {
+        padding-left: 20px;
+        /* padding-left만큼 *(텍스트) 들여쓰기 실행 */
+        text-indent: -20px;
+        font-size: 16px;
+    }
+    
+    .bullet-list > li::before {
+        content: '';
+        display: inline-block;
+        border-radius: 50%; 
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        background: black; 
+        margin: -4px 12px 0 0;
+    }
+
+    .bullet-list > li + li {
+        margin-top: 8px;
+    }
+</style>
+<body class="guide-inner">
+    <ul class="bullet-list">
+        <li>불릿 리스트는 padding left와 <br> text-indent</li>
+        <li>그리고 before를 이용해서 만들게 됩니다.</li>
+        <li>보통 디자인에서 텍스트로 주기 때문에 svg를 지양하는 게 좋습니다.</li>
+    </ul>
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
             <summary>HTML</summary>
@@ -49,18 +73,7 @@
             </div>
         </details>
     </div>
-    <script class="script">
-        function counter(text, length) {
-            var limit = length;
-            var str = text.value.length;
-            if (str > limit) {
-                document.getElementById("count").innerHTML = "100자 이상 입력!";
-                text.value = text.value.substring(0, limit);
-                text.focus();
-            } else {
-                document.getElementById("count").innerHTML = `${str} / ${limit}`;
-            }
-        }
-    </script>
 </body>
+<script class="script">
+</script>
 </html>

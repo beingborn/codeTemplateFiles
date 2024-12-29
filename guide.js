@@ -1,5 +1,46 @@
 
 $(function(){
+    codeBoxSettings();
+
+    // code 클립보드 복사 기능
+    $('.copy-btn').click(function(){ 
+        if ($(this).text() == 'copied' ){
+            $(this).text('copy') 
+        } else {
+            var copyText = $(this).siblings('.code').text()
+            var tempEl = document.createElement("textarea")
+            document.body.appendChild(tempEl);
+            tempEl.value = copyText;
+            tempEl.select();
+            tempEl.setSelectionRange(0,9999);
+            document.execCommand("copy");
+            tempEl.setSelectionRange(0,0);
+            document.body.removeChild(tempEl)
+            $(this).text('copied!')
+        }
+    })
+})
+
+
+
+var markupNum = 0;
+var jsNum = 0;
+$(".file_lst tbody tr").each(function() {
+    var text = $(this).find('td').eq(1).text();
+    if (text.indexOf('markup') >= 0) {
+        markupNum++;
+    }
+    if (text.indexOf('js') >= 0) {
+        jsNum++;
+    }
+
+});
+
+$('.count-info .markup strong').text(markupNum);
+$('.count-info .js strong').text(jsNum);
+
+
+function codeBoxSettings(){
     if( $(".code-box-group").length > 0){
         var htmlContent = $("body")
         .clone()
@@ -7,7 +48,7 @@ $(function(){
         .remove()
         .end()
         .prop("outerHTML")
-
+    
         htmlContent = htmlContent.replace(/<body[^>]*>/g, '').replace(/<\/body>/g, '');
         $(".html-code-box .html-content").text(htmlContent).addClass("language-html")
     
@@ -29,22 +70,10 @@ $(function(){
         }
         Prism.highlightAll()
     }
-})
+}
 
 
-var markupNum = 0;
-var jsNum = 0;
-$(".file_lst tbody tr").each(function() {
-    var text = $(this).find('td').eq(1).text();
-    if (text.indexOf('markup') >= 0) {
-        markupNum++;
-    }
-    if (text.indexOf('js') >= 0) {
-        jsNum++;
-    }
-
-});
 
 
-$('.count-info .markup strong').text(markupNum);
-$('.count-info .js strong').text(jsNum);
+
+

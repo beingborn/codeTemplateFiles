@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>파일첨부 커스텀</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../guide.css">
     <link rel="stylesheet" href="../plugin/prism.css">
     <script src="../guide.js"></script>
     <script src="../plugin/prism.js"></script>
 </head>
-<body>
-    <textarea name="content" rows="4" onkeyup="counter(this,100)" style="width: 400px; height: 150px; border: 1px solid blue;"></textarea>
-    <div style="text-align: left;">
-        <span id="count">0 / 100</span>
+<style>
+    .custom-file input.fixed-width {
+        width: 400px;
+        height: 40px;
+    }
+    .custom-file label.btns {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px; 
+        padding: 0 12px;
+        background: black; 
+        color: white;
+    }
+    .custom-file input[type="file"] {
+        position: absolute;
+        width: 0;
+        height: 0;
+        padding: 0;
+        border: 0;
+    } 
+</style>
+<body class="guide-inner">
+    <div class="custom-file">
+        <input class="custom-file-name fixed-width">
+        <label for="custom-trigger" class="btns">파일첨부</label>
+        <input type="file" id="custom-trigger" class="file">
     </div>
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
@@ -49,18 +72,16 @@
             </div>
         </details>
     </div>
-    <script class="script">
-        function counter(text, length) {
-            var limit = length;
-            var str = text.value.length;
-            if (str > limit) {
-                document.getElementById("count").innerHTML = "100자 이상 입력!";
-                text.value = text.value.substring(0, limit);
-                text.focus();
-            } else {
-                document.getElementById("count").innerHTML = `${str} / ${limit}`;
-            }
-        }
-    </script>
 </body>
+<script class="script">
+    // 파일첨부
+    $('.file').on('change', function() {
+        var fileName = $(this).val().split(/\\|\//).pop();
+        if (fileName) {
+            $(this).siblings('.custom-file-name').val(fileName);
+        } else {
+            $(this).siblings('.custom-file-name').val(''); // 비어있을 경우 초기화
+        }
+    });
+</script>
 </html>
