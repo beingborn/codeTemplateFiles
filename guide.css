@@ -11,7 +11,12 @@ button { border: 0; background: none; height: auto; cursor: pointer}
 body {position: relative;}
 
 /* 가이드 wrapper 공통 */
-.guide-inner {max-width: 1440px; margin: 0px auto; padding-top: 20px;}
+.guide-inner {max-width: 1960px; padding: 0 20px; margin: 0px auto; padding-top: 20px;}
+
+@media (max-width: 1440px) {
+    .guide-inner {max-width: 1600px;}
+}
+
 
 /* index 상단 제목 */
 header.main-info .main-info-tit {font-size: 40px;}
@@ -80,7 +85,7 @@ table.file_lst .date { font-family: Tahoma; color: #999}
 .code-box-group .code-box {padding: 16px;}
 .code-box-group .code-box + .code-box {border-top: 1px solid #535353 ;}
 .code-box-group .code-box summary {font-size: 15px; font-weight: 700; color: #fff; width: 100%; cursor: pointer;}
-.code-box-group .memo-wrap {padding: 12px; margin-top: 12px; border: 1px solid #d8d8d8; background:  #2f302ace;;}
-.code-box-group .memo-wrap > p {font-size: 12px; color: #fff;}
+.code-box-group .memo-wrap {padding: 12px; margin-top: 12px; border: 1px solid #d8d8d8; background:  #2f302ace; line-height: 1.8;}
+.code-box-group .memo-wrap > p {font-size: 14px; color: #fff;}
 .code-box-group .code-wrap {position: relative;}
 .code-box-group .copy-btn {border: 1px solid #fff; padding: 6px 8px; color: #fff; position: absolute; right: 12px; top: 12px; border-radius: 4px;}

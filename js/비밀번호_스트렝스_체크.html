@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    .search-form {
+        padding: 10px; 
+        border: 1px solid #d8d8d8;
+        border-radius: 5px;
+        max-width: 400px;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .input-group input {
+        border-radius: 6px;
+        border: 1px solid #d8d8d8;
+        height: 32px;
+    }
+    #weakness {font-weight: 700;}
+    #weakness.weak {color: lightgreen;}
+    #weakness.middle {color: orange;}
+    #weakness.strong {color: red;}
+</style>
+<body class="guide-inner">
+    <div class="search-form">
+        <div class="input-group">
+            <label for="password">비밀번호 설정</label>
+            <div>보안강도 : <span id="weakness"></span></div>
+            <input type="password" id="password">
+        </div>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p><strong>className</strong>을 이용하면</p>
+                    <p>클래스 이름을 변경할 수 있다.</p>
+                    <p>클래스를 추가 삭제 하는 게 아니라 하나인 경우</p>
+                    <p>이름을 변경하는 형식으로 진행하면 좋을 것 같다.</p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    const passwordInput = document.querySelector('#password')
+    const weakness = document.querySelector('#weakness')
+
+    passwordInput.addEventListener('keyup', function(e){
+        var passwordLength = e.currentTarget.value.length; 
+        if (passwordLength == 0){
+            weakness.innerText = ""   
+        } else if (passwordLength < 8 && passwordLength != 0){
+            weakness.innerText = "weak"
+            weakness.className = 'weak'
+        } else if (passwordLength < 13) {
+            weakness.innerText = "middle"
+            weakness.className = 'middle'
+        } else {
+            weakness.innerText = "strong"
+            weakness.className = 'strong'
+        }
+    })
+</script>
+</html>
