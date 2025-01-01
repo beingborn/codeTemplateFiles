@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    /* init */
+    fieldset {
+        border: 0;
+    }
+    legend {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        font-size: 0;
+        left: -999px;
+        top: -999px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select {
+        height: 40px;
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+    }
+    .search-box {margin-top: 300px;}
+    .search-box {
+        padding: 20px;
+        background: #eee;
+        border: 1px solid #d8d8d8;
+        border-radius: 12px;
+    }
+    .search-list {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+    .search-box dl {
+        display: flex;
+        align-items: center;
+        width: 50%;
+    }
+    .search-box dl.period {
+        width: 100%;
+    }
+    .search-box dt {
+        width: 120px;
+        padding-left: 20px;
+        font-weight: 700;
+    }
+    .search-box dd {
+        flex: 1;
+    }
+    .search-box :where(input, select){
+        width: 100%;
+    }
+</style>
+<body class="guide-inner">
+    <div class="search-box">
+        <form>
+            <fieldset>
+                <legend>예시 검색 영역</legend>
+                <div class="search-list">
+                    <dl>
+                        <dt>
+                            <label>예시라벨1</label>
+                        </dt>
+                        <dd>
+                            <input type="text">
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <label>예시라벨1</label>
+                        </dt>
+                        <dd>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <label>예시라벨1</label>
+                        </dt>
+                        <dd>
+                            <input type="text">
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <label>예시라벨1</label>
+                        </dt>
+                        <dd>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    <dl class="period">
+                        <dt>
+                            <label>예시라벨3</label>
+                        </dt>
+                        <dd>
+                            <input type="text">
+                        </dd>
+                    </dl>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+</script>
+</html>
