@@ -1,0 +1,138 @@
+/****************************************************
+	파일명	: reset.css
+	최초작성자	: 이민혁
+	최초작성일	: 2024-09-28
+	-------------------------------------------------
+	Dec. 기본 스타일 초기화 관련 스타일
+	-------------------------------------------------
+	최종수정자	: 이민혁
+	최종수정일	: 2024-09-28
+	수정내용	: 최초작성
+	속성순서: 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+*****************************************************/
+
+/* WEB FONT */
+@font-face {
+font-weight: 800;
+font-family: 'Pretendard GOV';
+font-display: swap;
+src: local('Pretendard GOV ExtraBold'), url(../font/woff2/PretendardGOV-ExtraBold.woff2) format('woff2'), url(../font/woff/PretendardGOV-ExtraBold.woff) format('woff');
+}
+@font-face {
+font-weight: 700;
+font-family: 'Pretendard GOV';
+font-display: swap;
+src: local('Pretendard GOV Bold'), url(../font/woff2/PretendardGOV-Bold.woff2) format('woff2'), url(../font/woff/PretendardGOV-Bold.woff) format('woff');
+}
+@font-face {
+font-weight: 500;
+font-family: 'Pretendard GOV';
+font-display: swap;
+src: local('Pretendard GOV Medium'), url(../font/woff2/PretendardGOV-Medium.woff2) format('woff2'), url(../font/woff/PretendardGOV-Medium.woff) format('woff');
+}
+@font-face {
+font-weight: 400;
+font-family: 'Pretendard GOV';
+font-display: swap;
+src: local('Pretendard GOV Regular'), url(../font/woff2/PretendardGOV-Regular.woff2) format('woff2'), url(../font/woff/PretendardGOV-Regular.woff) format('woff');
+}
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	color: inherit;
+    font-size: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* 핵심 body의 기본값을 설정합니다. */
+body {
+	color: #1d1d1d;
+	font-size: 1.7rem;
+	line-height: 1.5;
+	font-family: "Pretendard GOV Variable", "Pretendard GOV",
+	-apple-system,
+	BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+	"Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+	"Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    min-height: 100vh;
+}
+
+select, textarea {
+	font-family: "Pretendard GOV Variable", "Pretendard GOV",
+	-apple-system,
+	BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+	"Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+	"Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+fieldset, img {
+	border: 0;
+	max-width:100%;
+}
+
+select,input,img, button {vertical-align:middle;}
+
+address {
+	font-style: normal;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+em {font-style: normal;}
+
+summary::-webkit-details-marker {display: none;} 
+summary {list-style-type: none;}
+
+
+button {cursor: pointer;}
+textarea {border:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;word-break:keep-all;word-wrap:break-word; width: 100%;}
+button, input { padding: 0; border: 0; background: inherit; font-family: inherit; -webkit-border-radius:0;border-radius:0;}
+
