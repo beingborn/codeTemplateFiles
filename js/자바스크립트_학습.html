@@ -52,15 +52,47 @@
  * 원시값 : 문자, 숫자, 불린, 심볼, null, undefined
  * 객체 : 프로퍼티(속성)에 다양한 값 저장 가능
  */
-let john = {
-    name : "john",
-    sayHi : function() {
-        alert(this.name + "반가워~")
-    }
+
+let arr = ["d","b","c"]
+// 삭제 후 추가
+
+// arr.forEach(function(item,index,array){
+//     alert(`the ${item} is at index ${index} in ${array}`)
+// })
+
+function sum(a,b){
+    alert( a + b )
 }
 
-let str = "Hello";
-alert(str.toUpperCase())
+var isArr = arr.includes("a")
+alert(isArr)
+
+if (isArr) {
+    return; 
+} else {
+    return sum(3,4);
+}
+
+/** 
+ *   
+ * 
+ * 
+*/
+
+function makeCounter(){
+    let count = 0;
+    function counter() {
+        return count++;
+    }
+    counter.set((value)=>{
+        count = value;
+    })
+    counter.decrease = () => count--
+    return counter;
+}
+
+
+
 
 </script>
 </html>

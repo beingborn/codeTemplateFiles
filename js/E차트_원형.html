@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+    <!-- e-chart inject -->
+    <script src="../plugin/echart.js/echarts.min.js"></script>
+</head>
+<style>
+    .echart-box {
+        border: 1px solid #d8d8d8;
+        border-radius: 20px;
+        background: #fff;
+        padding: 20px;
+        width: 800px;
+    }
+    .echart {
+        height: 400px;
+    }
+</style>
+<body class="guide-inner">
+    <div class="echart-box">
+        <div class="echart" id="monthCondition"></div>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p>
+                        E차트 구멍 radius 값이 주로 사용되는 것 같고, 
+                        더미 데이터에 itemStyle까지는 개발쪽에 넘겨줄 수 있을 것 같다.
+                    </p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    /* 월별 통계 */
+    let monthlyChart = echarts.init(document.getElementById('monthCondition'));
+    let monthlyOption = { 
+        tooltip: { 
+            trigger: 'item',
+            formatter : ' {b}: {c} ({d}%)' // 값 보여주는 텍스트 커스텀 
+        },
+        legend: { 
+            orient: 'horizontal',
+            right: 0, itemGap : 20
+        },
+        series: [
+            { 
+                type: 'pie',
+                radius: ['25%','60%'], // 원 크기 줄이기 + 도넛 차트 만들기
+                center: ['50%','50%'], // 원 위치 변경
+                data: [
+                    { 
+                        value: 1048,
+                        name: '현역',
+                        itemStyle: {color: '#37A981'} 
+                    },
+                    { 
+                        value: 735,
+                        name: '군무원',
+                        itemStyle : {color: '#00B1B7'}
+                    }, 
+                    {
+                        value: 580,
+                        name: '공무원',
+                        itemStyle: {color: '#438EC3'}
+                    },
+                ], 
+                emphasis: {
+                    itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)' }
+                }, 
+                // 라벨 스타일 지정
+                label : {
+                    formatter : '{b|{b}}{c|{c}}{per|{d}%}',
+                    backgroundColor: '#f5f5f5',
+                    borderColor : '#d8d8d8',
+                    borderWidth: 1,
+                    borderRadius:8, 
+                    padding: [4, 8],
+                    fontSize: 14,
+                    rich : {
+                        b : {
+                            lineHeight : 20,
+                            align : 'center',
+                            color: '#444444'
+                        },
+                        c : {
+                            fontWeight: "bold",
+                            lineHeight: 20,
+                            padding : [0,8,0,4],
+                            color: '#000000'
+                        },
+                        per: {
+                            color: '#fff',
+                            backgroundColor: '#3BA79A',
+                            fontSize: 15,
+                            borderRadius: 4,
+                            padding: [0, 4],
+                            lineHeight: 30,
+                            height: 30,
+                            fontWeight: 'bold'
+                        }
+                    }
+                }
+            }
+        ] 
+    };
+    monthlyChart.setOption(monthlyOption);
+</script>
+</html>
