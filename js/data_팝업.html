@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    .example-inner {height: 2000px;}
+    .pop-trigger {
+        background: black;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 12px;
+    }
+    .pop-hide-trigger {
+        padding: 8px 12px;
+        background: orange;
+        color: white;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        transition: all 0.2s;
+        z-index: 1000;
+    }
+    .modal-cont {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 840px;
+        background: #fff;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+        padding: 60px;
+    }
+</style>
+<body class="guide-inner example-inner">
+    <button class="pop-trigger" onclick="$('[data-pop=popEx]').show();">팝업보기 버튼</button>
+    <div class="modal" data-pop="popEx">
+        <div class="modal-cont">
+            <div class="modal-head">
+                <h2 class="modal-tit">모달 제목</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-desc">
+                    <p>모달에 대한 설명</p>
+                </div>
+            </div>
+            <div class="modal-foot">
+                <button class="pop-hide-trigger">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    // $('.modal button').each(function(){
+    //     var onClickValue = $(this).attr('onclick')
+    //     if(onClickValue.includes('data-pop') ){
+    //         $(this).addClass('pop-hide')
+    //     }
+    // })
+    $('.pop-trigger').click(()=>{
+        $('body').css('overflow', 'hidden')
+    })
+    $('.pop-hide').click(function(){
+        $('body').css('overflow', '')
+    })
+    // 가까운 모달 숨기기
+    $('.pop-hide-trigger').click(function(){
+        $(this).closest('.modal').hide()
+    })
+</script>
+</html>
