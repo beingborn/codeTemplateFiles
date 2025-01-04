@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    * {
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+    html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1f2d3d;
+    }
+
+    body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #1f2d3d;
+    }
+
+    body::after {
+    content: "";
+    display: block;
+    margin-top: 50px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    }
+    .dropdown {
+    position: relative;
+    }
+    .dropdown-button {
+    width: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    }
+    .dropdown-button:hover {
+    opacity: 0.75;
+    }
+    .dropdown-button:focus,
+    .dropdown-button:active {
+    box-shadow: none;
+    outline: none;
+    }
+
+    .dropdown-button img {
+    width: 100%;
+    height: auto;
+    }
+
+    .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: 8px 0;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15);
+    transition: transform 200ms ease-in;
+    }
+
+    .dropdown-menu.active {
+    display: block;
+    }
+
+    .dropdown-menu:hover {
+    transform: translateY(2px);
+    }
+
+    .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 9px solid #fff;
+    border-right: 8px solid transparent;
+    }
+
+    .dropdown-menu h3,
+    .dropdown-menu a {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    text-decoration: none;
+    }
+
+    .dropdown-menu h3 {
+    padding: 8px 16px 16px;
+    border-bottom: 1px solid #e1e4e8;
+    font-weight: 500;
+    }
+
+    .dropdown-menu h3 strong {
+    font-weight: 700;
+    }
+
+    .dropdown-menu h3 strong:hover {
+    opacity: 0.5;
+    }
+
+    .dropdown-menu ul {
+    list-style-type: none;
+    padding: 8px 0;
+    }
+
+    .dropdown-menu ul:last-child {
+    border-top: 1px solid #e1e4e8;
+    }
+
+    .dropdown-menu ul a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    text-decoration: none;
+    }
+
+    .dropdown-menu ul a:hover {
+    color: #fff;
+    background-color: #0366d6;
+    }
+
+</style>
+<body class="guide-inner">
+    <div class="dropdown">
+        <button type="button" aria-label="Open user menu" class="dropdown-button">
+            <img src="https://user-images.githubusercontent.com/19285811/69063907-43da4800-0a58-11ea-8efb-4b57dca4e3fe.png" alt="rohjs">
+        </button>
+        <div class="dropdown-menu">
+            <h3>
+                <a href="#">
+                    Signed in as <strong>rohjs</strong>
+                </a>
+            </h3>
+            <!-- 순서가 필요하지 않은 리스트 ul -->
+            <ul>
+                <li><a href="#">Your profile</a></li>
+                <li><a href="#">Your repositories</a></li>
+                <li><a href="#">Your projects</a></li>
+                <li><a href="#">Your stars</a></li>
+                <li><a href="#">Your gists</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Feature preview</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    var dropdownMenu = document.querySelector(".dropdown-menu")
+    var dropdownButton = document.querySelector(".dropdown-button")
+
+    dropdownButton.addEventListener("click", function(event) {
+    if (this.active) { // active true시 제거
+        dropdownMenu.classList.remove("active")
+    } else {
+        dropdownMenu.classList.add("active")
+    }
+
+    this.active = !this.active // 상태 전환
+    })
+
+    dropdownButton.active = false // 초기값 설정
+</script>
+</html>
