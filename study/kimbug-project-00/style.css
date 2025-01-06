@@ -1,0 +1,38 @@
+/** 
+    김버그의 경우 이정도의 reset만 하고 그때 그때 추가해주는 편
+*/
+
+/* Reset */
+button,
+input,
+textarea, 
+select {
+    font-style: inherit;
+    font-size: 16px;
+}
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+select:focus,
+select:active {
+    outline: 0;
+    box-shadow: none;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+/* custom grid system - fix container */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 960px!important;
+    }
+}
