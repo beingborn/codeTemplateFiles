@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    .sm-list {border-top: 1px solid #d8d8d8; max-width: 360px; font-size: 17px;}
+    .sm-list-tit::after {content: ':'; margin: 0 4px ; }
+    .sm-list-tit {font-weight: 700;}
+    .sm-list > li:first-child {margin-top: 4px;}
+    .sm-list > li > a {display: flex; flex-direction: column; gap: 4px; padding: 20px 12px; border-bottom: 1px dashed #d8d8d8;}
+</style>
+<body class="guide-inner">
+    <ul class="sm-list">
+        <li>
+            <a href="#">
+                <p>
+                    <strong class="sm-list-tit">데이터 제목</strong>
+                    <span class="sm-list-desc">데이터</span>
+                </p>
+                <p>
+                    <strong class="sm-list-tit">승인일자</strong>
+                    <span class="sm-list-desc">2023-09-08</span>
+                </p>
+                <p>
+                    <strong class="sm-list-tit">승인번호</strong>
+                    <span class="sm-list-desc">202002020</span>
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <p>
+                    <strong class="sm-list-tit">데이터 제목</strong>
+                    <span class="sm-list-desc">데이터</span>
+                </p>
+                <p>
+                    <strong class="sm-list-tit">승인일자</strong>
+                    <span class="sm-list-desc">2023-09-08</span>
+                </p>
+                <p>
+                    <strong class="sm-list-tit">승인번호</strong>
+                    <span class="sm-list-desc">202002020</span>
+                </p>
+            </a>
+        </li>
+    </ul>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p>개발에서 어떻게 뿌릴지 잘 생각해보아야 한다.</p>
+                    <p>ul은 리스트의 집합체이고 li가 해당 요소들의 리스트이기 때문에</p>
+                    <p>ul이 반복적으로 뿌려지는 것이 아니라 다음과 같은 상황에선 li가 뿌려져야 한다.</p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+</script>
+</html>

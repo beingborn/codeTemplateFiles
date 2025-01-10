@@ -12,22 +12,23 @@
     <script src="../plugin/prism.js"></script>
 </head>
 <style>
-    .win-size-wrap {
-        padding: 20px;
-        border: 1px solid #d8d8d8;
-        border-radius: 12px;
-        max-width: 360px;
-        font-size: 18px;
-    }
-
-    #win-size {font-weight: 700;}
-
+    .sr-only {overflow: hidden; text-indent: -9999em;}
 </style>
 <body class="guide-inner">
-    <div class="win-size-wrap">
-        현재 윈도우 :
-        <span id="win-size"></span>
-    </div>
+    <ul class="list">
+        <li>
+            <button>버튼1</button>
+        </li>
+        <li>
+            <button>버튼2</button>
+        </li>
+        <li>
+            <button>버튼3</button>
+        </li>
+        <li>
+            <button>버튼4</button>
+        </li>
+    </ul>
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
             <summary>HTML</summary>
@@ -64,21 +65,29 @@
     </div>
 </body>
 <script class="script">
-    let winSize; 
 
-    function winSetSize(){
-        const breakPoint = 1024;
 
-        if(window.innerWidth < 1024){
-            winSize = "mo"
-        } else {
-            winSize = "pc"
+    function listSettings(){
+        const listArea = document.querySelectorAll('.list li button')
+        // 반복문 돌면 각 요소에 해당 요소 집어넣기
+
+        function tabAccSetting(item){
+            // 접근성 세팅
+            const listBtnText = document.createTextNode('선택됨') // 동적으로 생성할 HTML에 넣을 TEXT 자식 노드 생성
+            const listBtnTag = document.createElement('i') // 생성 요소를 동적으로 넣을 HTML 요소 생성
+            listBtnTag.setAttribute('class', 'sr-only created') // 생성 요소에 클래스 지정
+            listBtnTag.appendChild(listBtnText) // 생성 요소에 텍스트 삽입
+            item.appendChild(listBtnTag)
         }
 
-        console.log(winSize)
-
-        document.getElementById('win-size').innerHTML = winSize;
+        // 아이템이 밑에서만 유효하니까.
+        // 반복문을 돌면서 해당 요소 내부에 item 변수를 각 요소로 참조 시켜줌
+        listArea.forEach(item => {
+            tabAccSetting(item);
+        })
     }
-    winSetSize();
+
+    listSettings()
+
 </script>
 </html>
