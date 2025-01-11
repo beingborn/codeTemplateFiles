@@ -12,21 +12,18 @@
     <script src="../plugin/prism.js"></script>
 </head>
 <style>
-    .win-size-wrap {
-        padding: 20px;
-        border: 1px solid #d8d8d8;
-        border-radius: 12px;
-        max-width: 360px;
-        font-size: 18px;
-    }
-
-    #win-size {font-weight: 700;}
-
+    .sr-only {overflow: hidden; text-indent: -9999em;}
+    .tab > ul {display: flex;}
 </style>
 <body class="guide-inner">
-    <div class="win-size-wrap">
-        현재 윈도우 :
-        <span id="win-size"></span>
+    <div class="tab-area layer">
+        <div class="tab">
+            <ul>
+                <li class="active" aria-controls="panel-1" aria-selected="true">탭1</li>
+                <li aria-controls="panel-2" aria-selected="false">탭2</li>
+                <li aria-controls="panel-3" aria-selected="false">탭3</li>
+            </ul>
+        </div>
     </div>
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
@@ -64,19 +61,8 @@
     </div>
 </body>
 <script class="script">
-    let winSize; 
 
-    function winSetSize(){
-        const breakPoint = 1024;
 
-        if(window.innerWidth < 1024){
-            winSize = "mo"
-        } else {
-            winSize = "pc"
-        }
-        
-        document.getElementById('win-size').innerHTML = winSize;
-    }
-    winSetSize();
+    
 </script>
 </html>
