@@ -13,16 +13,57 @@
 </head>
 <style>
     .sr-only {overflow: hidden; text-indent: -9999em;}
-    .tab > ul {display: flex;}
+    .tab ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    }
+    .tab ul li {
+        margin-right: 10px;
+    }
+    .tab ul li.active button {
+        font-weight: bold;
+        color: blue;
+    }
+    .tab-conts {
+        display: none;
+    }
+    .tab-conts.active {
+        display: block;
+    }
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
 </style>
 <body class="guide-inner">
     <div class="tab-area layer">
         <div class="tab">
             <ul>
-                <li class="active" aria-controls="panel-1" aria-selected="true">탭1</li>
-                <li aria-controls="panel-2" aria-selected="false">탭2</li>
-                <li aria-controls="panel-3" aria-selected="false">탭3</li>
+                <li class="active" aria-controls="panel1" aria-selected="true">
+                    <button>탭1</button>
+                </li>
+                <li aria-controls="panel2" aria-selected="false">
+                   <button>탭2</button> 
+                </li>
+                <li aria-controls="panel3" aria-selected="false">
+                    <button>탭3</button>
+                </li>
             </ul>
+        </div>
+        <!-- 탭 콘텐츠 영역 -->
+        <div class="tab-conts active" id="panel1">
+            <p>탭 1의 내용입니다.</p>
+        </div>
+        <div class="tab-conts" id="panel2">
+            <p>탭 2의 내용입니다.</p>
+        </div>
+        <div class="tab-conts" id="panel3">
+            <p>탭 3의 내용입니다.</p>
         </div>
     </div>
     <div class="code-box-group">
@@ -61,8 +102,46 @@
     </div>
 </body>
 <script class="script">
+    function layerTab(){
+        const layerTabArea = document.querySelectorAll('.tab-area.layer')
+        const tabAccText = document.createTextNode('선택됌')
+        const tabAccTag = document.createElement('i');
+
+        tabAccTag.setAttribute('class', 'sr-only created')
+        tabAccTag.appendChild(tabAccText)
+
+        layerTabArea.forEach(e => {
+            const layerTabEle = e.querySelectorAll('.tab > ul > li') // tab-area layer에서 tab > ul > li 들을 지정
+            const tabPanel = e.querySelectorAll('.tab-conts')
+
+            function tab(){
+                layerTabEle.forEach(ele=> {
+                    const control = ele.getAttribute('aria-controls'); // 해당 aria-controls들의 속성을 가져와 그 값을 각각 가진 아이디의 탭 판넬을 추가
+                    const selectedTabPanel = document.getElementById(control); // li들에 aria-controls 속성 값을 가져와서 해당 값을 가진 요소를 지정
+
+                    if (ele.classList.contains('active')){
+                        ele.querySelector('button').append(tabAccTag)
+                    }
+
+                    // 여기서 this값이 없이 자신을 인식 할 수 있는 이유는 자바스크립트의 클로저 때문이다.
+                    // 이는 자신이 생성될 때 ele의 값을 '기억한다' 화살표 함수가 아니었다면, this를 사용해도 무방
+                    ele.addEventListener('click', ()=>{
+                        // layerTabInitial();
+
+                        console.log(ele)
+                    })
+
+                    
+                        
+                })
 
 
+            }
+            tab();      
+        })
+    }
+
+    layerTab();
     
 </script>
 </html>
