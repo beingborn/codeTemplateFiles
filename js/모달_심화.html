@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+
+</style>
+<body class="guide-inner">
+
+    <button class="open-modal" data-target="modal1">1번 모달 열기</button>
+    <div id="modal1">
+        <button class="close-modal">닫기</button>
+    </div>
+
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    /** 
+     *  모달 세팅 시 고려사항
+     *  tabIndex -1 세팅 - 배경 콘텐츠와의 상호작용 방지, 모달 내부 탭이동 제어
+     *  모달이 여러 개 열린 경우 마지막 열린 모달 z-index를 높게
+     */
+
+    /* modal */
+    const $modalTrigger = document.querySelectorAll('.open-modal');
+    const $modalCloseTrigger = document.querySelectorAll('.close-modal');
+    const $body = document.querySelector('body');
+
+    const modal = {
+        init : () => {
+            modal.open();
+            modal.close();
+        },
+
+        open : () => {
+            // 클릭 이벤트 및 그 내부 내용 연결
+            $modalTrigger.forEach(e =>{
+                e.addEventListener('click', ele =>{
+                    const id = e.getAttribute('data-target')
+                    console.log(id)
+                })
+            })
+        },
+        close : () => {
+            $modalCloseTrigger.forEach(e=>{
+                e.addEventListener('click', ele =>{
+                    const id = e.getAttribute('data-target')
+                })
+            })
+        }
+    }
+    
+    // 함수 이벤트 초기화 = 등록
+    modal.init();  
+    
+</script>
+</html>
