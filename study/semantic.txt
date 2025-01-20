@@ -16,4 +16,10 @@ p 태그 문단
 // section, article, nav, aside
 // sectioning 태그에는 무조건적으로 heading tag를 작성해야한다.
 
+// 컴포넌트 설계 꿀팁
+// 탭과 탭 판넬을 연결해주는 게 좋다 aria-role
+// 깃허브 ISSUE 라는곳에 기억해야 할 점을 많이 넣는다.
+
+
+
 

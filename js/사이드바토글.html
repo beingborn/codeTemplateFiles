@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    .sidebar {width: 400px; background: #eee; height: 100%;}
+    .sidebar ul > li {line-height: 44px; font-weight: 700; padding: 8px;}
+    .sidebar ul > li > a {font-weight: 700;}
+    button {background: aliceblue; padding: 8px 12px; border-radius: 8px; margin-bottom: 12px;}
+    .overlay {width: 400px; height: 400px; background: rgba(0,0,0,0.5); display: none;}
+    .overlay.is-active {display: block;}
+
+</style>
+<body class="guide-inner">
+    <div>
+        <button>사이드바 열기</button>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">사이드1</a></li>
+                <li><a href="#">사이드2</a></li>
+                <li><a href="#">사이드3</a></li>
+                <li><a href="#">사이드4</a></li>
+            </ul>
+        </aside>
+        <div class="overlay"></div>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    // addEventLister로 함수를 등록해줌으로써 가독성 증가
+    const menuTrigger = document.querySelector('button')
+    const menusideBar = document.querySelector('.sidebar')
+    const menusideBarOverlay = document.querySelector('.overlay')
+
+    function menusideOpen(){
+        menusideBar.classList.add('is-active')
+        menusideBarOverlay.classList.add('is-active')
+    }
+
+    function menusideBgOff(){
+        menusideBar.classList.remove('is-active')
+        menusideBarOverlay.classList.remove('is-active')
+    }
+
+    menuTrigger.addEventListener('click', menusideOpen)
+    menusideBarOverlay.addEventListener('click', menusideBgOff)
+
+
+</script>
+</html>
