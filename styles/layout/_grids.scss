@@ -1,0 +1,11 @@
+$lg-max-container: 1960px;
+$note-lg-max-container: 1440px;
+
+.guide-inner {
+  padding: 20px 20px 0 20px;
+  margin: 0px auto;
+
+  @media screen and (max-width: 1440px) {
+    max-width: 1600px;
+  }
+}

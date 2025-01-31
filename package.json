@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "install": "^0.13.0",
+    "sass": "^1.83.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node-sass": "node-sass",
+    "sass": "node-sass -wr --source-map true styles/main.scss style.css"
+  },
+  "devDependencies": {
+    "sass-lint": "^1.13.1"
+  }
+}
