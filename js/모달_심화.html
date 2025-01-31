@@ -12,14 +12,64 @@
     <script src="../plugin/prism.js"></script>
 </head>
 <style>
+    /* 스크롤 막기 */
+    .scroll-no {overflow: hidden;}
+    .modal {display: none;}
+    .btn {padding: 8px 12px; border-radius: 12px; background: blue; color: #fff;}
+
+    .modal.shown {display: block;}
+    .modal .modal-dialog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--width, 840px);
+        max-height: calc(100vh - 40px);
+        position: relative;
+        z-index: 1020;
+        margin: 200px auto;
+    }
+    .modal .modal-content {
+        background: #f5f5f5;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        padding: 40px;
+    }
+
+    .modal .modal-header {height: 48px;}
+    .modal .modal-header > h3 {font-weight: 700; font-size: 32px;}
+    .modal .modal-body .modal-body-conts {display: flex; flex-direction: column; gap: 20px;}
+    .modal .modal-body .modal-body-tit {font-size: 20px; margin-bottom: 20px;}
+    .modal .close-modal {display: flex; justify-content: center; background: blue; color: #fff; padding: 12px;}
+    .modal .modal-btn-group {display: flex; justify-content: end;}
+    .modal-back {display: none; width: 100%; height: 100%; background: rgba(0,0,0,0.5); position: fixed; left: 0; top: 0; z-index: 1019;}
+    .modal-back.in {display: block;}
 
 </style>
 <body class="guide-inner">
-
-    <button class="open-modal" data-target="modal1">1번 모달 열기</button>
-    <div id="modal1">
-        <button class="close-modal">닫기</button>
-    </div>
+    <button class="btn open-modal" data-target="modal1">1번 모달 열기</button>
+    <section id="modal1" class="modal" aria-hidden="true" role="dialog"> 
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>팝업내용</h3>
+                </div>
+                <div class="modal-body">
+                    <h3 class="modal-body-tit">팝업 서브 내용</h3>
+                    <div class="modal-body-conts">
+                        <p>이용약관동의1</p>
+                        <p>이용약관동의2</p>
+                        <p>이용약관동의3</p>
+                    </div>
+                </div>
+                <div class="modal-btn-group">
+                    <button class="close-modal">닫기</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-back"></div>
+    </section>
 
     <div class="code-box-group">
         <details class="html-code-box language-html code-box">
@@ -63,11 +113,22 @@
      *  모달이 여러 개 열린 경우 마지막 열린 모달 z-index를 높게
      */
 
+    /**
+     *  모달 > 모달 버튼, 닫기 버튼, body 참조 
+     *  1. 각 함수 이벤트 설정
+     *  2. 함수 설정 open 모달 버튼 전체에 eventlister 클릭 시 active 클래스 넣고
+     *  버튼 tabIndex -1 설정, id값으로 객체 메서드 오픈에 전달 (해당 데이터 target값 가지고 와서)
+     *  
+     *  3. 모달 오픈 함수 (매개변수 = id값) id값을 가지고 와서 해당 id값에 shown 클래스를 붙힘
+     *  4. modal backGround 에도 active 값을 넣어주고, tabINdex는 0으로 설정 
+     *  5. 해당 함수가 실행된 후 해당 모달 컨텐츠에 focus해줌
+     *  6. body에 스크롤을 제어하는 함수를 달아주고 , aria-hidden을 false로 해줌 (접근성을 읽겠다.)
+     */
+
     /* modal */
     const $modalTrigger = document.querySelectorAll('.open-modal');
     const $modalCloseTrigger = document.querySelectorAll('.close-modal');
     const $body = document.querySelector('body');
-
     const modal = {
         init : () => {
             modal.open();
@@ -78,18 +139,67 @@
             // 클릭 이벤트 및 그 내부 내용 연결
             $modalTrigger.forEach(e =>{
                 e.addEventListener('click', ele =>{
-                    const id = e.getAttribute('data-target')
-                    console.log(id)
+                    const id = e.getAttribute('data-target');
+                    e.classList.add('modal-opened');
+                    e.setAttribute('tabindex', '-1')
+                    modal.modalOpen(id);
+                    ele.preventDefault();
                 })
             })
+        },
+        modalOpen : (id) => {
+            const $idVal = document.getElementById(id);
+            const $dialog = $idVal.querySelector('.modal-content');
+            const $modalBack = $idVal.querySelector('.modal-back');
+            const $modalOpened = document.querySelectorAll('.modal.in')
+            const $modalOpenedLen = $modalOpened.length + 1;
+            $body.classList.add('scroll-no');
+            $idVal.setAttribute('aria-hidden', 'false');
+            $modalBack.classList.add('in');
+            $idVal.classList.add('shown')
+
+            $dialog.setAttribute('tabindex', '0');
+
+            if($modalOpenedLen > 1){
+                const openedLen = $modalOpenedLen;
+                const zIndexNew = 1010 + openedLen;
+                $idVal.setAttribute('style', 'z-index' + zIndexNew)
+            }   
+
+            // 레이어 진입 시 포커스
+            setTimeout(()=>{
+                $dialog.focus()
+            }, 350);
+
         },
         close : () => {
             $modalCloseTrigger.forEach(e=>{
                 e.addEventListener('click', ele =>{
-                    const id = e.getAttribute('data-target')
+                    const id = e.closest('.modal').getAttribute('id');
+                    modal.modalClose(id); 
                 })
             })
+        },
+        modalClose : (id) => {
+            const $idVal = document.getElementById(id);
+            const $dialog = $idVal.querySelector('.modal-content')
+            const $modalOpened = document.querySelectorAll('.modal')
+            const $modalOpenedLen = $modalOpened.length;
+
+            // 2보다 열려있는 개수가 적다면
+            if($modalOpenedLen < 2){
+                $body.classList.remove('scroll-no')
+            }
+
+            $idVal.setAttribute('aria-hidden', 'true');
+            $idVal.classList.remove('in');
+            $dialog.removeAttribute('tabindex')
+
+            setTimeout(()=>{
+                $idVal.classList.remove('shown');
+            }, 150)
         }
+
     }
     
     // 함수 이벤트 초기화 = 등록

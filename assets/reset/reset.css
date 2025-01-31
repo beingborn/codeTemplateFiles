@@ -85,6 +85,7 @@ input , select {
     vertical-align: middle;
 }
 
+/* 대체 텍스트 세팅 */
 caption, 
 legend, 
 .sr_only, 
@@ -101,6 +102,15 @@ legend,
     border:0 none;
     clip:rect(0, 0, 0, 0)
 }
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
