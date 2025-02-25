@@ -1,0 +1,30 @@
+:root {
+    --pri : #0e6b96;
+    --bg-pri : #d1e2eb;
+}
+
+/* Font */
+@font-face {
+    font-weight: 800;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV ExtraBold'), url(assets/fonts/woff2/PretendardGOV-ExtraBold.worff) format('woff');
+}
+@font-face {
+    font-weight: 700;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV Bold'), url(assets/fonts/woff2/PretendardGOV-Bold.woff2) format('woff2'), url(../font/woff/PretendardGOV-Bold.woff) format('woff');
+}
+@font-face {
+    font-weight: 500;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV Medium'), url(assets/fonts/woff2/PretendardGOV-Medium.woff2) format('woff2'), url(../font/woff/PretendardGOV-Medium.woff) format('woff');
+}
+@font-face {
+    font-weight: 400;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV Regular'), url(assets/fonts/woff2/PretendardGOV-Regular.woff2) format('woff2'), url(../font/woff/PretendardGOV-Regular.woff) format('woff');
+}

@@ -1,0 +1,17 @@
+
+
+/* Header */
+header.main-info .main-info-tit {font-size: 40px;}
+header.main-info .count-info {padding: 12px; border: 1px solid #d8d8d8; border-radius: 12px;} 
+header .main-info-wrap {display: flex; align-items: end; height: 80px; column-gap: 20px; border-bottom: 1px solid #ccc; padding-bottom: 32px;}
+header .main-info-wrap .file_search {margin-left: auto;}
+
+/* Sidebar */
+.sidebar {width: 260px; height: calc(100vh - 100px);}
+.sidebar > nav > h2 {padding: 8px 16px 16px 8px; font-size: 18px;}
+.sidebar .sidebar-list > .sidebar-item > a {display: block; line-height: 44px; font-size: 18px; padding: 0 8px;}
+.sidebar .sidebar-list > .sidebar-item > a:hover {background-color: var(--bg-pri); color: var(--pri); }
+.sidebar .sidebar-list > .sidebar-item {border-bottom: 1px solid #ccc;}
+.sidebar .sidebar-list > .sidebar-item.is-active {border-bottom: 3px solid var(--pri); background-color: var(--bg-pri);}
+.sidebar .sidebar-list > .sidebar-item.is-active > a {font-weight: 700; color: var(--pri);}
+

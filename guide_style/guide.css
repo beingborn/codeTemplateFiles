@@ -1,0 +1,95 @@
+/* 가이드 리셋 */
+* { margin: 0; padding: 0 } 
+html, body, .cont {height: 100%;}
+ol, ul, li { margin: 0; padding: 0; list-style: none } 
+a { color: #555; text-decoration: none } 
+body { font-family: "Pretendard GOV Variable", "Pretendard GOV"; font-size: 16px; color: #333; -webkit-text-size-adjust: none } 
+h1 { padding: 10px; border-bottom: 1px solid #ddd; font-size: 24px } 
+h2 { font-size: 20px}
+.cont {padding: 0 20px;}
+button { border: 0; background: none; vertical-align: middle; cursor: pointer}
+body {position: relative;}
+
+/* 가이드 wrapper 공통 */
+.guide-inner { margin: 0px auto; padding: 0 20px; padding-top: 20px;max-width: 1960px;}
+
+@media (max-width: 1440px) {
+    .guide-inner {max-width: 1600px;}
+}
+
+/* Util */
+.flex-acjs {display: flex; align-items: center; justify-content: space-between;}
+
+
+/* Main Cont */
+.main-cont {display: flex; justify-content: space-between; margin-top: 40px; gap: 20px;}
+.main-cont .main-table-wrap {flex: 1;}
+
+/* 테이블 기본 스타일 */
+table.file_lst { border-bottom: 1px solid #ccc; width: 100%; table-layout: fixed; border-collapse: collapse;}
+table.file_lst tr.line { border-top: 2px solid #ccc}
+
+/* 완료 처리 */
+table.file_lst tr.done { background: rgb(241, 252, 255); } 
+table.file_lst tr.done.main { filter: brightness(92%); } 
+table.file_lst tr.done.main td:nth-child(2) {font-weight: 700;}
+table.file_lst tr.done.popup { background: rgb(212, 228, 212); } 
+/* 국가포털용 */
+/* 지자체 구분 */
+table.file_lst thead th { padding: 7px 5px; border: 1px solid #ccc; border-bottom: double #ccc; background-color: #f0f0f0; white-space: nowrap}
+table.file_lst tbody th { padding: 10px; border: 1px solid #ccc; color: #555; text-align: left}
+table.file_lst tbody td { padding: 10px; border: 1px solid #ccc; color: #555}
+table.file_lst td a { display: block; color: #114fc1}
+table.file_lst td span { color: red}
+table.file_lst .line { border-top: 2px solid #ccc}
+table.file_lst .date { font-family: Tahoma; color: #999}
+.ac { text-align: center}
+/* 상단 컬러 정보 */
+.color-info {margin-top: 20px;}
+.color-info p {padding: 8px; border: 1px solid black; border-radius: 8px;}
+.color-info p + p {margin-left: 10px;}
+/* 상단 검색 */
+.file_lst_search > fieldset { display: flex; border: none; width: 840px; font-size: 13px; align-items: center; font-weight: 700; column-gap: 10px; border-radius: 12px; padding: 0; margin: 0;}
+.file_lst_search legend { margin-bottom: 8px;}
+.file_lst_search select {width: 168px;}
+.file_lst_search :where(select, input, button) { padding: 0 8px; height: 44px;border-radius: 8px;}
+.file_lst_search button.search-btn { width: 120px;background: #333333; font-weight: 700; color: #fff;}
+.file_lst_search button.search-btn:disabled {background: #999; color: #eee;}
+.file_lst_search input {flex: 1;}
+/* 아이템 정렬 */
+.flex-item-right {display: flex; justify-content: end;}
+/* 검색 */
+.btn-function {border: 1px solid #d8d8d8; border-radius: 12px;}
+.btn-function.is-active {background: rgb(139, 182, 221);}
+
+/* Btn Style */
+[class*=btn-] {display: inline-flex; align-items: center; justify-content: center;}
+[class*=btn-]:not(.bg-transparent) {color: #fff;}
+
+/* tooltip */
+.file_tooltip {display: inline-block; position: relative;  width: 20px; height: 20px; vertical-align: middle; background-color: #555; font-weight: 700; color: #fff; text-align: center; border-radius: 50%;}
+.file_tooltip_box {display: none; padding: 12px; border: 1px solid #d8d8d8; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); position: absolute; top: 0; right: 60px; width: 400px; background: #fff; text-align: left; border-radius: 12px}
+.file_tooltip_box > p { font-weight: 500; color: #000;}
+.file_tooltip_box > strong {font-weight: 700;}
+.file_tooltip:hover .file_tooltip_box {display: block;}
+
+
+/* code-box group */
+.code-box-group {
+    border: 1px solid #d8d8d8;
+    position: absolute; 
+    top: 20px;
+    right: 20px;
+    width: var(--side-width, 600px);
+    background: #272822;
+    border-radius: 8px;
+}
+.code-box-group :where(.html-code-box, .css-code-box, .script-code-box){ white-space: pre-wrap;}
+.code-box-group .code-wrap:not(.memo) {background: #272822; font-size: 12px; border-radius: 8px;}
+.code-box-group .code-box {padding: 16px;}
+.code-box-group .code-box + .code-box {border-top: 1px solid #535353 ;}
+.code-box-group .code-box summary { width: 100%;font-size: 15px; font-weight: 700; color: #fff; cursor: pointer;}
+.code-box-group .memo-wrap { margin-top: 12px;padding: 12px; border: 1px solid #d8d8d8; background:  #2f302ace; line-height: 1.8;}
+.code-box-group .memo-wrap > p {font-size: 14px; color: #fff;}
+.code-box-group .code-wrap {position: relative;}
+.code-box-group .copy-btn { padding: 6px 8px;border: 1px solid #fff; position: absolute; top: 12px; right: 12px; color: #fff; border-radius: 4px;}

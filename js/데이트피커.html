@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<body class="guide-inner">
+    <div class="input-group">
+        <input type="text" class="datepicker-input">
+    </div>
+    <div class="input-group">
+        <input type="text" class="datepicker-input">
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    $(function(){
+        $('.datepicker-input').datepicker();
+
+        <!-- 고유 아이디 값 지정 -->
+        $(".input-group").each(function(index){
+            console.log(index)
+
+            var datepickerId = "datepicker" + index;
+            var input = $(this).find(".datepicker-input")
+            input.attr("id", datepickerId)
+        })
+
+        $(this).click(function(){
+            input.focus();
+        })
+
+        $(this).find(".btn").on('click', function(){
+            input.focus();
+        })
+    })
+</script>
+</html>

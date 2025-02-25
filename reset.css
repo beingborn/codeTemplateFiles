@@ -126,7 +126,7 @@ a{
     text-decoration: none;
 }
 
-em {font-style: normal;}
+em, strong, i {font-style: normal;}
 
 summary::-webkit-details-marker {display: none;} 
 summary {list-style-type: none;}

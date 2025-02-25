@@ -1,4 +1,3 @@
-
 $(function(){
     codeBoxSettings();
 
@@ -19,7 +18,7 @@ $(function(){
             $(this).text('copied!')
         }
     })
-})
+
 
 var markupNum = 0;
 var jsNum = 0;
@@ -69,7 +68,70 @@ function codeBoxSettings(){
     }
 }
 
+    // 사이드 바 기능
+    $('.sidebar-item > a').click(function(){
+        $('.sidebar-item').removeClass("is-active")
+        $(this).parent().addClass("is-active")
+    })
 
+    $('.file_lst_search .btn-function').click(function () {
+        $('.file_lst_search .btn-function').not($(this)).removeClass('is-active')
+        $(this).addClass('is-active');
+      })
+      
+      const fastModeBtn = document.querySelector('#fastModeBtn')
+      const slowModeBtn = document.querySelector('#slowModeBtn')
+  
+      let filterValue;
+      let searchTbody;
+      let rows;
+      let searchMode = "slowmode"; // 기본값을 패스트 모드로 설정
+
+      if (searchMode = "fastmode"){
+        // searchBtn.disabled = true;
+      } else {
+        // searchBtn.disabled = false;
+      }
+
+      const searchInput = document.querySelector('#search')
+      searchTbody = document.querySelector('.file_lst tbody');
+      searchInput.addEventListener('keyup', function(){
+        filterValue = searchInput.value;
+      })
+
+      // 검색 버튼 기능
+      const searchBtn = document.querySelector('#search-confirm')
+      searchBtn.addEventListener('click',function(event){
+
+        event.preventDefault();
+        const pageNameRows = searchTbody.querySelectorAll('tr');
+        let matched = false;
+
+        for (var i = 0; i < pageNameRows.length; i++){
+          
+          var pageNumText = pageNameRows[i].textContent;
+          // 각각의 tr의 text컨텐츠의 filterValue가 포함되어있다면, tr의 display값을 'block'
+          if(pageNumText.includes(filterValue)){
+            pageNameRows[i].style.display = '';
+            matched = true;
+          } else {
+            pageNameRows[i].style.display = 'none';
+          }
+        } 
+        // 검색어가 없을 경우
+        if (matched === false) {
+            const noDataTr = document.createElement('tr')
+            const noDataTd = document.createElement('td')
+            noDataTd.textContent = "조회된 데이터가 없습니다."
+            noDataTd.setAttribute('colspan', '6')
+            noDataTd.setAttribute('style', 'text-align: center;')
+            noDataTr.appendChild(noDataTd);
+            searchTbody.appendChild(noDataTr)
+            return false;
+        }
+      })
+
+})
 
 
 
