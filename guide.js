@@ -22,6 +22,7 @@ $(function(){
 
 var markupNum = 0;
 var jsNum = 0;
+var fileNum = 0;
 $(".file_lst tbody tr").each(function() {
     var text = $(this).find('td').eq(1).text();
     if (text.indexOf('markup') >= 0) {
@@ -30,11 +31,14 @@ $(".file_lst tbody tr").each(function() {
     if (text.indexOf('js') >= 0) {
         jsNum++;
     }
+    if (text.indexOf('file') >= 0){
+        fileNum++;
+    }
 });
 
 $('.count-info .markup strong').text(markupNum);
 $('.count-info .js strong').text(jsNum);
-
+$('.count-info .file strong').text(fileNum);
 
 function codeBoxSettings(){
     if( $(".code-box-group").length > 0){
