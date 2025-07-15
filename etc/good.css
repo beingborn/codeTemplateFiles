@@ -1,0 +1,91 @@
+:root {
+  /* Content-width */
+  --content-padding-x : 20px;
+  --content-wrap-size : calc(1440px + (var(--content-padding-x) * 2));
+
+  /* Grayscale */
+  --white: #FFF;
+	--bg-color: #EEE;
+	--ds-color: #EEE;
+	--bd-color: #AAA;
+	--ph-color: #666;
+	--pri-txt-color: #000;
+	--sub-txt-color: #333;
+
+  /* Color */
+	--pri: #00ADB2;
+	--skyblue: #218CEF;
+	--blue: #4C85BA;
+	--lightblue : #F7F9FC;
+	--deepblue: #003675;
+	--green: #56CA00;
+	--red: #EA292E;
+
+  /* Font */
+	--font-lv0: 42px;
+	--font-lv1: 34px;
+	--font-lv2: 32px;
+	--font-lv3: 28px;
+	--font-lv4: 22px;
+	--font-lv5: 20px;
+	--font-lv6: 18px;
+	--font-lv7: 16px;
+
+  /** 
+    Css Order 
+    ---------------------------
+    Layout > Box > Background > Font > Animation, Transition > Other
+    ---------------------------
+    Css Config  : https://github.com/beingborn/portCSS.config.css
+  */
+}
+
+/* Background */
+.bg-set {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+/* Show Hide Util */
+
+/* only block */
+.lg-only-flex {display: flex;}
+
+@media screen and (max-width: 1024px) {
+    .lg-only {display: none;}
+    .sm-only {display: block;}
+
+    .lg-only-flex {display: none;}
+    .sm-only-flex {display: flex;}
+}
+
+@media screen and (max-width: 800px) {
+    .sm-only800 {display: block;}
+}
+
+/* bg */
+button:not(.bg-transparent)[class*=bg-] {color: #fff;}
+
+.bg-primary {background: #212121;}
+.bg-blue {background: blue;}
+
+picture img, .img-wrap img, .video-wrap video, .video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* scss 가독성 */
+.main-pop { overflow: hidden;
+    .slide-pagination-area {
+      .visual-page-list {
+        .swiper-pagination-bullet { margin: 0 rem(5); width: rem(8); height: rem(8); background: #fff; opacity: 1;
+          &.swiper-pagination-bullet-active { background: #111; }
+        }
+      }
+    }
+}

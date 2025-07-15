@@ -1,0 +1,13 @@
+/**
+    File	: Layout.css
+    Author	: 이민혁
+    Date	: 2024-11-23
+    -------------------------------------------------
+    Dec     : 레이아웃 관련 CSS 정의
+*/
+
+.inner {
+    width: 100%;
+    max-width: var(--content-wrap-size);
+    padding: 0 var(--content-padding-x);
+}

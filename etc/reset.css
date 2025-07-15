@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body {
+	font-size: 1.7rem;
+	font-family: sans-serif;
+}
+
+fieldset,
+img {
+	border: 0;
+	max-width: 100%;
+}
+
+address,
+em {
+	font-style: normal;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+textarea {
+	border: 0;
+	resize: none;
+	width: 100%;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 파일</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../guide_style/guide.css">
+    <link rel="stylesheet" href="../plugin/prism.css">
+    <script src="../guide.js"></script>
+    <script src="../plugin/prism.js"></script>
+</head>
+<style>
+    .calender-wrap {max-width: 400px;}
+
+    .calender-wrap table {border-collapse: collapse; width: 100%;}
+    .calender-wrap table, th, td {border: 1px solid #CCC;}
+    .calender-wrap table tbody :where(th,td){height: 32px;}
+    .calender-wrap table tbody td {padding: 6px;}
+    
+    .calender-control {display: flex; align-items: center;}
+    .calender-control > button {width: 20px; height: 20px; border: 1px solid #CCC;}
+
+</style>
+<body class="guide-inner">
+    <div class="calender-wrap">
+        <div class="calender-header">
+            <div class="calender-control">
+                <button type="button" aria-label="이전 달"></button>
+                    <p>
+                        <span id="year"></span>
+                        <span id="month"></span>
+                        월
+                    </p>
+                <button type="button" aria-label="다음 달"></button>
+            </div>
+            <table id="calender">
+                <caption>공연전시</caption>
+                <thead>
+                    <tr>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody id="calender-body">
+                    <tr>
+                        <td class="sun"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="sat">1</td>
+                    </tr>
+                    <tr>
+                        <td class="sun">2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td class="sat">8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="code-box-group">
+        <details class="html-code-box language-html code-box">
+            <summary>HTML</summary>
+            <div class="code-wrap">
+                <code class="html-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="css-code-box language-css code-box">
+            <summary>CSS</summary>
+            <div class="code-wrap">
+                <code class="css-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="script-code-box language-javascript code-box">
+            <summary>JS</summary>
+            <div class="code-wrap">
+                <code class="js-content code">
+                </code>
+                <button class="copy-btn">copy</button>
+            </div>
+        </details>
+        <details class="memo-code-box code-box">
+            <summary>메모내역</summary>
+            <div class="code-wrap memo">
+                <div class="memo-wrap">
+                    <p></p>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+<script class="script">
+    // 달력 만들기
+    // Date 함수를 이용해 날짜를 계산한 후 
+    // table 변수에 html로 삽입한다.
+    // 1번 헤더에 현재 날짜를 삽입한다.
+
+    // 2번 해당 날짜를 이용해 현재 날짜를 계산하여 
+    // 해당 날짜를 이용해 마지막 날을 계산하고 날짜를 출력한다.
+
+    // 버튼을 클릭 시 신규로 해당 함수를 실행해 html을 바꿔치기한다.
+    // 데이트 구해서 뿌려주기
+
+    function getCallender(){
+        const callederBody = document.getElementById('#calender-body')
+
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth() + 1;
+
+        const currentMonthFirst = new Date(currentYear, currentMonth, 1).getDate();
+        const currentMonthLast =  new Date(currentYear,currentMonth,0).getDate();
+        const calenderWeekCount = Math.ceil((currentMonthFirst + currentMonthLast) / 7);
+
+        
+        let html = ""
+        for (let i = 0; i < calenderWeekCount; i++){
+
+        }
+
+
+
+        document.getElementById('year').innerText = currentYear;
+        document.getElementById('month').innerText = currentMonth;
+    }
+
+    getCallender();
+
+
+
+
+
+
+</script>
+</html>
